@@ -24,6 +24,15 @@ jobs:
           sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
           xcodebuild -version
 
+      - name: Fix Swift source paths
+        run: |
+          find ArabicTrivia -mindepth 2 -type f -name '*.swift' -print0 | while IFS= read -r -d '' file; do
+            base="$(basename "$file")"
+            if [ ! -e "ArabicTrivia/$base" ]; then
+              ln -s "$PWD/$file" "$PWD/ArabicTrivia/$base"
+            fi
+          done
+
       - name: Build iOS application
         run: |
           set -o pipefail
