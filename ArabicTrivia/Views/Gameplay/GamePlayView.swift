@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// شاشة اللعب الرئيسية المتكاملة
+/// شاشة اللعب الرئيسية المتكاملة مع لوحة الفئات الـ 6 وتعديل النتيجة وتبديل الدور
 public struct GamePlayView: View {
     @StateObject public var viewModel: GamePlayViewModel
     @Environment(\.dismiss) private var dismiss
@@ -13,30 +13,26 @@ public struct GamePlayView: View {
     
     public var body: some View {
         ZStack {
-            // الخلفية الفاخرة
             AppTheme.bgGradient
                 .ignoresSafeArea()
             
-            VStack(spacing: 14) {
-                // ترويسة المباراة: زر الإيقاف/الخروج + الجولة + مؤقت الوقت
+            VStack(spacing: 12) {
+                // ترويسة المباراة: زر الخروج + عداد الخانات + زر الإيقاف المؤقت
                 headerBar
                 
-                // لوحة نتائج الفريقين المتنافسين
+                // لوحة نتائج الفريقين (قابلة للنقر لتعديل النتيجة)
                 teamsScoreBoard
+                
+                // شريط تحديد وتبديل الدور اليدوي (Requirement 3: اقدر اعدل الدور عند مين)
+                turnControlBanner
                 
                 // محتوى الجولة حسب المرحلة الحالية
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 16) {
                         switch viewModel.session.phase {
-                        case .categorySelection:
-                            categorySelectionSection
-                            
-                        case .pointsSelection:
-                            if let cat = viewModel.session.activeCategory {
-                                PointsPickerCard(category: cat) { diff in
-                                    viewModel.selectPoints(diff)
-                                }
-                            }
+                        case .boardSelection:
+                            // لوحة الفئات الـ 6 الثابتة (Requirement 4)
+                            SixCategoryBoardView(viewModel: viewModel)
                             
                         case .questionAnswering:
                             if let question = viewModel.session.currentQuestion,
@@ -107,35 +103,33 @@ public struct GamePlayView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $viewModel.showScoreEditSheet) {
+            ScoreEditSheetView(viewModel: viewModel)
+        }
         .alert(isPresented: $viewModel.noQuestionsAvailableAlert) {
             Alert(
-                title: Text("تنبيه بنك الأسئلة"),
+                title: Text("تنبيه"),
                 message: Text(viewModel.alertMessage),
                 dismissButton: .default(Text("حسناً")) {
-                    viewModel.session.phase = .categorySelection
+                    viewModel.session.phase = .boardSelection
                 }
             )
         }
-        .confirmationDialog("هل تود إنهاء المباراة مبكراً؟", isPresented: $showExitConfirmation, titleVisibility: .visible) {
-            Button("إنهاء وحفظ النتيجة الحالية", role: .destructive) {
+        .confirmationDialog("إنهاء أو تعليق المباراة", isPresented: $showExitConfirmation, titleVisibility: .visible) {
+            Button("إنهاء وحفظ النتيجة النهائية", role: .destructive) {
                 viewModel.finishMatch()
             }
             Button("الخروج واستكمال المباراة لاحقاً") {
                 dismiss()
             }
             Button("إلغاء", role: .cancel) {}
-        } message: {
-            Text("يمكنك حفظ النتيجة الحالية أو استكمال المباراة في أي وقت لاحق من الشاشة الرئيسية.")
         }
     }
     
     // MARK: - Header Bar
     private var headerBar: some View {
         HStack {
-            // زر الخروج / الإنهاء
-            Button(action: {
-                showExitConfirmation = true
-            }) {
+            Button(action: { showExitConfirmation = true }) {
                 Image(systemName: "xmark.circle.fill")
                     .font(.title2)
                     .foregroundColor(AppTheme.textMuted)
@@ -143,55 +137,44 @@ public struct GamePlayView: View {
             
             Spacer()
             
-            // رقم الجولة
-            HStack(spacing: 6) {
-                Image(systemName: "flag.checkered")
-                    .foregroundColor(AppTheme.goldPrimary)
-                Text("الجولة \(viewModel.session.currentRound) من \(viewModel.session.totalRounds)")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundColor(AppTheme.textPrimary)
-            }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 6)
-            .background(AppTheme.bgCardElevated)
-            .cornerRadius(20)
+            Text("السَّــفَّاحِــين")
+                .font(.headline)
+                .fontWeight(.black)
+                .foregroundStyle(AppTheme.goldGradient)
             
             Spacer()
             
-            // زر الإيقاف المؤقت
-            Button(action: {
-                viewModel.togglePauseGame()
-            }) {
+            Button(action: { viewModel.togglePauseGame() }) {
                 Image(systemName: viewModel.session.isPaused ? "play.circle.fill" : "pause.circle.fill")
                     .font(.title2)
                     .foregroundColor(AppTheme.goldPrimary)
             }
         }
         .padding(.horizontal, 16)
-        .padding(.top, 6)
+        .padding(.top, 4)
     }
     
-    // MARK: - Score Board & Turn Indicator
+    // MARK: - Score Board (مع دعم التعديل اليدوي بالضغط على البطاقة)
     private var teamsScoreBoard: some View {
-        HStack(spacing: 12) {
-            // الفريق الأول
+        HStack(spacing: 10) {
+            // كرت الفريق الأول (قابل للنقر لتعديل النتيجة)
             teamScoreCard(
                 team: viewModel.session.team1,
-                isActive: viewModel.session.currentTurnTeamIndex == 0
+                isActive: viewModel.session.currentTurnTeamIndex == 0,
+                teamIndex: 0
             )
             
-            // المؤقت في المنتصف
+            // المؤقت في المنتصف أثناء الإجابة
             if viewModel.session.phase == .questionAnswering {
                 ZStack {
                     Circle()
                         .stroke(Color.white.opacity(0.1), lineWidth: 4)
-                        .frame(width: 48, height: 48)
+                        .frame(width: 44, height: 44)
                     
                     Circle()
                         .trim(from: 0, to: CGFloat(viewModel.remainingSeconds) / CGFloat(max(viewModel.session.timeLimitSeconds, 1)))
                         .stroke(viewModel.remainingSeconds <= 5 ? AppTheme.error : AppTheme.goldPrimary, lineWidth: 4)
-                        .frame(width: 48, height: 48)
+                        .frame(width: 44, height: 44)
                         .rotationEffect(.degrees(-90))
                         .animation(.linear(duration: 1.0), value: viewModel.remainingSeconds)
                     
@@ -202,178 +185,158 @@ public struct GamePlayView: View {
                 }
             } else {
                 Text("VS")
-                    .font(.caption)
+                    .font(.caption2)
                     .fontWeight(.black)
                     .foregroundColor(AppTheme.goldPrimary)
-                    .frame(width: 36, height: 36)
+                    .frame(width: 32, height: 32)
                     .background(AppTheme.bgSecondary)
                     .clipShape(Circle())
             }
             
-            // الفريق الثاني
+            // كرت الفريق الثاني (قابل للنقر لتعديل النتيجة)
             teamScoreCard(
                 team: viewModel.session.team2,
-                isActive: viewModel.session.currentTurnTeamIndex == 1
+                isActive: viewModel.session.currentTurnTeamIndex == 1,
+                teamIndex: 1
             )
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 14)
     }
     
-    private func teamScoreCard(team: Team, isActive: Bool) -> some View {
-        HStack(spacing: 10) {
-            Circle()
-                .fill(Color(hex: team.colorHex))
-                .frame(width: 14, height: 14)
-                .overlay(
-                    Circle().stroke(Color.white, lineWidth: isActive ? 2 : 0)
-                )
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text(team.name)
-                    .font(.subheadline)
-                    .fontWeight(isActive ? .black : .semibold)
-                    .foregroundColor(isActive ? .white : AppTheme.textSecondary)
-                    .lineLimit(1)
+    private func teamScoreCard(team: Team, isActive: Bool, teamIndex: Int) -> some View {
+        Button(action: {
+            viewModel.openScoreEditor(for: teamIndex)
+        }) {
+            HStack(spacing: 8) {
+                Circle()
+                    .fill(Color(hex: team.colorHex))
+                    .frame(width: 12, height: 12)
                 
-                Text("\(team.score) نقطة")
-                    .font(.headline)
-                    .fontWeight(.heavy)
-                    .foregroundColor(isActive ? AppTheme.goldPrimary : AppTheme.textPrimary)
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 4) {
+                        Text(team.name)
+                            .font(.system(size: 13, weight: isActive ? .black : .bold))
+                            .foregroundColor(isActive ? .white : AppTheme.textSecondary)
+                            .lineLimit(1)
+                        
+                        // أيقونة التعديل
+                        Image(systemName: "pencil")
+                            .font(.system(size: 9))
+                            .foregroundColor(AppTheme.textMuted)
+                    }
+                    
+                    Text("\(team.score) ن")
+                        .font(.system(size: 17, weight: .heavy))
+                        .foregroundColor(isActive ? AppTheme.goldPrimary : AppTheme.textPrimary)
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
-            
-            if isActive {
-                Text("دوره")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(.black)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(AppTheme.goldPrimary)
-                    .cornerRadius(6)
-            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 14)
+                    .fill(isActive ? AppTheme.bgCardElevated : AppTheme.bgCard.opacity(0.6))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(isActive ? Color(hex: team.colorHex) : Color.white.opacity(0.08), lineWidth: isActive ? 2 : 1)
+                    )
+            )
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 10)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(isActive ? AppTheme.bgCardElevated : AppTheme.bgCard.opacity(0.6))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(isActive ? Color(hex: team.colorHex) : Color.white.opacity(0.05), lineWidth: isActive ? 2 : 1)
-                )
-        )
+        .buttonStyle(ScaleButtonStyle())
     }
     
-    // MARK: - Category Selection Section
-    private var categorySelectionSection: some View {
-        VStack(spacing: 16) {
-            VStack(spacing: 4) {
-                Text("دور: \(viewModel.session.currentTeam.name)")
-                    .font(.headline)
+    // MARK: - Turn Control Banner (Requirement 3: اقدر اعدل الدور عند مين)
+    private var turnControlBanner: some View {
+        Button(action: {
+            viewModel.switchTurn()
+        }) {
+            HStack(spacing: 8) {
+                Image(systemName: "person.2.arrow.triangle.turn.up.right.diamond.fill")
+                    .foregroundColor(AppTheme.goldPrimary)
+                    .font(.caption)
+                
+                Text("الدور الحالي:")
+                    .font(.caption2)
+                    .foregroundColor(AppTheme.textSecondary)
+                
+                Text(viewModel.session.currentTeam.name)
+                    .font(.caption)
+                    .fontWeight(.black)
                     .foregroundColor(Color(hex: viewModel.session.currentTeam.colorHex))
                 
-                Text("اختر تصنيف السؤال لهذه الجولة")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(AppTheme.textPrimary)
-            }
-            
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                ForEach(viewModel.session.selectedCategories) { cat in
-                    Button(action: {
-                        viewModel.selectCategory(cat)
-                    }) {
-                        HStack(spacing: 10) {
-                            Image(systemName: cat.iconName)
-                                .font(.title3)
-                                .foregroundColor(cat.themeColor)
-                                .frame(width: 36, height: 36)
-                                .background(cat.themeColor.opacity(0.15))
-                                .clipShape(Circle())
-                            
-                            Text(cat.titleArabic)
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                                .foregroundColor(AppTheme.textPrimary)
-                                .lineLimit(2)
-                                .multilineTextAlignment(.leading)
-                            
-                            Spacer()
-                        }
-                        .padding(12)
-                        .background(AppTheme.bgCard)
-                        .cornerRadius(16)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.white.opacity(0.08), lineWidth: 1)
-                        )
-                    }
-                    .buttonStyle(ScaleButtonStyle())
+                Spacer()
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                    Text("تبديل الدور")
                 }
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(.black)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 3)
+                .background(AppTheme.goldGradient)
+                .cornerRadius(8)
             }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(AppTheme.bgCardElevated)
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.goldPrimary.opacity(0.25), lineWidth: 1)
+            )
         }
-        .padding(16)
-        .premiumCard()
+        .buttonStyle(ScaleButtonStyle())
+        .padding(.horizontal, 14)
     }
     
     // MARK: - Tie Breaker Card
     private var tieBreakerCard: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 16) {
             Image(systemName: "scalemass.fill")
-                .font(.system(size: 60))
+                .font(.system(size: 50))
                 .foregroundColor(AppTheme.goldPrimary)
             
-            Text("المباراة انتهت بالتعادل!")
-                .font(.title2)
-                .fontWeight(.black)
+            Text("تعادل ملحمي بين الفريقين!")
+                .font(.title3)
+                .fontWeight(.bold)
                 .foregroundColor(AppTheme.textPrimary)
             
-            Text("تعادلت نقاط الفريقين بنتيجة \(viewModel.session.team1.score) نقطة. هل ترغب في بدء جولة حسم سريعة لتحديد الفائز؟")
-                .font(.subheadline)
-                .foregroundColor(AppTheme.textSecondary)
-                .multilineTextAlignment(.center)
-            
-            HStack(spacing: 14) {
-                Button(action: {
+            HStack(spacing: 12) {
+                Button("جولة حسم جديدة ⚔️") {
                     viewModel.startTieBreakerRound()
-                }) {
-                    Text("بدء جولة الحسم ⚔️")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(AppTheme.goldGradient)
-                        .cornerRadius(16)
                 }
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .frame(height: 48)
+                .background(AppTheme.goldGradient)
+                .cornerRadius(14)
                 
-                Button(action: {
+                Button("إنهاء بالتعادل") {
                     viewModel.session.phase = .matchFinished
-                }) {
-                    Text("اكتفاء بالتعادل")
-                        .fontWeight(.bold)
-                        .foregroundColor(AppTheme.textPrimary)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(AppTheme.bgCardElevated)
-                        .cornerRadius(16)
                 }
+                .fontWeight(.bold)
+                .foregroundColor(AppTheme.textPrimary)
+                .frame(maxWidth: .infinity)
+                .frame(height: 48)
+                .background(AppTheme.bgCardElevated)
+                .cornerRadius(14)
             }
         }
-        .padding(24)
+        .padding(18)
         .premiumCard()
     }
     
     // MARK: - Pause Overlay
     private var pauseOverlay: some View {
         ZStack {
-            Color.black.opacity(0.85)
-                .ignoresSafeArea()
-            
-            VStack(spacing: 24) {
+            Color.black.opacity(0.85).ignoresSafeArea()
+            VStack(spacing: 20) {
                 Image(systemName: "pause.circle.fill")
-                    .font(.system(size: 70))
+                    .font(.system(size: 60))
                     .foregroundColor(AppTheme.goldPrimary)
                 
                 Text("المباراة متوقفة مؤقتاً")
@@ -381,35 +344,25 @@ public struct GamePlayView: View {
                     .fontWeight(.bold)
                     .foregroundColor(AppTheme.textPrimary)
                 
-                VStack(spacing: 14) {
-                    Button(action: {
+                VStack(spacing: 12) {
+                    Button("استئناف اللعب") {
                         viewModel.togglePauseGame()
-                    }) {
-                        Text("استئناف المباراة")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .frame(width: 220, height: 50)
-                            .background(AppTheme.goldGradient)
-                            .cornerRadius(16)
                     }
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .frame(width: 200, height: 46)
+                    .background(AppTheme.goldGradient)
+                    .cornerRadius(14)
                     
-                    Button(action: {
+                    Button("إنهاء الآن") {
                         viewModel.finishMatch()
-                    }) {
-                        Text("إنهاء المباراة الآن")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(AppTheme.error)
-                            .frame(width: 220, height: 46)
-                            .background(AppTheme.bgCardElevated)
-                            .cornerRadius(14)
                     }
+                    .font(.caption)
+                    .foregroundColor(AppTheme.error)
                 }
             }
-            .padding(30)
+            .padding(24)
             .premiumCard()
-            .frame(maxWidth: 320)
         }
     }
 }

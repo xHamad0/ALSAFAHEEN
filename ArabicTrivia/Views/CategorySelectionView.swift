@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// شاشة اختيار التصنيفات الـ 26 للمباراة
+/// شاشة اختيار الفئات الـ 6 الثابتة للجولة (Requirement 4)
 public struct CategorySelectionView: View {
     @ObservedObject var setupViewModel: SetupGameViewModel
     
@@ -10,45 +10,60 @@ public struct CategorySelectionView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 14) {
-                // شريط تحديد الكل والتنبيه
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("التصنيفات المختارة")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .foregroundColor(AppTheme.textPrimary)
-                        Text("\(setupViewModel.selectedCategories.count) من أصل \(QuestionCategory.allCases.count) تصنيف")
-                            .font(.caption)
-                            .foregroundColor(AppTheme.goldPrimary)
+                // شريط التحديد والعداد
+                VStack(spacing: 8) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("الفئات الـ 6 الثابتة للجولة")
+                                .font(.headline)
+                                .fontWeight(.black)
+                                .foregroundColor(AppTheme.textPrimary)
+                            
+                            Text("اختر 6 فئات لجميع الفرق (كل فئة تضم 10 أسئلة)")
+                                .font(.caption2)
+                                .foregroundColor(AppTheme.textSecondary)
+                        }
+                        
+                        Spacer()
+                        
+                        // عداد 6 فئات
+                        ZStack {
+                            Capsule()
+                                .fill(setupViewModel.selectedCategories.count == 6 ? AppTheme.success.opacity(0.2) : AppTheme.goldPrimary.opacity(0.15))
+                                .frame(width: 80, height: 32)
+                            
+                            HStack(spacing: 2) {
+                                Text("\(setupViewModel.selectedCategories.count)")
+                                    .fontWeight(.black)
+                                    .foregroundColor(setupViewModel.selectedCategories.count == 6 ? AppTheme.success : AppTheme.goldPrimary)
+                                Text("/ 6")
+                                    .font(.caption)
+                                    .foregroundColor(AppTheme.textMuted)
+                            }
+                        }
                     }
                     
-                    Spacer()
-                    
-                    HStack(spacing: 8) {
-                        Button("تحديد الكل") {
-                            setupViewModel.selectAllCategories()
+                    // زر اختيار 6 فئات عشوائياً
+                    Button(action: {
+                        setupViewModel.selectRandomSixCategories()
+                    }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "dice.fill")
+                            Text("اختيار 6 فئات عشوائياً بضغطة واحدة 🎲")
+                                .fontWeight(.bold)
                         }
                         .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(AppTheme.goldPrimary)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(AppTheme.bgCardElevated)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 38)
+                        .background(AppTheme.goldGradient)
                         .cornerRadius(10)
-                        
-                        Button("إلغاء") {
-                            setupViewModel.deselectAllCategories()
-                        }
-                        .font(.caption)
-                        .foregroundColor(AppTheme.textMuted)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 6)
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 6)
+                .padding(.top, 4)
                 
-                // شبكة التصنيفات الـ 26
+                // قائمة التصنيفات
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                         ForEach(QuestionCategory.allCases) { cat in
@@ -82,7 +97,7 @@ public struct CategorySelectionView: View {
                                         .fill(isSelected ? AppTheme.bgCardElevated : AppTheme.bgCard.opacity(0.4))
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 16)
-                                                .stroke(isSelected ? AppTheme.goldPrimary.opacity(0.5) : Color.white.opacity(0.05), lineWidth: 1)
+                                                .stroke(isSelected ? AppTheme.goldPrimary.opacity(0.6) : Color.white.opacity(0.05), lineWidth: 1.2)
                                         )
                                 )
                             }
@@ -93,27 +108,27 @@ public struct CategorySelectionView: View {
                     .padding(.bottom, 80)
                 }
                 
-                // زر المتابعة إلى إعدادات المباراة
+                // زر المتابعة (مفعل فقط عند اختيار 6 فئات تماماً)
                 NavigationLink(destination: GameSettingsView(setupViewModel: setupViewModel)) {
                     HStack(spacing: 8) {
-                        Text("متابعة لإعدادات المباراة")
+                        Text(setupViewModel.selectedCategories.count == 6 ? "تأكيد الـ 6 فئات والمتابعة" : "يرجى تحديد 6 فئات (\(setupViewModel.selectedCategories.count)/6)")
                             .fontWeight(.bold)
                         Image(systemName: "arrow.left.circle.fill")
                     }
                     .font(.headline)
-                    .foregroundColor(.black)
+                    .foregroundColor(setupViewModel.selectedCategories.count == 6 ? .black : .white.opacity(0.5))
                     .frame(maxWidth: .infinity)
-                    .frame(height: 54)
-                    .background(!setupViewModel.selectedCategories.isEmpty ? AppTheme.goldGradient : LinearGradient(colors: [.gray], startPoint: .top, endPoint: .bottom))
+                    .frame(height: 52)
+                    .background(setupViewModel.selectedCategories.count == 6 ? AnyView(AppTheme.goldGradient) : AnyView(Color.gray.opacity(0.3)))
                     .cornerRadius(16)
-                    .shadow(color: AppTheme.goldPrimary.opacity(0.3), radius: 8, x: 0, y: 4)
+                    .shadow(color: setupViewModel.selectedCategories.count == 6 ? AppTheme.goldPrimary.opacity(0.3) : .clear, radius: 8, x: 0, y: 4)
                 }
-                .disabled(setupViewModel.selectedCategories.isEmpty)
+                .disabled(setupViewModel.selectedCategories.count != 6)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 12)
             }
         }
-        .navigationTitle("اختيار التصنيفات")
+        .navigationTitle("فئات الجولة")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

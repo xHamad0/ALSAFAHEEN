@@ -1,9 +1,15 @@
 import SwiftUI
 
-/// شاشة تفاصيل التصنيف وتوزيع مستويات الصعوبة والنقاط
+/// شاشة تفاصيل التصنيف مع إمكانية سحب وتصدير الأسئلة مقسمة في فئاتها (Requirement 1)
 public struct CategoryDetailView: View {
     let category: QuestionCategory
     let questionBank = QuestionBankService.shared
+    
+    @State private var showShareSheet: Bool = false
+    @State private var shareItems: [Any] = []
+    @State private var showCopiedAlert: Bool = false
+    @State private var copiedMessage: String = ""
+    @State private var isShowingQuestionsList: Bool = true
     
     public var body: some View {
         ZStack {
@@ -41,6 +47,65 @@ public struct CategoryDetailView: View {
                     .padding(20)
                     .premiumCard()
                     
+                    // قسم سحب وتصدير الأسئلة مقسمة (Requirement 1)
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Image(systemName: "square.and.arrow.up.fill")
+                                .foregroundColor(AppTheme.goldPrimary)
+                            Text("سحب ومشاركة أسئلة هذا التصنيف:")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(AppTheme.goldPrimary)
+                        }
+                        
+                        HStack(spacing: 10) {
+                            // زر سحب ومشاركة JSON
+                            Button(action: {
+                                let jsonStr = questionBank.exportCategoryJSON(category: category)
+                                shareItems = [jsonStr]
+                                showShareSheet = true
+                            }) {
+                                HStack(spacing: 6) {
+                                    Image(systemName: "doc.text.fill")
+                                    Text("سحب ملف JSON")
+                                }
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 44)
+                                .background(AppTheme.goldGradient)
+                                .cornerRadius(12)
+                            }
+                            
+                            // زر نسخ النص المنسق
+                            Button(action: {
+                                let text = questionBank.exportCategoryFormattedText(category: category)
+                                UIPasteboard.general.string = text
+                                copiedMessage = "تم نسخ أسئلة «\(category.titleArabic)» إلى الحافظة بنجاح!"
+                                showCopiedAlert = true
+                            }) {
+                                HStack(spacing: 6) {
+                                    Image(systemName: "doc.on.doc.fill")
+                                    Text("نسخ الأسئلة نصياً")
+                                }
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(AppTheme.textPrimary)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 44)
+                                .background(AppTheme.bgSecondary)
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                                )
+                            }
+                        }
+                    }
+                    .padding(16)
+                    .premiumCard()
+                    
                     // تفصيل مستويات الصعوبة والنقاط
                     VStack(alignment: .leading, spacing: 14) {
                         Text("توزيع الأسئلة على النقاط")
@@ -50,6 +115,7 @@ public struct CategoryDetailView: View {
                         
                         ForEach(DifficultyLevel.allCases, id: \.self) { diff in
                             let count = questionBank.availableCount(for: category, difficulty: diff)
+                            let totalInDiff = (questionBank.questionsByCategory[category] ?? []).filter { $0.difficulty == diff }.count
                             
                             HStack {
                                 ZStack {
@@ -74,8 +140,8 @@ public struct CategoryDetailView: View {
                                 
                                 Spacer()
                                 
-                                Text("\(count) متاح")
-                                    .font(.subheadline)
+                                Text("\(count) متاح من \(totalInDiff)")
+                                    .font(.caption)
                                     .fontWeight(.heavy)
                                     .foregroundColor(count > 0 ? AppTheme.textPrimary : AppTheme.error)
                             }
@@ -86,12 +152,81 @@ public struct CategoryDetailView: View {
                     }
                     .padding(20)
                     .premiumCard()
+                    
+                    // استعراض الأسئلة مقسمة داخل الشاشة
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Text("قائمة الأسئلة المفصلة للتصنيف")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(AppTheme.textPrimary)
+                            Spacer()
+                            Button(isShowingQuestionsList ? "إخفاء" : "عرض") {
+                                withAnimation { isShowingQuestionsList.toggle() }
+                            }
+                            .font(.caption)
+                            .foregroundColor(AppTheme.goldPrimary)
+                        }
+                        
+                        if isShowingQuestionsList {
+                            let catQuestions = questionBank.questionsByCategory[category] ?? []
+                            ForEach(Array(catQuestions.enumerated()), id: \.element.id) { index, q in
+                                VStack(alignment: .leading, spacing: 6) {
+                                    HStack {
+                                        Text("\(index + 1). \(q.text)")
+                                            .font(.subheadline)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(AppTheme.textPrimary)
+                                        Spacer()
+                                        Text("\(q.difficulty.points) ن")
+                                            .font(.caption2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 6)
+                                            .padding(.vertical, 2)
+                                            .background(q.difficulty.primaryColor)
+                                            .cornerRadius(6)
+                                    }
+                                    
+                                    if let opts = q.options, !opts.isEmpty {
+                                        Text("الخيارات: " + opts.joined(separator: " • "))
+                                            .font(.caption2)
+                                            .foregroundColor(AppTheme.textSecondary)
+                                    }
+                                    
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .font(.caption2)
+                                            .foregroundColor(AppTheme.success)
+                                        Text("الإجابة: \(q.answer)")
+                                            .font(.caption)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(AppTheme.success)
+                                    }
+                                }
+                                .padding(12)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(AppTheme.bgSecondary)
+                                .cornerRadius(12)
+                            }
+                        }
+                    }
+                    .padding(16)
+                    .premiumCard()
                 }
                 .padding(16)
             }
         }
         .navigationTitle(category.titleArabic)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(items: shareItems)
+        }
+        .alert("تم النسخ", isPresented: $showCopiedAlert) {
+            Button("حسناً", role: .cancel) {}
+        } message: {
+            Text(copiedMessage)
+        }
     }
     
     private func statBadge(title: String, value: String, color: Color) -> some View {

@@ -1,11 +1,14 @@
 import SwiftUI
 
-/// شاشة إدارة بنك الأسئلة واستيراد وتحديث ملفات JSON
+/// شاشة إدارة بنك الأسئلة مع إمكانية سحب وتصدير الأسئلة مقسمة في فئاتها واستيراد JSON
 public struct QuestionBankManagementView: View {
     @StateObject private var viewModel = QuestionBankViewModel()
     @State private var jsonInputText: String = ""
     @State private var showResetDialog: Bool = false
     @State private var showImportSheet: Bool = false
+    @State private var showShareSheet: Bool = false
+    @State private var shareItems: [Any] = []
+    @State private var showCopiedAlert: Bool = false
     
     public var body: some View {
         ZStack {
@@ -16,6 +19,9 @@ public struct QuestionBankManagementView: View {
                 VStack(spacing: 20) {
                     // كرت الإحصائيات الحقيقية للبنك
                     realQuestionStatsCard
+                    
+                    // كرت سحب وتصدير الأسئلة مقسمة في فئاتها (Requirement 1)
+                    exportQuestionsCard
                     
                     // شريط البحث في التصنيفات
                     searchBar
@@ -34,6 +40,9 @@ public struct QuestionBankManagementView: View {
         .sheet(isPresented: $showImportSheet) {
             importSheetContent
         }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(items: shareItems)
+        }
         .alert("إعادة ضبط سجل الأسئلة المستخدمة", isPresented: $showResetDialog) {
             Button("تأكيد إعادة الضبط", role: .destructive) {
                 viewModel.resetUsedHistory()
@@ -46,6 +55,11 @@ public struct QuestionBankManagementView: View {
             Button("حسناً", role: .cancel) {}
         } message: {
             Text("تم تصفير سجل الأسئلة المستخدمة. جميع الأسئلة أصبحت متاحة الآن في المباريات الجديدة.")
+        }
+        .alert("تم النسخ", isPresented: $showCopiedAlert) {
+            Button("حسناً", role: .cancel) {}
+        } message: {
+            Text("تم نسخ جميع الأسئلة مقسمة في فئاتها إلى الحافظة بنجاح.")
         }
     }
     
@@ -101,6 +115,74 @@ public struct QuestionBankManagementView: View {
             }
         }
         .padding(18)
+        .premiumCard()
+    }
+    
+    // MARK: - Export / Pull Questions Card (Requirement 1: اقدر اسحب الاسئله مقسمه في فئاتها)
+    private var exportQuestionsCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "square.and.arrow.up.fill")
+                    .foregroundColor(AppTheme.goldPrimary)
+                Text("سحب الأسئلة مقسمة في فئاتها:")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(AppTheme.goldPrimary)
+            }
+            
+            Text("يمكنك سحب وتصدير كامل أسئلة البنك مقسمة ومصنفة بحسب الفئات الـ 26 بصيغة JSON أو كنص منسق.")
+                .font(.caption)
+                .foregroundColor(AppTheme.textSecondary)
+            
+            HStack(spacing: 10) {
+                Button(action: {
+                    let fullJSON = viewModel.bankService.exportAllCategorizedJSON()
+                    shareItems = [fullJSON]
+                    showShareSheet = true
+                }) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "square.and.arrow.up")
+                        Text("سحب ومشاركة JSON")
+                    }
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(AppTheme.goldGradient)
+                    .cornerRadius(12)
+                }
+                
+                Button(action: {
+                    var fullText = "═══════════════════════════════════════\n"
+                    fullText += "📚 بنك أسئلة لعبة السفاحين كامل ومقسم بالفئات\n"
+                    fullText += "═══════════════════════════════════════\n\n"
+                    for cat in QuestionCategory.allCases {
+                        fullText += viewModel.bankService.exportCategoryFormattedText(category: cat)
+                        fullText += "\n"
+                    }
+                    UIPasteboard.general.string = fullText
+                    showCopiedAlert = true
+                }) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "doc.on.doc")
+                        Text("نسخ الكل كنص")
+                    }
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(AppTheme.textPrimary)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(AppTheme.bgSecondary)
+                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                    )
+                }
+            }
+        }
+        .padding(16)
         .premiumCard()
     }
     
@@ -199,7 +281,7 @@ public struct QuestionBankManagementView: View {
     
     // MARK: - Import Sheet
     private var importSheetContent: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 AppTheme.bgDark
                     .ignoresSafeArea()

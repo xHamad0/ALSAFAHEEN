@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-/// الخدمة المركزية لإدارة بنك الأسئلة والتحميل والتوزيع
+/// الخدمة المركزية لإدارة بنك الأسئلة والتحميل والتوزيع والسحب حسب الفئات
 public final class QuestionBankService: ObservableObject {
     public static let shared = QuestionBankService()
     
@@ -84,23 +84,92 @@ public final class QuestionBankService: ObservableObject {
         }
     }
     
-    /// الحصول على سؤال غير مستخدم لتصنيف معين وقيمة صعوبة معينة (100, 200, 300, 400, 500)
-    public func fetchQuestion(for category: QuestionCategory, difficulty: DifficultyLevel) -> Question? {
+    /// جلب سؤال غير مستخدم ولم يتم حجزه لخانات أخرى
+    public func fetchQuestionForSlot(category: QuestionCategory, difficulty: DifficultyLevel, excludeIDs: Set<String> = []) -> Question? {
         queue.sync {
             let candidates = (questionsByCategory[category] ?? []).filter {
-                $0.difficulty == difficulty && !tracker.isUsed(id: $0.id)
+                $0.difficulty == difficulty && !tracker.isUsed(id: $0.id) && !excludeIDs.contains($0.id)
             }
-            
             if let selected = candidates.shuffled().first {
                 return selected
             }
             
-            // إذا نفدت الأسئلة بالقيمة المطلوبة بالتحديد، نبحث عن أقرب قيمة غير مستخدمة لنفس التصنيف
-            let fallbackCandidates = (questionsByCategory[category] ?? []).filter {
-                !tracker.isUsed(id: $0.id)
+            // إذا نفدت الأسئلة غير المستخدمة، نجلب أي سؤال من نفس الصعوبة لم يُحجز بعد في اللوحة الحالية
+            let secondaryCandidates = (questionsByCategory[category] ?? []).filter {
+                $0.difficulty == difficulty && !excludeIDs.contains($0.id)
             }
-            return fallbackCandidates.shuffled().first
+            if let selected = secondaryCandidates.shuffled().first {
+                return selected
+            }
+            
+            // احتياط عام للتصنيف
+            let fallback = (questionsByCategory[category] ?? []).filter { !excludeIDs.contains($0.id) }
+            return fallback.shuffled().first
         }
+    }
+    
+    public func fetchQuestionById(_ id: String) -> Question? {
+        queue.sync {
+            allQuestions.first { $0.id == id }
+        }
+    }
+    
+    // MARK: - خاصية سحب الأسئلة مقسمة في فئاتها (Requirement 1)
+    
+    /// سحب وتصدير أسئلة تصنيف معين بصيغة JSON مقسمة ومنسقة
+    public func exportCategoryJSON(category: QuestionCategory) -> String {
+        let questions = questionsByCategory[category] ?? []
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        if let data = try? encoder.encode(questions), let str = String(data: data, encoding: .utf8) {
+            return str
+        }
+        return "[]"
+    }
+    
+    /// سحب وتصدير أسئلة تصنيف معين كنص مقروء ومقسم حسب درجات الصعوبة
+    public func exportCategoryFormattedText(category: QuestionCategory) -> String {
+        let questions = questionsByCategory[category] ?? []
+        var text = "═══════════════════════════════════════\n"
+        text += "📚 تصنيف: \(category.titleArabic)\n"
+        text += "إجمالي الأسئلة: \(questions.count) سؤال\n"
+        text += "═══════════════════════════════════════\n\n"
+        
+        for diff in DifficultyLevel.allCases {
+            let diffQuestions = questions.filter { $0.difficulty == diff }
+            if !diffQuestions.isEmpty {
+                text += "─── [ \(diff.points) نقطة - \(diff.titleArabic) ] ───\n"
+                for (index, q) in diffQuestions.enumerated() {
+                    text += "\(index + 1). \(q.text)\n"
+                    if let opts = q.options, !opts.isEmpty {
+                        text += "   الخيارات: " + opts.joined(separator: " | ") + "\n"
+                    }
+                    text += "   الإجابة: \(q.answer)\n"
+                    if let exp = q.explanation, !exp.isEmpty {
+                        text += "   الشرح: \(exp)\n"
+                    }
+                    if let letter = q.letter {
+                        text += "   الحرف: \(letter)\n"
+                    }
+                    text += "\n"
+                }
+            }
+        }
+        return text
+    }
+    
+    /// سحب وتصدير كامل بنك الأسئلة مقسماً في فئاته (Categorized Dictionary JSON)
+    public func exportAllCategorizedJSON() -> String {
+        var dict: [String: [Question]] = [:]
+        for (cat, list) in questionsByCategory {
+            dict[cat.rawValue] = list
+        }
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        if let data = try? encoder.encode(dict), let str = String(data: data, encoding: .utf8) {
+            return str
+        }
+        return "{}"
     }
     
     /// عدد الأسئلة الكلية لتصنيف معين
@@ -108,7 +177,7 @@ public final class QuestionBankService: ObservableObject {
         return questionsByCategory[category]?.count ?? 0
     }
     
-    /// عدد الأسئلة المتاحة (التي لم تلعب بعد) لتصنيف معين
+    /// عدد الأسئلة المتاحة لتصنيف معين
     public func availableCount(for category: QuestionCategory) -> Int {
         guard let list = questionsByCategory[category] else { return 0 }
         let usedIDs = tracker.getAllUsedIDs()
@@ -122,36 +191,8 @@ public final class QuestionBankService: ObservableObject {
         return list.filter { $0.difficulty == difficulty && !usedIDs.contains($0.id) }.count
     }
     
-    /// إجمالي الأسئلة المتاحة في البنك بالكامل
     public var totalAvailableCount: Int {
         let usedIDs = tracker.getAllUsedIDs()
         return allQuestions.filter { !usedIDs.contains($0.id) }.count
-    }
-    
-    /// إضافة أسئلة مستوردة مباشرة إلى الذاكرة
-    public func appendImportedQuestions(_ newQuestions: [Question]) {
-        queue.async(flags: .barrier) {
-            var currentIDs = Set(self.allQuestions.map { $0.id })
-            var added: [Question] = []
-            
-            for q in newQuestions {
-                if !currentIDs.contains(q.id) {
-                    currentIDs.insert(q.id)
-                    added.append(q)
-                }
-            }
-            
-            var updatedList = self.allQuestions + added
-            var grouped = self.questionsByCategory
-            for q in added {
-                grouped[q.category, default: []].append(q)
-            }
-            
-            DispatchQueue.main.async {
-                self.allQuestions = updatedList
-                self.questionsByCategory = grouped
-                self.totalQuestionsCount = updatedList.count
-            }
-        }
     }
 }

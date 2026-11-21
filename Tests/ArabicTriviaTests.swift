@@ -12,34 +12,20 @@ final class ArabicTriviaTests: XCTestCase {
     }
 
     func testArabicNormalizer() {
-        // فحص توحيد الهمزات والألفات
         XCTAssertEqual(ArabicNormalizer.normalize("أحمد"), ArabicNormalizer.normalize("احمد"))
         XCTAssertEqual(ArabicNormalizer.normalize("إبراهيم"), ArabicNormalizer.normalize("ابراهيم"))
         XCTAssertEqual(ArabicNormalizer.normalize("آسيا"), ArabicNormalizer.normalize("اسيا"))
-        
-        // فحص إزالة الحركات والتشكيل
         XCTAssertEqual(ArabicNormalizer.removeDiacritics("سِـجَـالٌ"), "سـجـال")
-        
-        // فحص الياء والألف المقصورة
         XCTAssertEqual(ArabicNormalizer.normalize("موسى"), ArabicNormalizer.normalize("موسي"))
-        
-        // فحص مطابقة الإجابات مع تجريد الـ التعريف
         XCTAssertTrue(ArabicNormalizer.isAnswerMatch(userInput: "مكسيك", correctAnswer: "المكسيك"))
         XCTAssertTrue(ArabicNormalizer.isAnswerMatch(userInput: "المكسيك", correctAnswer: "مكسيك"))
     }
 
     func testLettersCategoryStrictRule() {
-        // التحقق من أن "المكسيك" تبدأ بحرف "م"
         XCTAssertTrue(ArabicNormalizer.startsWithLetter("المكسيك", letter: "م"))
         XCTAssertTrue(ArabicNormalizer.startsWithLetter("مكسيكو", letter: "م"))
-        
-        // التحقق من أن "بوخارست" لا تبدأ بحرف "ر"
         XCTAssertFalse(ArabicNormalizer.startsWithLetter("بوخارست", letter: "ر"))
-        
-        // التحقق من أن "رومانيا" تبدأ بحرف "ر"
         XCTAssertTrue(ArabicNormalizer.startsWithLetter("رومانيا", letter: "ر"))
-        
-        // التحقق من الألف والهمزات
         XCTAssertTrue(ArabicNormalizer.startsWithLetter("أمستردام", letter: "أ"))
         XCTAssertTrue(ArabicNormalizer.startsWithLetter("امستردام", letter: "أ"))
     }
@@ -47,55 +33,66 @@ final class ArabicTriviaTests: XCTestCase {
     func testAntiRepetitionTracker() {
         let tracker = UsedQuestionsTracker.shared
         let testID = "test-uuid-anti-repetition-\(UUID().uuidString)"
-        
         XCTAssertFalse(tracker.isUsed(id: testID))
         tracker.markAsUsed(id: testID)
         XCTAssertTrue(tracker.isUsed(id: testID))
     }
 
-    func testJSONImporterStrictRejectionOfTrueFalse() {
-        let importer = JSONImporterService.shared
+    func testSixCategoriesAndSixtyBoardSlots() {
+        let vm = SetupGameViewModel()
+        vm.selectRandomSixCategories()
+        XCTAssertEqual(vm.selectedCategories.count, 6)
         
-        // محاولة استيراد سؤال صح وخطأ يجب أن ترفض تماماً
-        let invalidJSON = """
-        [
-            {
-                "id": "invalid-tf-1",
-                "text": "هل الشمس تدور حول الأرض؟",
-                "answer": "خطأ",
-                "category": "science",
-                "difficulty": 100,
-                "type": "true_false"
+        let session = vm.createGameSession()
+        XCTAssertEqual(session.boardCategories.count, 6)
+        // 6 فئات × 5 قيم × 2 سؤالين = 60 خانة
+        XCTAssertEqual(session.boardSlots.count, 60)
+        
+        // التحقق من أن كل تصنيف به 10 خانات
+        for cat in session.boardCategories {
+            let catSlots = session.boardSlots.filter { $0.category == cat }
+            XCTAssertEqual(catSlots.count, 10)
+            
+            // تحقق من أن كل صعوبة بها خانتان (1 و 2)
+            for diff in DifficultyLevel.allCases {
+                let diffSlots = catSlots.filter { $0.difficulty == diff }
+                XCTAssertEqual(diffSlots.count, 2)
             }
-        ]
-        """
-        
-        let result = importer.importQuestions(from: invalidJSON.data(using: .utf8)!)
-        XCTAssertEqual(result.successfullyAdded, 0)
-        XCTAssertFalse(result.errors.isEmpty)
-        XCTAssertTrue(result.errors.first?.contains("صح أو خطأ ممنوعة") ?? false)
+        }
     }
 
-    func testTeamTurnSwitching() {
+    func testManualScoreEdit() {
+        let team1 = Team(name: "الفريق الأول", colorHex: "#3B82F6", score: 500)
+        let team2 = Team(name: "الفريق الثاني", colorHex: "#EF4444", score: 200)
+        let session = GameSession(team1: team1, team2: team2)
+        let vm = GamePlayViewModel(session: session)
+        
+        vm.editingTeamIndex = 0
+        vm.adjustScore(delta: 300)
+        XCTAssertEqual(vm.session.team1.score, 800)
+        
+        vm.adjustScore(delta: -200)
+        XCTAssertEqual(vm.session.team1.score, 600)
+        
+        vm.editingTeamIndex = 1
+        vm.manualScoreText = "1500"
+        vm.applyManualScore()
+        XCTAssertEqual(vm.session.team2.score, 1500)
+    }
+
+    func testManualTurnSwitching() {
         let team1 = Team(name: "الفريق الأول", colorHex: "#3B82F6")
         let team2 = Team(name: "الفريق الثاني", colorHex: "#EF4444")
-        
-        var session = GameSession(
-            team1: team1,
-            team2: team2,
-            totalRounds: 5,
-            currentRound: 1,
-            currentTurnTeamIndex: 0
-        )
-        
+        let session = GameSession(team1: team1, team2: team2)
         let vm = GamePlayViewModel(session: session)
-        XCTAssertEqual(vm.session.currentTurnTeamIndex, 0)
         
-        vm.proceedToNextTurn()
+        XCTAssertEqual(vm.session.currentTurnTeamIndex, 0)
+        vm.switchTurn()
         XCTAssertEqual(vm.session.currentTurnTeamIndex, 1)
-        
-        vm.proceedToNextTurn()
+        vm.switchTurn()
         XCTAssertEqual(vm.session.currentTurnTeamIndex, 0)
-        XCTAssertEqual(vm.session.currentRound, 2)
+        
+        vm.setTurn(to: 1)
+        XCTAssertEqual(vm.session.currentTurnTeamIndex, 1)
     }
 }

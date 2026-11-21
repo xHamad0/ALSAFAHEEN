@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-/// مدير منطق اللعبة وشاشة اللعب المباشر
+/// مدير منطق اللعبة وشاشة اللعب المباشر مع دعم اللوحة المكونة من 6 فئات وتعديل النتيجة وتغيير الدور
 public final class GamePlayViewModel: ObservableObject {
     @Published public var session: GameSession
     @Published public var remainingSeconds: Int = 30
@@ -14,6 +14,11 @@ public final class GamePlayViewModel: ObservableObject {
     @Published public var noQuestionsAvailableAlert: Bool = false
     @Published public var alertMessage: String = ""
     
+    // تعديل النتيجة (Requirement 2)
+    @Published public var showScoreEditSheet: Bool = false
+    @Published public var editingTeamIndex: Int = 0
+    @Published public var manualScoreText: String = ""
+    
     private var timerSubscription: AnyCancellable?
     private let questionService = QuestionBankService.shared
     private let tracker = UsedQuestionsTracker.shared
@@ -24,36 +29,84 @@ public final class GamePlayViewModel: ObservableObject {
     public init(session: GameSession) {
         self.session = session
         self.remainingSeconds = session.timeLimitSeconds
-        
-        // إذا كان التوزيع العشوائي مفعلاً، نبدأ باختيار عشوائي للتصنيف
-        if session.isRandomCategoryDistribution {
-            pickRandomCategory()
-        }
     }
     
-    // MARK: - Category Selection
-    public func selectCategory(_ category: QuestionCategory) {
+    // MARK: - تعديل الدور (Requirement 3: اقدر اعدل الدور عند مين)
+    
+    /// تبديل الدور إلى الفريق الآخر مباشرة في أي وقت
+    public func switchTurn() {
         haptic.selection()
-        session.activeCategory = category
-        session.phase = .pointsSelection
+        session.currentTurnTeamIndex = (session.currentTurnTeamIndex == 0 ? 1 : 0)
         saveCurrentProgress()
     }
     
-    public func pickRandomCategory() {
-        if let cat = session.selectedCategories.shuffled().first {
-            selectCategory(cat)
-        }
+    /// تحديد الفريق صاحب الدور بشكل صريح
+    public func setTurn(to teamIndex: Int) {
+        guard teamIndex == 0 || teamIndex == 1 else { return }
+        haptic.selection()
+        session.currentTurnTeamIndex = teamIndex
+        saveCurrentProgress()
     }
     
-    // MARK: - Points & Question Selection (100 | 200 | 300 | 400 | 500)
-    public func selectPoints(_ difficulty: DifficultyLevel) {
-        guard let category = session.activeCategory else { return }
+    // MARK: - تعديل النتيجة (Requirement 2: اقدر اعدل النتيجه)
+    
+    /// فتح واجهة تعديل نتيجة فريق معين
+    public func openScoreEditor(for teamIndex: Int) {
+        self.editingTeamIndex = teamIndex
+        let currentScore = (teamIndex == 0 ? session.team1.score : session.team2.score)
+        self.manualScoreText = "\(currentScore)"
+        self.showScoreEditSheet = true
+    }
+    
+    /// تعديل نتيجة الفريق بزيادة أو إنقاص نقاط
+    public func adjustScore(delta: Int) {
+        haptic.impact(.medium)
+        if editingTeamIndex == 0 {
+            session.team1.score = max(0, session.team1.score + delta)
+            manualScoreText = "\(session.team1.score)"
+        } else {
+            session.team2.score = max(0, session.team2.score + delta)
+            manualScoreText = "\(session.team2.score)"
+        }
+        saveCurrentProgress()
+    }
+    
+    /// حفظ النتيجة المدخلة يدوياً
+    public func applyManualScore() {
+        if let newScore = Int(manualScoreText.trimmingCharacters(in: .whitespaces)) {
+            haptic.notification(.success)
+            if editingTeamIndex == 0 {
+                session.team1.score = max(0, newScore)
+            } else {
+                session.team2.score = max(0, newScore)
+            }
+            saveCurrentProgress()
+        }
+        showScoreEditSheet = false
+    }
+    
+    // MARK: - اختيار خانة من اللوحة (Requirement 4: 6 فئات، 100-500 بسؤالين لكل خانة)
+    
+    public func selectBoardSlot(_ slot: BoardSlot) {
+        guard !slot.isPlayed else { return }
         haptic.impact(.medium)
         
-        session.activeDifficulty = difficulty
+        session.activeBoardSlotId = slot.id
+        session.activeCategory = slot.category
+        session.activeDifficulty = slot.difficulty
         
-        // جلب سؤال غير مكرر
-        if let question = questionService.fetchQuestion(for: category, difficulty: difficulty) {
+        // جلب السؤال المحجوز لهذه الخانة
+        var question: Question? = nil
+        if let qId = slot.questionId {
+            question = questionService.fetchQuestionById(qId)
+        }
+        
+        // في حال عدم توفره نجلب سؤالاً مطابقاً
+        if question == nil {
+            question = questionService.fetchQuestionForSlot(category: slot.category, difficulty: slot.difficulty)
+        }
+        
+        if let question = question {
             session.currentQuestion = question
             session.phase = .questionAnswering
             session.eliminatedOptions = []
@@ -65,15 +118,14 @@ public final class GamePlayViewModel: ObservableObject {
             directAnswerInput = ""
             showExplanation = false
             
-            // تسجيل السؤال لمنع تكراره مستقبلاً
+            // تسجيل السؤال لمنع تكراره
             tracker.markAsUsed(id: question.id)
             session.questionsUsedInSession.append(question.id)
             
             startTimer()
             saveCurrentProgress()
         } else {
-            // نفاد الأسئلة في هذا التصنيف والصعوبة
-            alertMessage = "تم استهلاك جميع أسئلة تصنيف «\(category.titleArabic)» بقيمة \(difficulty.points) نقطة! يمكنك تجربة قيمة أخرى أو تصنيف آخر."
+            alertMessage = "لم يتم العثور على سؤال متاح لهذه الخانة."
             noQuestionsAvailableAlert = true
             haptic.notification(.warning)
         }
@@ -182,11 +234,18 @@ public final class GamePlayViewModel: ObservableObject {
         session.lastAnswerWasCorrect = isCorrect
         session.lastPointsEarned = points
         
+        // تحديث حالة الخانة في لوحة الأسئلة
+        if let activeSlotId = session.activeBoardSlotId,
+           let index = session.boardSlots.firstIndex(where: { $0.id == activeSlotId }) {
+            session.boardSlots[index].isPlayed = true
+            session.boardSlots[index].playedByTeamIndex = session.currentTurnTeamIndex
+            session.boardSlots[index].wasCorrect = isCorrect
+        }
+        
         if isCorrect {
             audio.playCorrectSound()
             haptic.notification(.success)
             
-            // إضافة النقاط للفريق صاحب الدور
             if session.currentTurnTeamIndex == 0 {
                 session.team1.score += points
                 session.team1.correctAnswersCount += 1
@@ -219,7 +278,7 @@ public final class GamePlayViewModel: ObservableObject {
         saveCurrentProgress()
     }
     
-    // MARK: - Lifelines (وسائل المساعدة)
+    // MARK: - Lifelines
     public func canUseLifeline(_ type: LifelineType) -> Bool {
         let count = session.currentTeam.lifelinesRemaining[type.rawValue] ?? 0
         return count > 0 && session.phase == .questionAnswering
@@ -230,7 +289,6 @@ public final class GamePlayViewModel: ObservableObject {
         audio.playLifelineSound()
         haptic.impact(.heavy)
         
-        // خصم الاستخدام
         if session.currentTurnTeamIndex == 0 {
             session.team1.lifelinesRemaining[type.rawValue, default: 1] -= 1
         } else {
@@ -260,37 +318,24 @@ public final class GamePlayViewModel: ObservableObject {
         session.eliminatedOptions = toEliminate
     }
     
-    // MARK: - Move to Next Turn / Finish
+    // MARK: - الانتقال إلى الدور التالي والعودة للوحة الجولة
     public func proceedToNextTurn() {
         haptic.selection()
         
-        // التحقق مما إذا كان كلا الفريقين قد لعبا نفس الجولة
-        if session.currentTurnTeamIndex == 0 {
-            // الانتقال للفريق الثاني
-            session.currentTurnTeamIndex = 1
-        } else {
-            // اكتملت دورة الجولة للفريقين معاً
-            if session.currentRound < session.totalRounds {
-                session.currentRound += 1
-                session.currentTurnTeamIndex = 0
-            } else {
-                // نهاية الجولات المحددة
-                finishMatch()
-                return
-            }
+        // التحقق من اكتمال جميع خانات اللوحة الـ 60
+        let unplayedSlots = session.boardSlots.filter { !$0.isPlayed }
+        if unplayedSlots.isEmpty {
+            finishMatch()
+            return
         }
         
-        // إعادة التعيين للجولة التالية
-        resetForNextTurn()
-    }
-    
-    private func resetForNextTurn() {
-        session.phase = session.isRandomCategoryDistribution ? .pointsSelection : .categorySelection
-        if session.isRandomCategoryDistribution {
-            pickRandomCategory()
-        } else {
-            session.activeCategory = nil
-        }
+        // تبديل الدور تلقائياً للفريق الآخر
+        session.currentTurnTeamIndex = (session.currentTurnTeamIndex == 0 ? 1 : 0)
+        
+        // العودة إلى لوحة الفئات الـ 6
+        session.phase = .boardSelection
+        session.activeBoardSlotId = nil
+        session.activeCategory = nil
         session.activeDifficulty = nil
         session.currentQuestion = nil
         session.eliminatedOptions = []
@@ -301,6 +346,7 @@ public final class GamePlayViewModel: ObservableObject {
         selectedOptionIndex = nil
         directAnswerInput = ""
         showExplanation = false
+        
         saveCurrentProgress()
     }
     
@@ -314,7 +360,6 @@ public final class GamePlayViewModel: ObservableObject {
         stopTimer()
         session.phase = .matchFinished
         
-        // فحص التعادل
         let winnerName: String?
         if session.team1.score > session.team2.score {
             winnerName = session.team1.name
@@ -323,10 +368,9 @@ public final class GamePlayViewModel: ObservableObject {
             winnerName = session.team2.name
             audio.playVictorySound()
         } else {
-            winnerName = nil // تعادل
+            winnerName = nil
         }
         
-        // حفظ سجل المباراة
         let record = MatchRecord(
             team1Name: session.team1.name,
             team1ColorHex: session.team1.colorHex,
@@ -340,19 +384,18 @@ public final class GamePlayViewModel: ObservableObject {
             team2Wrong: session.team2.wrongAnswersCount,
             winnerName: winnerName,
             roundsCount: session.currentRound,
-            categoriesPlayedCount: session.selectedCategories.count
+            categoriesPlayedCount: session.boardCategories.count
         )
         
         dataManager.saveMatchRecord(record)
         dataManager.clearActiveSession()
     }
     
-    /// جولة الحسم لفض التعادل
     public func startTieBreakerRound() {
         session.totalRounds += 1
         session.currentRound += 1
-        session.currentTurnTeamIndex = 0
-        resetForNextTurn()
+        session.phase = .boardSelection
+        saveCurrentProgress()
     }
     
     private func saveCurrentProgress() {
