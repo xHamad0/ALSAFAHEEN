@@ -1,0 +1,273 @@
+[
+  {
+    "id": "f972510a-7392-5f32-9a3e-282115fc5a23",
+    "text": "ما هو النادي الأكثر تتويجاً بلقب الدوري السعودي للمحترفين؟",
+    "answer": "الهلال",
+    "options": [
+      "الاتحاد",
+      "النصر",
+      "الهلال",
+      "الأهلي"
+    ],
+    "category": "saudi_football",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "نادي الهلال هو الأكثر تتويجاً ببطولات الدوري السعودي عبر التاريخ.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "deb13b10-33c7-5459-99d5-39fe3d525af8",
+    "text": "تأهل المنتخب السعودي الأول لكرة القدم إلى نهائيات كأس العالم لأول مرة في تاريخه عام _______",
+    "answer": "1994",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "تأهل الأخضر لمونديال أمريكا 1994 وبلغ دور الـ 16 بشجاعة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "bc675540-7457-5bf3-b3b7-fd7d933d6649",
+    "text": "من هو الهداف التاريخي للدوري السعودي للمحترفين وبطولات الدوري بجميع مسمياته؟",
+    "answer": "ماجد عبد الله",
+    "options": [
+      "سامي الجابر",
+      "ماجد عبد الله",
+      "عمر السومة",
+      "ناصر الشمراني"
+    ],
+    "category": "saudi_football",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "سجل أسطورة النصر والكرة السعودية ماجد عبد الله 189 هدفاً بالدوري.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "df9bca18-087f-514b-99ca-21fce7495855",
+    "text": "أي نادٍ سعودي يلقب بـ 'العميد' وهو أقدم نادٍ تأسس في المملكة عام 1927؟",
+    "answer": "الاتحاد",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "تأسس نادي الاتحاد في جدة عام 1927 ويحمل لقب العميد.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "769573b5-b517-572f-9f89-ba84c15fc599",
+    "text": "من هو صاحب هدف الفوز التاريخي للمنتخب السعودي ضد الأرجنتين في كأس العالم 2022؟",
+    "answer": "سالم الدوسري",
+    "options": [
+      "صالح الشهري",
+      "سالم الدوسري",
+      "سلمان الفرج",
+      "فراس البريكان"
+    ],
+    "category": "saudi_football",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "سجل سالم الدوسري هدف الانتصار الملحمي 2-1 على بطل العالم الأرجنتين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "13851641-2637-5ed2-9457-cfd4d85ba91c",
+    "text": "صاحب الهدف المارادوني التاريخي للمنتخب السعودي في مرمى بلجيكا بمونديال 1994 هو النجم _______",
+    "answer": "سعيد العويران",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "انطلق سعيد العويران من منتصف الملعب وسجل أحد أعظم أهداف المونديال.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7e1396bd-0cf2-5878-8884-84e7dc7c0626",
+    "text": "كم عدد بطولات دوري أبطال آسيا للنخبة/أبطال آسيا التي حققها نادي الهلال السعودي؟",
+    "answer": "4 ألقاب",
+    "options": [
+      "لقبين",
+      "3 ألقاب",
+      "4 ألقاب",
+      "5 ألقاب"
+    ],
+    "category": "saudi_football",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "الهلال هو زعيم آسيا بتحقيقه 4 ألقاب أعوام (1991, 2000, 2019, 2021).",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5229742b-8817-5a40-9283-3828653dfbf4",
+    "text": "من هو الحارس السعودي الملقب بـ 'أخطبوط آسيا' واختير حارس القرن العشرين في قارة آسيا؟",
+    "answer": "محمد الدعيع",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "محمد الدعيع عميد لاعبي العالم الأسبق وأسطورة الطائي والهلال والمنتخب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0b2eb829-37e1-5ad7-b947-80b63e3ca7b8",
+    "text": "في أي عام حقق المنتخب السعودي لقب كأس آسيا لأول مرة في تاريخه؟",
+    "answer": "1984",
+    "options": [
+      "1980",
+      "1984",
+      "1988",
+      "1996"
+    ],
+    "category": "saudi_football",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "توج الأخضر بكأس آسيا 1984 في سنغافورة بعد الفوز على الصين في النهائي 2-0.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "eb0304d4-0d20-5248-abe6-bb32e477cc00",
+    "text": "المدرب البرازيلي الشهير الذي قاد نادي الهلال لتحقيق أول لقب آسيوي عام 1991 هو الداهية سيدينهو وقاد المنتخب السعودي لمونديال 1998 المدرب البرازيلي _______",
+    "answer": "كارلوس ألبرتو باريرا",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "درب كارلوس ألبرتو باريرا الأخضر في كأس آسيا ومونديال 1998.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "87355e2f-ae90-5a3b-b26a-37154e614510",
+    "text": "ما هو اللون الأساسي لقميص نادي النصر السعودي؟",
+    "answer": "الأصفر",
+    "options": [
+      "الأزرق",
+      "الأصفر",
+      "الأخضر",
+      "الأحمر"
+    ],
+    "category": "saudi_football",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يعرف النصر بلقب 'فارس نجد' والقميص الأصفر والأزرق.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7f7df05e-0ce0-5722-a5cf-622960e6c377",
+    "text": "من هو النادي السعودي الملقب بـ 'قلعة الكؤوس' وتأسس في جدة عام 1937؟",
+    "answer": "الأهلي",
+    "options": [
+      "الاتحاد",
+      "الأهلي",
+      "الهلال",
+      "الوحدة"
+    ],
+    "category": "saudi_football",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "الأهلي هو قلعة الكؤوس وأحد أقطاب الكرة السعودية الكبار.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "9852150b-53a8-53b9-9083-f6e0e4d87af9",
+    "text": "الملعب الدولي الشهير في مدينة الرياض الذي يشبه الخيمة البدوية يسمى استاد الملك _______ الدولي",
+    "answer": "فهد",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 200,
+    "type": "fill_in_blank",
+    "explanation": "استاد الملك فهد الدولي 'درة الملاعب'.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "98f2a0e4-6023-5c16-8d9c-19923748ff4d",
+    "text": "أي نادٍ سعودي يلقب بـ 'ليث العاصمة' وتوج بلقب الدوري 6 مرات؟",
+    "answer": "الشباب",
+    "options": [
+      "الرياض",
+      "الشباب",
+      "الاتفاق",
+      "الفيحاء"
+    ],
+    "category": "saudi_football",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "نادي الشباب أحد أقدم وأعرق أندية الرياض.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "73ca0b39-8c03-5098-a81d-cbdb6c7d008c",
+    "text": "ما هو أول نادٍ سعودي يحقق بطولة أندية أبطال الدوري في الخليج عام 1983 وبطولة العرب؟",
+    "answer": "الاتفاق",
+    "options": null,
+    "category": "saudi_football",
+    "difficulty": 300,
+    "type": "direct_answer",
+    "explanation": "الاتفاق فارس الدهناء أول من حقق البطولات الخارجية للكرة السعودية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "05ac0b11-21ba-5909-a095-eb41bafae9e3",
+    "text": "كم عدد الأهداف التي سجلها النجم سامي الجابر في بطولات كأس العالم للمنتخب السعودي؟",
+    "answer": "3 أهداف",
+    "options": [
+      "هدفان",
+      "3 أهداف",
+      "4 أهداف",
+      "5 أهداف"
+    ],
+    "category": "saudi_football",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "سجل الجابر في 3 نسخ مختلفة: 1994 و1998 و2006.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "48da15c2-a8af-5c66-be2c-7a920d130159",
+    "text": "في أي عام حقق نادي الاتحاد السعودي لقبه الثاني على التوالي في دوري أبطال آسيا بنظام الذهاب والإياب؟",
+    "answer": "2005",
+    "options": [
+      "2003",
+      "2004",
+      "2005",
+      "2006"
+    ],
+    "category": "saudi_football",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "توج الاتحاد بلقب دوري أبطال آسيا 2004 و2005.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "f1a9ed45-0778-5d3a-9535-d4b43328710d",
+    "text": "ما اسم السفينة الشهيرة التي تدور حولها أحداث الفيلم العالمي الحائز على 11 جائزة أوسكار للمخرج جيمس كاميرون؟",
+    "answer": "تيتانيك",
+    "options": [
+      "بلاك بيرل",
+      "تيتانيك",
+      "بيسمارك",
+      "أوديسي"
+    ],
+    "category": "cinema_movies",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "حقق فيلم Titanic عام 1997 نجاحاً أسطورياً في شباك التذاكر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "45f540c8-a120-5a42-ad79-a7bdc383958f",
+    "text": "الممثل المصري العالمي الذي رشح للأوسكار ولعب دور البطولة في فيلم لورنس العرب ودكتور زيفاجو هو عمر _______",
+    "answer": "الشريف",
+    "options": null,
+    "category": "cinema_movies",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "عمر الشريف نجم السينما المصرية والعالمية الحائز على الغولدن غلوب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0e6e88a8-6f83-52a4-ab11-e4b31566e5d2",
+    "text": "من هو الممثل الذي جسد شخصية 'الجوكر' في فيلم فارس الظلام (The Dark Knight) عام 2008 ونال الأوسكار بعد وفاته؟",
+    "answer": "هيث ليدجر",
+    "options": [
+      "خواكين فينيكس",
+      "هيث ليدجر",
+      "جاك نيكلسون",
+      "كريستيان بيل"
+    ],
+    "category": "cinema_movies",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "قدم الأسترالي هيث ليدجر أداءً خالداً نال عنه جائزة الأوسكار.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e390fdfa-6edc-5c28-8d41-c7ce583b35a0",
+    "text": "ما هي ثلاثية أفلام الخيال الملحمية الشهيرة للمخرج بيتر جاكسون المقتبسة عن روايات جون تولكين؟",
+    "answer": "سيد الخواتم",
+    "options": null,
+    "category": "cinema_movies",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "The Lord of the Rings حصدت الجزء الثالث 'عودة الملك' 11 أوسكار.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "bacdb667-28ae-5615-b8b5-45dd764ac22d",
+    "text": "من أخرج فيلم الخيال العلمي والفضاء الشهير 'Interstellar' وفيلم 'Inception'؟",
+    "answer": "كريستوفر نولان",
+    "options": [
+      "ستيفن سبيلبرغ",
+      "كريستوفر نولان",
+      "مارتن سكورسيزي",
+      "كوينتن تارانتينو"
+    ],
+    "category": "cinema_movies",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "يشتهر نولان بأفلامه الملحمية وتلاعبه بالزمن والفيزياء.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "3826d440-924e-5502-9b6b-2e6be26cbf31",
+    "text": "الفيلم العربي المصري التاريخي الشهير الذي جسد معركة حطين وصلاح الدين الأيوبي عام 1963 كان من بطولة أحمد مظهر وإخراج يوسف _______",
+    "answer": "شاهين",
+    "options": null,
+    "category": "cinema_movies",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "فيلم 'الناصر صلاح الدين' من كلاسيكيات السينما العربية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "23ce2dd1-47be-5e4c-884b-4e7ec232ad4f",
+    "text": "من هو الممثل صاحب الرقم القياسي في الفوز بجائزة أوسكار أفضل ممثل في دور رئيسي (3 مرات)؟",
+    "answer": "دانيال دي لويس",
+    "options": [
+      "جاك نيكلسون",
+      "مارلون براندو",
+      "دانيال دي لويس",
+      "روبرت دي نيرو"
+    ],
+    "category": "cinema_movies",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "فاز دانيال دي لويس عن أفلام My Left Foot وThere Will Be Blood وLincoln.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e41a2e8b-5b8d-59dc-a91e-a91cfbdb91c6",
+    "text": "ما اسم فيلم الرسوم المتحركة الأول الطويل بالكامل في تاريخ السينما وأنتجته والت ديزني عام 1937؟",
+    "answer": "سندريلا",
+    "options": null,
+    "category": "cinema_movies",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "سنو وايت والأقزام السبعة (Snow White) 1937.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "8db9effa-7894-59cd-b9db-a322957649d3",
+    "text": "أي فيلم كوري جنوبي صنع التاريخ كأول فيلم غير ناطق بالإنجليزية يفوز بجائزة أوسكار أفضل فيلم عام 2020؟",
+    "answer": "طفيلي",
+    "options": [
+      "القطار إلى بوسان",
+      "طفيلي",
+      "أولد بوي",
+      "السيدة المنتقمة"
+    ],
+    "category": "cinema_movies",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "فيلم Parasite للمخرج بونغ جون هو حقق 4 جوائز أوسكار تاريخية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "87be1b52-bbf6-54a6-adcc-cc5a1d4bb6e6",
+    "text": "الجائزة الكبرى التي يمنحها مهرجان كان السينمائي الدولي لأفضل فيلم في المسابقة الرسمية تسمى السعفة _______",
+    "answer": "الذهبية",
+    "options": null,
+    "category": "cinema_movies",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "Palme d'Or هي أرفع جائزة سينمائية في مهرجان كان بفرنسا.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

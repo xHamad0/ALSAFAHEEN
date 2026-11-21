@@ -1,0 +1,157 @@
+[
+  {
+    "id": "247f8673-e109-596d-a815-95b0e465366b",
+    "text": "ما هو الرمز الكيميائي للماء المكون من الهيدروجين والأكسجين؟",
+    "answer": "H2O",
+    "options": [
+      "CO2",
+      "H2O",
+      "NaCl",
+      "O2"
+    ],
+    "category": "physics_chemistry",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يتكون جزيء الماء من ذرتي هيدروجين وذرة أكسجين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a0ccc5d9-0001-5bb9-87cf-20db44916eb9",
+    "text": "الرمز الكيميائي لعنصر الحديد في الجدول الدوري هو _______",
+    "answer": "Fe",
+    "options": null,
+    "category": "physics_chemistry",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "يشتق رمز Fe من الكلمة اللاتينية Ferrum.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "bafef256-6eee-5bea-936c-022edd68c329",
+    "text": "ما هو الرمز الكيميائي لعنصر الذهب؟",
+    "answer": "Au",
+    "options": [
+      "Ag",
+      "Au",
+      "Cu",
+      "Pt"
+    ],
+    "category": "physics_chemistry",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "يشتق رمز الذهب Au من الكلمة اللاتينية Aurum.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "25dc7d10-cf80-5593-8665-485f662380a9",
+    "text": "ما هي الوحدة الدولية لقياس القوة في الفيزياء؟",
+    "answer": "النيوتن",
+    "options": null,
+    "category": "physics_chemistry",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "سميت الوحدة باسم عالم الفيزياء إسحاق نيوتن.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "11de4045-fa5f-57a3-b3ef-df123ecb8eba",
+    "text": "ما قيمة الرقم الهيدروجيني (pH) للمحلول المتعادل تماماً مثل الماء النقي؟",
+    "answer": "7",
+    "options": [
+      "0",
+      "5",
+      "7",
+      "14"
+    ],
+    "category": "physics_chemistry",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "مقياس pH يعتبر 7 متعادلاً، وأقل من 7 حمضي، وأعلى من 7 قاعدي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e3de4600-d4fd-5703-bb40-e8ae53946235",
+    "text": "المعادلة الشهيرة لأينشتاين في النسبية الخاصة تنص على أن الطاقة تساوي الكتلة مضروبة في مربع سرعة _______",
+    "answer": "الضوء",
+    "options": null,
+    "category": "physics_chemistry",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "المعادلة الشهيرة E = mc².",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "04cf7acd-9198-5be8-a849-5e1b41a0c8fe",
+    "text": "ما هو المعدن الوحيد الذي يكون في الحالة السائلة عند درجة حرارة الغرفة وضغطها العاديين؟",
+    "answer": "الزئبق",
+    "options": [
+      "الرصاص",
+      "الزئبق",
+      "البروم",
+      "الغاليوم"
+    ],
+    "category": "physics_chemistry",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "الزئبق Hg هو الفلز السائل الوحيد في الظروف القياسية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "623fa2e1-a4af-5f00-ae04-6ffec8897ffe",
+    "text": "ما اسم الجسيم الذري عديم الشحنة الكهربائية ويوجد داخل نواة الذرة مع البروتونات؟",
+    "answer": "النيوترون",
+    "options": null,
+    "category": "physics_chemistry",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "اكتشف جيمس تشادويك النيوترون عام 1932 وهو جسيم متعادل الشحنة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "1a209be9-8220-5add-8dd1-2c0f9eb12416",
+    "text": "ما هي درجة الصفر المطلق على مقياس كلفن بالدرجات المئوية السيلسيوس؟",
+    "answer": "-273.15 مئوية",
+    "options": [
+      "-100 مئوية",
+      "-200 مئوية",
+      "-273.15 مئوية",
+      "-300 مئوية"
+    ],
+    "category": "physics_chemistry",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "الصفر المطلق 0K يعادل بالضبط -273.15 درجة مئوية وتتوقف عنده الحركة الجزيئية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "edde258b-498a-5f50-a90f-09343bcabf77",
+    "text": "العالم الروسي الذي صاغ أول نسخة معتمدة من الجدول الدوري للعناصر الكيميائية عام 1869 هو ديمتري _______",
+    "answer": "مندلييف",
+    "options": null,
+    "category": "physics_chemistry",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "رتب مندلييف العناصر وفق أوزانها الذرية وتنبأ بخواص عناصر لم تكن قد اكتشفت.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

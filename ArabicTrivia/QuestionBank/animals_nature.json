@@ -1,0 +1,157 @@
+[
+  {
+    "id": "f804723b-8f34-5f2c-8e37-ca85d07b3c96",
+    "text": "ما هو أسرع حيوان بري على كوكب الأرض وتصل سرعته إلى أكثر من 110 كم/ساعة؟",
+    "answer": "الفهد",
+    "options": [
+      "الأسد",
+      "الفهد",
+      "الغزال",
+      "الحصان"
+    ],
+    "category": "animals_nature",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "الفهد الصياد (الشيتا) يمتلك تسارعاً خارقاً في المسافات القصيرة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2f708ce6-4232-5717-a4e4-0780d0971f43",
+    "text": "أضخم حيوان عاش على وجه الأرض ويزن أكثر من 150 طناً هو الحوت _______",
+    "answer": "الأزرق",
+    "options": null,
+    "category": "animals_nature",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "الحوت الأزرق أكبر كائن حي معروف في تاريخ كوكب الأرض.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "82e9d320-f324-550c-93de-60970838f6d2",
+    "text": "ما هو الطائر الوحيد الذي يستطيع الطيران إلى الخلف والتوقف التام في الهواء ورفرفة جناحيه 80 مرة بالثانية؟",
+    "answer": "الطنان",
+    "options": [
+      "السنونو",
+      "الطنان",
+      "الصقر",
+      "النسر"
+    ],
+    "category": "animals_nature",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "طائر الطنان يمتلك مرونة طيران مذهلة تجعله يطير في جميع الاتجاهات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "563a3ea3-ae53-53ed-aea8-1adcafa9c0dd",
+    "text": "ما اسم الحيوان الجرابي الأسترالي الشهير الذي يحمل صغاره في جيب ببطنه ويتحرك بالقفز؟",
+    "answer": "الكنغر",
+    "options": null,
+    "category": "animals_nature",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "الكنغر هو الرمز الوطني لأستراليا.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ebf78287-8f68-5f72-b2bd-dcea92edf0b7",
+    "text": "كم عدد القلوب التي يمتلكها حيوان الأخطبوط البحري في جسمه؟",
+    "answer": "3 قلوب",
+    "options": [
+      "قلب واحد",
+      "قلبان",
+      "3 قلوب",
+      "4 قلوب"
+    ],
+    "category": "animals_nature",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "يمتلك الأخطبوط 3 قلوب: قلبان لضخ الدم للخياشيم وقلب مركزي للجسم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6d7968eb-7b5d-51a4-93c9-7b7bb63ff3f7",
+    "text": "تعتبر غابات الأمازون المطيرة في أمريكا الجنوبية المورد الحيوي الأضخم للأكسجين وتلقب بـ _______ الأرض",
+    "answer": "رئة",
+    "options": null,
+    "category": "animals_nature",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "غابات الأمازون تضم أكبر تنوع بيولوجي على سطح الكوكب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "3a63708a-6693-5115-b9c5-810f5333c245",
+    "text": "ما هو الحيوان الوحيد من الثدييات الذي يمتلك القدرة الحقيقية على الطيران الفعلي وليس مجرد الانزلاق؟",
+    "answer": "الخفاش",
+    "options": [
+      "السنجاب الطائر",
+      "الخفاش",
+      "الكولايا",
+      "الليمور"
+    ],
+    "category": "animals_nature",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "الخفافيش هي الثدييات الوحيدة القادرة على الطيران المستمر بواسطة أجنحة جلدية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "01c77f17-a4e9-5134-b319-2d74cc03aa03",
+    "text": "ما اسم نوع قناديل البحر المعروف علمياً بقدرته على تجديد خلاياه والعودة لمرحلة اليرقة ويسمى القنديل الخالد؟",
+    "answer": "تيوريتوبسيس",
+    "options": null,
+    "category": "animals_nature",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "Turritopsis dohrnii هو الكائن الحي الوحيد الذي يستطيع تجديد شبابه باستمرار.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6ccf45c4-2206-537b-a689-31f4397c26dd",
+    "text": "ما هو الحيوان المائي المجهري الخارق المعروف بقدرته على النجاة في الفضاء والحرارة والبرودة القصوى؟",
+    "answer": "دب الماء",
+    "options": [
+      "البلاناريا",
+      "دب الماء",
+      "الهيدرا",
+      "الروتيفيرا"
+    ],
+    "category": "animals_nature",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "بطيئات المشية (Tardigrada) أو دب الماء يمكنها العيش في الفراغ والإشعاعات القاتلة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "bc799250-9224-5a70-83d7-3e19590797f6",
+    "text": "الطيور التي لا تستطيع الطيران وتعيش في النصف الجنوبي من الكرة الأرضية ومغطاة بريش مقاوم للماء تسمى طيور الـ _______",
+    "answer": "بطريق",
+    "options": null,
+    "category": "animals_nature",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "البطاريق سباحات ماهرة وتتكيف مع المياه الجليدية القاسية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "9fe29167-4e63-5600-965e-849f37952e44",
+    "text": "من هو العالم ومخترع المصباح الكهربائي العملي والفونوغراف والذي سجل أكثر من 1000 براءة اختراع؟",
+    "answer": "توماس إديسون",
+    "options": [
+      "نيكولا تسلا",
+      "توماس إديسون",
+      "ألكسندر غراهام بيل",
+      "بنجامين فرانكلين"
+    ],
+    "category": "famous_people",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "طوّر إديسون المصباح الكهربائي المتوهج العملي ونظام التوزيع الكهربائي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "588f9155-c028-519f-b116-4830c652d98c",
+    "text": "الرحالة المغربي المسلم الشهير الملقب بـ 'أمير الرحالين' الذي طاف العالم الإسلامي في 30 عاماً هو ابن _______",
+    "answer": "بطوطة",
+    "options": null,
+    "category": "famous_people",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "أبو عبد الله محمد بن بطوطة صاحب كتاب 'تحفة النظار في غرائب الأمصار'.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ba64c405-2eff-50bc-a7a6-4a7a3d4ba8b2",
+    "text": "من هو العالم الفيزيائي الصربي الأمريكي العبقري رائد التيار المتردد (AC) ومبتكر المحرك الحثي؟",
+    "answer": "نيكولا تسلا",
+    "options": [
+      "توماس إديسون",
+      "نيكولا تسلا",
+      "مايكل فاراداي",
+      "جيمس ماكسويل"
+    ],
+    "category": "famous_people",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "أحدثت ابتكارات تسلا في التيار المتناوب ثورة نقل الطاقة الكهربائية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "03f6c468-40ad-52c0-90c7-dc7c17236b06",
+    "text": "من هو الزعيم الهندي التاريخي الذي قاد حركة الاستقلال الوطنية بسياسة المقاومة السلمية واللاعنف؟",
+    "answer": "المهاتما غاندي",
+    "options": null,
+    "category": "famous_people",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "قاد موهانداس كرمشاند غاندي الهند نحو التحرر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "36f5e270-c76b-597a-bdc6-70b112c2c871",
+    "text": "من هو الطبيب والفيلسوف المسلم الملقب بـ 'الشيخ الرئيس' ومؤلف كتاب 'القانون في الطب'؟",
+    "answer": "ابن سينا",
+    "options": [
+      "الرازي",
+      "ابن سينا",
+      "ابن النفيس",
+      "الزهراوي"
+    ],
+    "category": "famous_people",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "ظل كتاب القانون لابن سينا المرجع الأساسي في الطب في جامعات أوروبا لقرون.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "32a0391c-9fb1-5bb2-b988-a1d5c0d3ef74",
+    "text": "الزعيم الإفريقي التاريخي الذي سجن 27 عاماً ثم أصبح أول رئيس أسود لجنوب إفريقيا هو نيلسون _______",
+    "answer": "مانديلا",
+    "options": null,
+    "category": "famous_people",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "قاد مانديلا بلاده لإنهاء نظام الفصل العنصري (الأبارتايد) ونال نوبل للسلام.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b34023f3-d7a9-50c6-b62e-733e4e5f640d",
+    "text": "من هي العالمة الوحيدة في التاريخ التي فازت بجائزتي نوبل في مجالين علميين مختلفين (الفيزياء والكيمياء)؟",
+    "answer": "ماري كوري",
+    "options": [
+      "ليز مايتنر",
+      "ماري كوري",
+      "روزاليند فرانكلين",
+      "دوروثي هودجكن"
+    ],
+    "category": "famous_people",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "اكتشفت ماري كوري عنصري الراديوم والبولونيوم وطورت أبحاث النشاط الإشعاعي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d6ccf8bf-40b5-52b9-8182-52319e1598e0",
+    "text": "من هو الطبيب والجراح الأندلسي العظيم الملقب بـ 'أبي الجراحة الحديثة' ومخترع أكثر من 200 أداة جراحية؟",
+    "answer": "أبو القاسم الزهراوي",
+    "options": null,
+    "category": "famous_people",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "كتاب الزهراوي 'التصريف لمن عجز عن التأليف' كان أساس علم الجراحة العالمي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "55881934-c4a7-58c0-a5be-7d64029d409b",
+    "text": "من هو البحار والمستكشف البرتغالي الذي قاد أول أسطول دار حول الكرة الأرضية وقتل في الفلبين عام 1521؟",
+    "answer": "فرناندو ماجلان",
+    "options": [
+      "فاسكو دا غاما",
+      "فرناندو ماجلان",
+      "كريستوفر كولومبوس",
+      "أمريكو فسبوتشي"
+    ],
+    "category": "famous_people",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "قاد ماجلان الرحلة التي أثبتت كروية الأرض عملياً وأكملها مساعده إلكانو.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "dd186810-4819-500d-b5ad-53fb2eb13144",
+    "text": "الفلكي البولندي الذي أحدث ثورة كوبرنيكوس وأثبت أن الشمس هي مركز المجموعة وليس الأرض هو نيكولاس _______",
+    "answer": "كوبرنيكوس",
+    "options": null,
+    "category": "famous_people",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "صاغ كوبرنيكوس نموذج مركزية الشمس في كتابه المنشور عام 1543.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

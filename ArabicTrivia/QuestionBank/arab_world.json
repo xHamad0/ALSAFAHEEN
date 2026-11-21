@@ -1,0 +1,157 @@
+[
+  {
+    "id": "ae5c174e-1fcc-5225-996e-86a43bedd941",
+    "text": "كم عدد الدول الأعضاء في جامعة الدول العربية؟",
+    "answer": "22 دولة",
+    "options": [
+      "20 دولة",
+      "21 دولة",
+      "22 دولة",
+      "24 دولة"
+    ],
+    "category": "arab_world",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "تضم جامعة الدول العربية 22 دولة تمتد عبر آسيا وإفريقيا.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "1e3c6793-86d7-53f4-ba05-7055060116e1",
+    "text": "المدينة الوردية المنحوتة في الصخر والتي تعد إحدى عجائب الدنيا السبع في الأردن هي مدينة _______",
+    "answer": "البتراء",
+    "options": null,
+    "category": "arab_world",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "شيد الأنباط مدينة البتراء التاريخية جنوب الأردن.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ab2852e0-ddd8-5716-9791-c091d1b9e93c",
+    "text": "ما هي أكبر دولة عربية من حيث المساحة الإجمالية؟",
+    "answer": "الجزائر",
+    "options": [
+      "السعودية",
+      "السودان",
+      "الجزائر",
+      "مصر"
+    ],
+    "category": "arab_world",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "الجزائر هي أكبر بلد عربي وإفريقي بمساحة تتجاوز 2.38 مليون كم².",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d839c8fc-d604-51f5-ae55-b66ca98651a6",
+    "text": "ما هي عاصمة سلطنة عمان الساحلية الشهيرة؟",
+    "answer": "مسقط",
+    "options": null,
+    "category": "arab_world",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "مسقط هي العاصمة السياسية والاقتصادية لعمان.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f95f4e00-1aba-5fa2-af29-3d9c718c0807",
+    "text": "ما هي الدولة الخليجية التي تم ربطها بالمملكة العربية السعودية عبر جسر الملك فهد الممتد بطول 25 كم؟",
+    "answer": "البحرين",
+    "options": [
+      "الكويت",
+      "قطر",
+      "البحرين",
+      "الإمارات"
+    ],
+    "category": "arab_world",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "افتتح جسر الملك فهد رسمياً عام 1986 ليربط الخبر بالبحرين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "28e4ba08-a2fa-5353-ba84-5c9bc423e2bc",
+    "text": "أعلى برج ناطحة سحاب بناه الإنسان في العالم يقع في إمارة دبي بدولة الإمارات ويسمى برج _______",
+    "answer": "خليفة",
+    "options": null,
+    "category": "arab_world",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "برج خليفة بارتفاع 828 متراً هو أطول بناء في العالم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ca187f5d-4952-5a4c-bb12-e4af035737aa",
+    "text": "ما اسم المضيق المائي العربي الإفريقي الذي يصل البحر الأحمر بخليج عدن وبحر العرب؟",
+    "answer": "مضيق باب المندب",
+    "options": [
+      "مضيق هرمز",
+      "مضيق باب المندب",
+      "مضيق تيران",
+      "مضيق جبل طارق"
+    ],
+    "category": "arab_world",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "باب المندب ممر استراتيجي للتجارة الدولية والملاحة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ba670812-cd9c-54ab-89ec-d71a38bf57bd",
+    "text": "ما هي عاصمة دولة موريتانيا المطلة على المحيط الأطلسي؟",
+    "answer": "نواكشوط",
+    "options": null,
+    "category": "arab_world",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "نواكشوط هي عاصمة الجمهورية الإسلامية الموريتانية وأكبر مدنها.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "efe06bb5-b2ec-591b-8f93-af9af23d37ed",
+    "text": "في أي عام تم تأسيس جامعة الدول العربية رسمياً بمقرها الدائم في القاهرة؟",
+    "answer": "1945",
+    "options": [
+      "1943",
+      "1945",
+      "1948",
+      "1952"
+    ],
+    "category": "arab_world",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "وقعت الدول المؤسسة ميثاق الجامعة العربية في 22 مارس 1945.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "fe86c2c0-9047-550d-9fba-7cc1b250481c",
+    "text": "المدينة التاريخية التونسية التي أسسها عقبة بن نافع وبنى فيها مسجده الشهير عام 50 هـ هي مدينة _______",
+    "answer": "القيروان",
+    "options": null,
+    "category": "arab_world",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "القيروان كانت أولى القواعد العسكرية والعلمية للفتح الإسلامي في المغرب العربي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

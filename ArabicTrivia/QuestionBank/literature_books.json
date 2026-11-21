@@ -1,0 +1,157 @@
+[
+  {
+    "id": "d8bcd3b6-1e28-57d0-bbe9-6d3a126cc324",
+    "text": "من هو الأديب والروائي المصري العربي الوحيد الذي فاز بجائزة نوبل في الأدب عام 1988؟",
+    "answer": "نجيب محفوظ",
+    "options": [
+      "طه حسين",
+      "توفيق الحكيم",
+      "نجيب محفوظ",
+      "يوسف إدريس"
+    ],
+    "category": "literature_books",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "نال نجيب محفوظ الجائزة تقديراً لثلاثيته الشهيرة وأعماله الروائية الخالدة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "9c30a7c7-6812-5bfb-b726-41f99f14ee42",
+    "text": "الشاعر العباسي العظيم القائل: 'الخيل والليل والبيداء تعرفني والسيف والرمح والقرطاس والقلم' هو أبو الطيب _______",
+    "answer": "المتنبي",
+    "options": null,
+    "category": "literature_books",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "أحمد بن الحسين المتنبي نادرة الشعر العربي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "26578fb2-1471-535c-8daf-9b5c5a8c51f0",
+    "text": "من هو الكاتب والمسرحي الإنجليزي مؤلف مسرحيات 'هاملت' و'روميو وجولييت' و'مكبث'؟",
+    "answer": "وليم شكسبير",
+    "options": [
+      "تشارلز ديكنز",
+      "وليم شكسبير",
+      "جورج أورويل",
+      "أوسكار وايلد"
+    ],
+    "category": "literature_books",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "يعتبر شكسبير أعظم كاتب ومسرحي في تاريخ الأدب الإنجليزي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "cb04e3b9-6f6b-50c3-b0b4-bb64faebd7eb",
+    "text": "من هو الشاعر الجاهلي صاحب المعلقة الشهيرة التي مطلعها: 'قفا نبك من ذكرى حبيب ومنزلِ'؟",
+    "answer": "امرؤ القيس",
+    "options": null,
+    "category": "literature_books",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "امرؤ القيس بن حجر الكندي الملقب بالملك الضليل أمير شعراء الجاهلية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "61fe02e5-070d-5d31-9c45-13d61c8bc407",
+    "text": "من هو الروائي الروسي العبقري مؤلف روايتي 'الجريمة والعقاب' و'الإخوة كارامازوف'؟",
+    "answer": "فيودور دوستويفسكي",
+    "options": [
+      "ليو تولستوي",
+      "فيودور دوستويفسكي",
+      "أنطون تشيخوف",
+      "مكسيم غوركي"
+    ],
+    "category": "literature_books",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "يعد دوستويفسكي أعظم محلل للنفس البشرية والصراع الأخلاقي في الرواية العالمية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "79792091-099a-50d6-a5b1-201a0f0d0e3e",
+    "text": "الملحمة الشعرية الإيطالية الشهيرة التي كتبها دانتي أليغييري في القرن 14 تسمى الكوميديا _______",
+    "answer": "الإلهية",
+    "options": null,
+    "category": "literature_books",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "The Divine Comedy رحلة دانتي الخيالية عبر الجحيم والمطهر والفردوس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "cd4f952e-5a39-5444-891a-7f87886ca074",
+    "text": "من هو الكاتب الإسباني مؤلف رواية 'دون كيشوت' التي تعتبر أول رواية أوروبية حديثة؟",
+    "answer": "ميغيل دي ثيربانتس",
+    "options": [
+      "غابرييل غارسيا ماركيز",
+      "ميغيل دي ثيربانتس",
+      "خورخي لويس بورخيس",
+      "بابلو نيرودا"
+    ],
+    "category": "literature_books",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "نشر ثيربانتس مغامرات دون كيشوت ومساعده سانشو بانزا عام 1605.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "97224a4f-b25c-53cd-a177-32215f87f57d",
+    "text": "من هو الشاعر العربي الكبير الملقب بـ 'أمير الشعراء' وصاحب مسرحية 'مجنون ليلى'؟",
+    "answer": "أحمد شوقي",
+    "options": null,
+    "category": "literature_books",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "بويع أحمد شوقي بإمارة الشعر العربي عام 1927.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d4516209-0a62-5be2-866c-a83be1a5b4c5",
+    "text": "ما اسم الملحمة البابلية السومرية التي تعد أقدم عمل أدبي ملحمي مكتوب وصل إلينا في تاريخ البشرية؟",
+    "answer": "ملحمة جلجامش",
+    "options": [
+      "الإلياذة",
+      "ملحمة جلجامش",
+      "الأوديسة",
+      "المهابهاراتا"
+    ],
+    "category": "literature_books",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "تدور ملحمة جلجامش حول ملك أوروك وسعيه الأسطوري وراء الخلود.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "48106f71-ad48-5bfd-b216-cf8aed429eb9",
+    "text": "الرواية الشهيرة التي تدور أحداثها في مجتمع شمولي رقابي وشعارها 'الأخ الأكبر يراقبك' للكاتب جورج أورويل هي رواية عام _______",
+    "answer": "1984",
+    "options": null,
+    "category": "literature_books",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "رواية 1984 للكاتب جورج أورويل الصادرة عام 1949.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

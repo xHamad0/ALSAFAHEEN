@@ -1,0 +1,157 @@
+[
+  {
+    "id": "15897e48-e2fa-5fa5-9371-8f250c38ae24",
+    "text": "من هي المطربة المصرية الخالدة الملقبة بـ 'كوكب الشرق' و'سيدة الغناء العربي'؟",
+    "answer": "أم كلثوم",
+    "options": [
+      "فيروز",
+      "أم كلثوم",
+      "شادية",
+      "نجاة الصغيرة"
+    ],
+    "category": "music_arts",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "أم كلثوم (فاطمة البلتاجي) هي أيقونة الغناء العربي الكلاسيكي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a07b1567-28ce-57c4-a272-da80ff8ae77b",
+    "text": "اللوحة الشهيرة التي رسمها ليوناردو دافنشي وتوجد في متحف اللوفر بباريس تسمى لوحة المونا _______",
+    "answer": "ليزا",
+    "options": null,
+    "category": "music_arts",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "رسم دافنشي لوحة الموناليزا في بدايات القرن السادس عشر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b6b200be-c862-570c-be87-44032c647bc0",
+    "text": "المطربة اللبنانية الأسطورية الملقبة بـ 'جارة القمر' وسفيرة العرب إلى النجوم هي:",
+    "answer": "فيروز",
+    "options": [
+      "صباح",
+      "فيروز",
+      "ماجدة الرومي",
+      "هدى حداد"
+    ],
+    "category": "music_arts",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "نهاد حداد الشهيرة بفيروز غنت من ألحان الأخوين رحباني.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "00a1bd8d-3e3a-527f-aff3-e167bf69061d",
+    "text": "ما هي الآلة الوترية الشرقية التقليدية الملقبة بـ 'أم الآلات الموسيقية الشرقية'؟",
+    "answer": "العود",
+    "options": null,
+    "category": "music_arts",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "العود هو الآلة المركزية في التخت الشرقي وتطوير المقامات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "20185701-9fb6-56f1-a3bc-bbbd9ec484bd",
+    "text": "من هو المؤلف الموسيقي الكلاسيكي الألماني الشهير الذي واصل تأليف أعظم سيمفونياته رغم إصابته بالصمم؟",
+    "answer": "بيتهوفن",
+    "options": [
+      "موتسارت",
+      "بيتهوفن",
+      "باخ",
+      "شوبان"
+    ],
+    "category": "music_arts",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "لودفيج فان بيتهوفن أتم السيمفونية التاسعة وهو أصم تماماً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f33a5ae0-8c06-502a-8ae5-7d445ad07d93",
+    "text": "الخط العربي التقليدي الذي يلقب بـ 'أم الخطوط' والخط الملكي نظراً لمهابته وصعوبة قواعده هو خط _______",
+    "answer": "الثلث",
+    "options": null,
+    "category": "music_arts",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "خط الثلث هو أجمل وأصعب الخطوط العربية ويستخدم في تزيين المساجد والمصاحف.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "55e6e72a-4c85-5e9a-a1ed-37aab77e4b33",
+    "text": "من رسم لوحة 'ليلة النجوم' (The Starry Night) الشهيرة عام 1889؟",
+    "answer": "فينسنت فان غوخ",
+    "options": [
+      "بابلو بيكاسو",
+      "فينسنت فان غوخ",
+      "سلفادور دالي",
+      "كلود مونيه"
+    ],
+    "category": "music_arts",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "رسم الفنان الهولندي الانطباعي فان غوخ هذه التحفة في مصحة سان ريمي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0e82489b-8343-5820-88ba-595fdd5bf92f",
+    "text": "ما اسم فنان النحت والرسام الإيطالي العبقري الذي نحت تمثال داود وزين سقف كنيسة سيستينا؟",
+    "answer": "ميكيلانجيلو",
+    "options": null,
+    "category": "music_arts",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "ميكيلانجيلو بوناروتي عبقري عصر النهضة الإيطالية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "73e7da62-e037-56cc-90d5-6d67b6c6ce4f",
+    "text": "من هو الموسيقار والفيلسوف الأندلسي الذي أضاف الوتر الخامس لآلة العود وأسس أول مدرسة موسيقية في قرطبة؟",
+    "answer": "زرياب",
+    "options": [
+      "الكندي",
+      "الفارابي",
+      "زرياب",
+      "ابن باجة"
+    ],
+    "category": "music_arts",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "أبو الحسن علي بن نافع الشهير بـ 'زرياب' نقل الذوق والموسيقى للأندلس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "4bc9f6d9-8e49-592a-9dfc-013691cd858e",
+    "text": "المدرسة الفنية التشكيلية الحديثة التي أسسها بابلو بيكاسو وجورج براك وتقوم على تكسير الأشكال إلى أشكال هندسية تسمى المدرسة _______",
+    "answer": "التكعيبية",
+    "options": null,
+    "category": "music_arts",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "Cubism أحدثت ثورة في الفنون البصرية في القرن العشرين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

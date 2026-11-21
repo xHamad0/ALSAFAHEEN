@@ -1,0 +1,157 @@
+[
+  {
+    "id": "4eda50a9-6975-5183-ad84-3240d0db0270",
+    "text": "ما هو الشيء الذي يمشي ويقف وليس له أرجل؟",
+    "answer": "الساعة",
+    "options": [
+      "الساعة",
+      "النهر",
+      "الظل",
+      "الريح"
+    ],
+    "category": "riddles_iq",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "الساعة تمشي وتقف وليس لها أقدام.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7096c095-2541-5f2c-aa10-85524111e016",
+    "text": "شيء كلما أخذت منه كبُر، وكلما وضعت فيه صغُر، فما هو؟ الـ _______",
+    "answer": "حفرة",
+    "options": null,
+    "category": "riddles_iq",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "الحفرة تكبر كلما رفعت منها التراب وتصغر إذا وضعت فيها.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e3ae4a46-188b-5d0d-bba1-c2ab93c7c1bb",
+    "text": "ما هو الشيء الذي يتحدث جميع لغات العالم ولكنه ليس إنساناً؟",
+    "answer": "صدى الصوت",
+    "options": [
+      "الراديو",
+      "صدى الصوت",
+      "المرآة",
+      "الهاتف"
+    ],
+    "category": "riddles_iq",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "صدى الصوت يكرر كل كلام بأي لغة كانت.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "dc4554f0-a9c9-58d8-a267-59949ae4d8a2",
+    "text": "ما هو الشيء الذي يملك عيناً واحدة ولكنه لا يرى بها شيئاً؟",
+    "answer": "الإبرة",
+    "options": null,
+    "category": "riddles_iq",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "عين الإبرة هي الثقب الذي يدخل فيه الخيط.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0b91ddaa-14fa-5b28-a09d-afad42e012a8",
+    "text": "ما هو الشيء الذي تذبحه وتبكي عليه بحرقة؟",
+    "answer": "البصل",
+    "options": [
+      "البصل",
+      "القلم",
+      "الخروف",
+      "الوقت"
+    ],
+    "category": "riddles_iq",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "البصل يطلق مركبات كبريتية تحفز الدموع عند تقطيعه.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ca966427-c637-54dd-9801-feb70c2fa021",
+    "text": "ما هو الشيء المليء بالثقوب ولكنه يحفظ الماء بداخله؟ الـ _______",
+    "answer": "إسفنج",
+    "options": null,
+    "category": "riddles_iq",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "الإسفنج يحتفظ بالسوائل عبر مساماته المتعددة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "8c282a93-9277-5b0b-8565-a09310d210c9",
+    "text": "سلم لا يصعد عليه أحد ولا ينزل منه أحد، فما هو؟",
+    "answer": "سلم الرواتب",
+    "options": [
+      "سلم الرواتب",
+      "سلم الطوارئ",
+      "سلم النجاح",
+      "سلم الموسيقى"
+    ],
+    "category": "riddles_iq",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "سلم الرواتب مسمى تنظيمي ومالي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0a1d6c8a-49e7-5476-9f3f-5718edd35749",
+    "text": "ابن أمك وأبيك، وليس بأختك ولا بأخيك، فمن يكون؟",
+    "answer": "أنت",
+    "options": null,
+    "category": "riddles_iq",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "أنت نفسك!",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a6cbff32-b0ad-5895-85f9-6b65ac51ad44",
+    "text": "شيء يتبعك دائماً أينما ذهبت في النهار، ولكنه يختفي تماماً في الظلام؟",
+    "answer": "ظلك",
+    "options": [
+      "ظلك",
+      "صوتك",
+      "اسمك",
+      "هواؤك"
+    ],
+    "category": "riddles_iq",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "الظل يحتاج لمصدر ضوء ليتكون ويختفي في العتمة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5981d04d-cd7c-5161-a725-f1dab9dd1303",
+    "text": "ما هو الشيء الذي إذا أطعمته كبُر وعاش، وإذا سقيته ماءً مات؟ الـ _______",
+    "answer": "نار",
+    "options": null,
+    "category": "riddles_iq",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "النار تشتعل بالوقود والحطب وتخمد وتنطفئ بالماء.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

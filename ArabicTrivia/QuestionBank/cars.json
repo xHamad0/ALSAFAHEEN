@@ -1,0 +1,157 @@
+[
+  {
+    "id": "b154310c-f70a-5aa8-9993-82d5d41e4693",
+    "text": "في أي دولة تقع المقرات الرئيسية لشركات السيارات مرسيدس-بنز وبي إم دبليو وبورش؟",
+    "answer": "ألمانيا",
+    "options": [
+      "إيطاليا",
+      "اليابان",
+      "ألمانيا",
+      "أمريكا"
+    ],
+    "category": "cars",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "تشتهر ألمانيا بالهندسة الفائقة وصناعة السيارات الفاخرة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "162410d3-1059-5b7d-8ce9-c8ce247b2174",
+    "text": "شعار شركة فيراري الإيطالية الخارقة يتوسطه حصان أسود _______",
+    "answer": "واقف",
+    "options": null,
+    "category": "cars",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "الحصان الواقف (Cavallino Rampante) هو الشعار الأيقوني لفيراري.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "bce2d431-601e-570f-9241-6ed6f5ece0b1",
+    "text": "ما هي شركة السيارات اليابانية الأكثر مبيعاً للسيارات في العالم وتنتج طراز 'كورولا' الشهير؟",
+    "answer": "تويوتا",
+    "options": [
+      "هوندا",
+      "نيسان",
+      "تويوتا",
+      "مازدا"
+    ],
+    "category": "cars",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "تويوتا هي أكبر مصنع سيارات عالمي من حيث حجم المبيعات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "1f1c8efb-7ec6-59ac-8399-9f736e391f52",
+    "text": "من هو الرائد الصناعي الأمريكي الذي طور خط التجميع الحديث وأنتج سيارة فورد موديل T؟",
+    "answer": "هنري فورد",
+    "options": null,
+    "category": "cars",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "أحدث هنري فورد ثورة في الإنتاج الضخم للسيارات عام 1908.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b7d89630-b58d-5bcc-a91a-91c3a8d15a19",
+    "text": "ما اسم الشركة الإيطالية الشهيرة للسيارات الرياضية الفائقة التي أسسها فيروتشيو وتحمل شعار الثور الهائج؟",
+    "answer": "لامبورغيني",
+    "options": [
+      "مازيراتي",
+      "لامبورغيني",
+      "ألفا روميو",
+      "باغاني"
+    ],
+    "category": "cars",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "أسس فيروتشيو لامبورغيني الشركة عام 1963 لتنافس فيراري.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e86077a4-71f4-56cf-aaac-9f47cba81b90",
+    "text": "السيارة الكهربائية الأكثر مبيعاً في العالم التابعة لشركة إيلون ماسك هي سيارة تسلا موديل _______",
+    "answer": "Y",
+    "options": null,
+    "category": "cars",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "حققت Tesla Model Y المركز الأول كأكثر سيارة مبيعاً في العالم عام 2023.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7a4f211e-c09b-52eb-b257-4f5577dc239e",
+    "text": "ما هو محرك الاحتراق الداخلي الأسطوري الخارق المكون من 16 أسطوانة الذي اشتهرت به سيارات بوغاتي فيرون وشيرون؟",
+    "answer": "W16",
+    "options": [
+      "V12",
+      "W12",
+      "W16",
+      "V16"
+    ],
+    "category": "cars",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "محرك بوغاتي W16 سعة 8.0 لتر مزود بأربعة شواحن توربينية ينتج قوة تفوق 1500 حصان.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f0a03c4c-557d-5580-9fa3-7cd9598c6abe",
+    "text": "ما اسم سباق السيارات الفرنسي التاريخي للتحمل الذي يستمر لمدة 24 ساعة متواصلة؟",
+    "answer": "لومان",
+    "options": null,
+    "category": "cars",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "سباق 24 Hours of Le Mans هو أقدم وأعرق سباق تحمل للسيارات في العالم منذ 1923.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "96282051-b3e4-5679-9825-17a58a7721c5",
+    "text": "من هو المهندس الألماني الذي سجل أول براءة اختراع لسيارة تعمل بمحرك بنزين عام 1886 وتعتبر أول سيارة في التاريخ؟",
+    "answer": "كارل بنز",
+    "options": [
+      "غوتليب دايملر",
+      "كارل بنز",
+      "فرديناند بورش",
+      "رودولف ديزل"
+    ],
+    "category": "cars",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "حصل كارل بنز على براءة اختراع سيارة Motorwagen ثلاثية العجلات عام 1886.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5311d113-48d6-5dc3-a96b-a77ee4db2d9f",
+    "text": "نظام دفع العجلات الرباعي الدائم والمبتكر الخاص بسيارات شركة أودي الألمانية يطلق عليه اسم أودي _______",
+    "answer": "كواترو",
+    "options": null,
+    "category": "cars",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "نظام Quattro أحدث ثورة في عالم الراليات والسيارات السياحية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

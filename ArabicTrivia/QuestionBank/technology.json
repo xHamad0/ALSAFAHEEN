@@ -1,0 +1,157 @@
+[
+  {
+    "id": "77828b23-e34a-5a76-890b-022d5991c2dd",
+    "text": "من هو مؤسس شركة أبل والرجل الذي كشف عن أول هاتف آيفون عام 2007؟",
+    "answer": "ستيف جوبز",
+    "options": [
+      "بيل غيتس",
+      "ستيف جوبز",
+      "إيلون ماسك",
+      "مارك زوكربيرغ"
+    ],
+    "category": "technology",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "أعلن ستيف جوبز عن الآيفون في مؤتمر ماك وورلد يناير 2007.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "50d60bf7-75b8-5e61-a7a0-80ce0e3f08cf",
+    "text": "نظام التشغيل مفتوح المصدر للهواتف الذكية المطور بواسطة غوغل يسمى _______",
+    "answer": "أندرويد",
+    "options": null,
+    "category": "technology",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "نظام Android هو الأكثر انتشاراً على الهواتف عالمياً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "cde3dd26-85b9-5642-aa83-c3184288a651",
+    "text": "ما اسم لغة البرمجة التي طورتها شركة أبل عام 2014 لتطوير تطبيقات iOS وmacOS؟",
+    "answer": "سويفت",
+    "options": [
+      "جافا",
+      "سويفت",
+      "كوتلن",
+      "بايثون"
+    ],
+    "category": "technology",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "أطلقت أبل لغة Swift كلغة عصرية وسريعة وآمنة لتحل محل Objective-C.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "fcafee4d-a552-5fe6-bdd1-2826706763d4",
+    "text": "من هو العالم البريطاني مخترع الشبكة العنكبوتية العالمية (WWW) عام 1989؟",
+    "answer": "تيم بيرنرز لي",
+    "options": null,
+    "category": "technology",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "اخترع تيم بيرنرز لي الويب أثناء عمله في سيرن CERN.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6889ea25-677e-5c10-8986-b2e6c713b49c",
+    "text": "ما اسم أول حاسوب إلكتروني رقمي للأغراض العامة في العالم تم تشغيله عام 1945؟",
+    "answer": "إنياك",
+    "options": [
+      "يونيفاك",
+      "إنياك",
+      "ألتير",
+      "ديب بلو"
+    ],
+    "category": "technology",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "حاسوب ENIAC بني في جامعة بنسلفانيا وكان يزن أكثر من 27 طناً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2df21446-75ca-51ec-b271-b83043d21ef2",
+    "text": "الرمز الأمني للتشفير في تقنية سلاسل الكتل التي تقوم عليها عملة البيتكوين يسمى البلوك _______",
+    "answer": "تشين",
+    "options": null,
+    "category": "technology",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "Blockchain هي تقنية دفتر الأستاذ الموزع.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "62673b87-37d2-59c7-8e5f-d6fb4caa4698",
+    "text": "من هو عالم الرياضيات الإنجليزي الملقب بأبي علوم الحاسوب والذكاء الاصطناعي والذي فك شفرة إنيغما؟",
+    "answer": "ألان تورنغ",
+    "options": [
+      "ألان تورنغ",
+      "جون فون نيومان",
+      "تشارلز بابيج",
+      "كلود شانون"
+    ],
+    "category": "technology",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "وضع ألان تورنغ أسس علم الحاسوب واختبار تورنغ الشهير للذكاء.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6d38921c-8326-5603-b5f0-1583a3c61371",
+    "text": "ما اسم أول قمر صناعي أطلقه الإنسان إلى الفضاء الخارجي بواسطة الاتحاد السوفيتي عام 1957؟",
+    "answer": "سبوتنيك 1",
+    "options": null,
+    "category": "technology",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "أطلق سبوتنيك 1 في 4 أكتوبر 1957 ليدشن عصر الفضاء.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e2c428b1-e748-5510-918f-04e0d850d4e6",
+    "text": "في أي عام تم إرسال أول رسالة إلكترونية (Email) في التاريخ بواسطة المهندس راي توملينسون؟",
+    "answer": "1971",
+    "options": [
+      "1965",
+      "1969",
+      "1971",
+      "1975"
+    ],
+    "category": "technology",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "أرسل توملينسون أول بريد على شبكة ARPANET واختار علامة @ لفصل المستخدم عن الجهاز.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "be1d311a-f975-5668-8778-743325f9325b",
+    "text": "أول معالج دقيق (Microprocessor) تجاري أنتجته شركة إنتل في العالم عام 1971 كان يحمل الرقم إنتل _______",
+    "answer": "4004",
+    "options": null,
+    "category": "technology",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "معالج Intel 4004 احتوى على 2300 ترانزستور فقط وكان انطلاقة ثورة المعالجات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

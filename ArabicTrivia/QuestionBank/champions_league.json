@@ -1,0 +1,157 @@
+[
+  {
+    "id": "5c54091e-a8eb-5237-a30a-99516fd5e0af",
+    "text": "ما هو النادي الأكثر تتويجاً بلقب دوري أبطال أوروبا في التاريخ؟",
+    "answer": "ريال مدريد",
+    "options": [
+      "ميلان",
+      "بايرن ميونخ",
+      "ليفربول",
+      "ريال مدريد"
+    ],
+    "category": "champions_league",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يحمل ريال مدريد الرقم القياسي بـ 15 لقباً أوروبياً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d87a0ac5-76d1-514f-96ca-19397c4089fe",
+    "text": "الهداف التاريخي لبطولة دوري أبطال أوروبا بأكثر من 140 هدفاً هو النجم البرتغالي _______",
+    "answer": "كريستيانو رونالدو",
+    "options": null,
+    "category": "champions_league",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "يتربع رونالدو على عرش هدافي الأبطال التاريخيين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "c7fc533d-e635-5e0a-aecc-133b1111e027",
+    "text": "في أي مدينة أقيم نهائي إسطنبول التاريخي عام 2005 بين ليفربول وميلان؟",
+    "answer": "إسطنبول",
+    "options": [
+      "إسطنبول",
+      "أثينا",
+      "لندن",
+      "مدريد"
+    ],
+    "category": "champions_league",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "شهدت إسطنبول عودة ليفربول الشهيرة من 0-3 إلى التعادل والتتويج بالركلات الترجيحية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "173ccf72-aae2-52a1-9dff-2f5657eaae4a",
+    "text": "أي نادٍ إيطالي يأتي ثانياً بعد ريال مدريد في عدد بطولات دوري أبطال أوروبا بـ 7 ألقاب؟",
+    "answer": "ميلان",
+    "options": null,
+    "category": "champions_league",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "توج إيه سي ميلان باللقب 7 مرات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a931a9c5-2725-5050-be4a-14e433dade95",
+    "text": "من هو المدرب الوحيد الذي حقق لقب دوري أبطال أوروبا 5 مرات في تاريخه التدريبي؟",
+    "answer": "كارلو أنشيلوتي",
+    "options": [
+      "بيب غوارديولا",
+      "زين الدين زيدان",
+      "كارلو أنشيلوتي",
+      "بوب بيزلي"
+    ],
+    "category": "champions_league",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "حقق أنشيلوتي اللقب مرتين مع ميلان و3 مرات مع ريال مدريد.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "09c364ff-2d76-5574-a662-906772f0a1bb",
+    "text": "المدرب الذي حقق 3 بطولات دوري أبطال أوروبا متتالية مع ريال مدريد (2016-2018) هو الأسطورة _______",
+    "answer": "زين الدين زيدان",
+    "options": null,
+    "category": "champions_league",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "حقق زيدان ثلاثية تاريخية غير مسبوقة في النظام الحديث.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2cf47b5a-bc98-5b42-be64-0294fdccf145",
+    "text": "ما هي النتيجة الإجمالية لمباراة الإياب التاريخية (الريمونتادا) بين برشلونة وباريس سان جيرمان عام 2017؟",
+    "answer": "6-1",
+    "options": [
+      "4-0",
+      "5-1",
+      "6-1",
+      "7-1"
+    ],
+    "category": "champions_league",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "فاز برشلونة 6-1 في كامب نو ليتأهل بنتيجة 6-5 بمجموع المباراتين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5eea30ae-6664-5291-a7ff-6dc5a8bd6b13",
+    "text": "من هو اللاعب الوحيد الذي فاز بدوري أبطال أوروبا مع 3 أندية مختلفة (أياكس، ريال مدريد، ميلان)؟",
+    "answer": "كلارنس سيدورف",
+    "options": null,
+    "category": "champions_league",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "فاز الهولندي كلارنس سيدورف بـ 4 ألقاب مع 3 أندية مختلفة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a4cfdb0e-de6c-5924-864c-ff06cbf36fad",
+    "text": "من هو أصغر لاعب يسجل ثلاثية 'هاتريك' في تاريخ دوري أبطال أوروبا؟",
+    "answer": "راؤول غونزاليس",
+    "options": [
+      "واين روني",
+      "راؤول غونزاليس",
+      "كيليان مبابي",
+      "إيرلينغ هالاند"
+    ],
+    "category": "champions_league",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "سجل راؤول ثلاثية مع ريال مدريد عام 1995 بعمر 18 عاماً و113 يوماً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a3551296-7d8f-596c-97e7-e3aca9a0d480",
+    "text": "الملعب الذي استضاف أول نهائي في تاريخ البطولة الأوروبية للأندية الأبطال عام 1956 كان ملعب بارك دي برانس في مدينة _______",
+    "answer": "باريس",
+    "options": null,
+    "category": "champions_league",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "أقيم أول نهائي في باريس وفاز ريال مدريد على ستاد ريمس 4-3.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

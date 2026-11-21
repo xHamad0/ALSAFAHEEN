@@ -1,0 +1,157 @@
+[
+  {
+    "id": "989f8388-7640-5148-a8b6-9e70b34fe791",
+    "text": "ما اسم المسلسل الكوميدي السعودي الأشهر الذي امتد لـ 18 جزءاً من بطولة ناصر القصبي وعبد الله السدحان؟",
+    "answer": "طاش ما طاش",
+    "options": [
+      "طاش ما طاش",
+      "شباب البومب",
+      "بيني وبينك",
+      "سكتم بكتم"
+    ],
+    "category": "series",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "بدأ مسلسل طاش ما طاش عام 1993 وتناول قضايا المجتمع السعودي بقالب ساخر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "c928b3cf-ca8e-5cef-ab6a-0977ccb91112",
+    "text": "المسلسل السوري البيئي الشامي الشهير الذي تدور أحداثه في حارة الضبع يسمى باب _______",
+    "answer": "الحارة",
+    "options": null,
+    "category": "series",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "باب الحارة هو أشهر الأعمال الدرامية الشامية في الوطن العربي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "77a7eaa4-47d2-5253-889a-80fca8bed985",
+    "text": "ما اسم المسلسل الأمريكي التاريخي عن عائلات ويستروس المقتبس عن روايات جورج ر. ر. مارتن؟",
+    "answer": "صراع العروش",
+    "options": [
+      "صراع العروش",
+      "التاج",
+      "الفايكنج",
+      "بريكينغ باد"
+    ],
+    "category": "series",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "Game of Thrones هو أحد أضخم وأنجح المسلسلات التلفزيونية عالمياً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2702b722-d2b7-5525-b189-c61a679268dc",
+    "text": "ما اسم المسلسل الدرامي الشهير الذي يحكي قصة مدرس الكيمياء والتر وايت وتحوله إلى تاجر مواد محظورة؟",
+    "answer": "بريكينغ باد",
+    "options": null,
+    "category": "series",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "Breaking Bad بطولة برايان كرانستون يعتبر من أعظم المسلسلات تقييماً في التاريخ.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "84326be6-87ff-5118-bda1-f5a60373209d",
+    "text": "ما اسم المسلسل التاريخي الضخم الذي جسد سيرة الخليفة عمر بن الخطاب رضي الله عنه وأخرجه حاتم علي عام 2012؟",
+    "answer": "عمر",
+    "options": [
+      "معاوية",
+      "عمر",
+      "صقر قريش",
+      "ملوك الطوائف"
+    ],
+    "category": "series",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "أنتج مسلسل عمر بمواصفات عالمية بالتعاون بين MBC وتلفزيون قطر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "29a41504-3d18-53cc-9a39-c540512fe698",
+    "text": "مسلسل العصابات البريطاني الشهير في مدينة برمنغهام من بطولة كيليان ميرفي بشخصية تومي شيلبي هو بيكي _______",
+    "answer": "بلايندرز",
+    "options": null,
+    "category": "series",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "Peaky Blinders مسلسل حقق شهرة عالمية جارفة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ee007639-18a4-5a8a-af93-90edb030a5af",
+    "text": "كم عدد مواسم مسلسل السيت كوم الأمريكي الأسطوري 'Friends' (الأصدقاء)؟",
+    "answer": "10 مواسم",
+    "options": [
+      "8 مواسم",
+      "9 مواسم",
+      "10 مواسم",
+      "12 موسماً"
+    ],
+    "category": "series",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "عرض مسلسل فريندز على مدار 10 مواسم من عام 1994 إلى 2004 بـ 236 حلقة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0214237c-b3b5-5817-82af-df87be072531",
+    "text": "ما اسم المسلسل الكوري الذي حقق أعلى نسب مشاهدة في تاريخ منصة نتفليكس عام 2021؟",
+    "answer": "لعبة الحبار",
+    "options": null,
+    "category": "series",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "Squid Game حقق أكثر من 1.65 مليار ساعة مشاهدة في أول 28 يوماً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b7500271-3836-58bc-a0a1-00f124d7c862",
+    "text": "ما اسم أول مسلسل في الثلاثية الأندلسية التاريخية الشهيرة للمخرج السوري الراحل حاتم علي والكاتب وليد سيف؟",
+    "answer": "صقر قريش",
+    "options": [
+      "صقر قريش",
+      "ربيع قرطبة",
+      "ملوك الطوائف",
+      "التغريبة الفلسطينية"
+    ],
+    "category": "series",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "بدأت السلسلة بمسلسل 'صقر قريش' عام 2002 عن سيرة عبد الرحمن الداخل.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d7a378e6-5f24-5eee-ae6a-be46e9f19480",
+    "text": "مسلسل الخيال العلمي الأمريكي الذي تدور أحداثه في بلدة هوكينز الخيالية مع الفتاة 'إليفن' هو سترينجر _______",
+    "answer": "ثينقز",
+    "options": null,
+    "category": "series",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "Stranger Things من إنتاج نتفليكس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

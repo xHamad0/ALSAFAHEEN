@@ -1,0 +1,157 @@
+[
+  {
+    "id": "e1fb3f29-0f9d-5db4-b0b9-e136d17e56e4",
+    "text": "من هو الملك المؤسس الذي أعلن توحيد المملكة العربية السعودية عام 1932م؟",
+    "answer": "الملك عبد العزيز",
+    "options": [
+      "الملك فيصل",
+      "الملك عبد العزيز",
+      "الملك سعود",
+      "الملك فهد"
+    ],
+    "category": "saudi_arabia",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "أعلن الملك عبد العزيز بن عبد الرحمن آل سعود توحيد البلاد في 23 سبتمبر 1932.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0ca34b25-0fbd-501b-856f-bfce315d2598",
+    "text": "عاصمة المملكة العربية السعودية وأكبر مدنها وأهم مراكزها الاقتصادية هي مدينة _______",
+    "answer": "الرياض",
+    "options": null,
+    "category": "saudi_arabia",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "مدينة الرياض قلب المملكة النابض وعاصمتها التاريخية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f3a9f90e-6f5d-5dbe-96f4-5d9e9e401d45",
+    "text": "في أي يوم من كل عام تحتفل المملكة العربية السعودية بـ 'يوم التأسيس' تخليداً لتأسيس الدولة السعودية الأولى عام 1727م؟",
+    "answer": "22 فبراير",
+    "options": [
+      "23 سبتمبر",
+      "22 فبراير",
+      "1 يناير",
+      "15 مارس"
+    ],
+    "category": "saudi_arabia",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "أقر يوم التأسيس للاعتزاز بتاريخ الإمام محمد بن سعود عام 1139هـ/1727م.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "c98d9339-4b19-512c-b9cf-83aa51e1c435",
+    "text": "ما اسم المشروع الحضري والتقني المستقبلي العملاق الواقع شمال غرب المملكة على ساحل البحر الأحمر؟",
+    "answer": "نيوم",
+    "options": null,
+    "category": "saudi_arabia",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "نيوم وجهة المستقبل والاستدامة ضمن رؤية السعودية 2030.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "db0fe490-8114-52b9-b9e4-2becd426ceac",
+    "text": "ما هي المدينة السعودية التاريخية المدرجة في اليونسكو والتي كانت عاصمة الدولة السعودية الأولى؟",
+    "answer": "الدرعية",
+    "options": [
+      "العلا",
+      "الدرعية",
+      "جدة التاريخية",
+      "دومة الجندل"
+    ],
+    "category": "saudi_arabia",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "الدرعية التاريخية بحي الطريف مهد انطلاق الدولة السعودية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b5f2eaac-bfd3-5b11-8ca5-0c78c6118ee7",
+    "text": "أعلى قمة جبلية في المملكة العربية السعودية بارتفاع يتجاوز 3000 متر هي قمة جبل السودة في منطقة _______",
+    "answer": "عسير",
+    "options": null,
+    "category": "saudi_arabia",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "جبل السودة في أبها بعسير هو أعلى ارتفاع مسجل في المملكة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "187b60b3-39e1-5fb6-84b9-78431ea232f6",
+    "text": "كم عدد المناطق الإدارية الرسمية التي تتكون منها المملكة العربية السعودية؟",
+    "answer": "13 منطقة",
+    "options": [
+      "10 مناطق",
+      "12 منطقة",
+      "13 منطقة",
+      "15 منطقة"
+    ],
+    "category": "saudi_arabia",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "تنقسم المملكة إدارياً إلى 13 منطقة إدارية يرأس كلاً منها أمير منطقة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "352a4fa3-7c7f-5c62-9078-5a65a59f023b",
+    "text": "ما اسم أول موقع أثري في المملكة العربية السعودية تم تسجيله رسمياً في قائمة التراث العالمي لليونسكو عام 2008؟",
+    "answer": "مدائن صالح",
+    "options": null,
+    "category": "saudi_arabia",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "الحِجر (مدائن صالح) في العلا تضم مقابر نبطية فريدة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5f323f0f-57f1-513d-8488-ac4198119e97",
+    "text": "ما هو الحقل النفطي السعودي الذي يعد أكبر حقل نفط تقليدي بري في العالم بأسره؟",
+    "answer": "حقل الغوار",
+    "options": [
+      "حقل السفانية",
+      "حقل الغوار",
+      "حقل شيبة",
+      "حقل بقيق"
+    ],
+    "category": "saudi_arabia",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "يمتد حقل الغوار في المنطقة الشرقية بطول نحو 280 كم ويحوي احتياطيات هائلة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "8891adc3-0030-55ad-8764-b576d344aa84",
+    "text": "الخطة التنموية والتحولية الكبرى للمملكة العربية السعودية التي أطلقها ولي العهد الأمير محمد بن سلمان عام 2016 هي رؤية _______",
+    "answer": "2030",
+    "options": null,
+    "category": "saudi_arabia",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "رؤية السعودية 2030 تهدف لتنويع الاقتصاد وتمكين المجتمع والريادة العالمية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

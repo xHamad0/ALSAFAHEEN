@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		998B71CEFBCB5CB5984F5E4D /* ArabicTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F0D8AE96A5A9F9D28AEF2 /* ArabicTriviaApp.swift */; };
+		2939A501FE525FD29A73A65E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1529F69DB5403A21539DD /* ContentView.swift */; };
+		8A4416AAC6BB50FFB5F5D9CC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F8014CE3B55A52AFA09A6C /* DataManager.swift */; };
+		D646B5AEA5F25DA68DADAA24 /* UsedQuestionsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17BEE78C9CA5FC394CA80F8 /* UsedQuestionsTracker.swift */; };
+		45B13711BD3D51DFAE2D05E3 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8A376F4A0055DCADB27613 /* DifficultyLevel.swift */; };
+		39E861EFD3EE53718D66864A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38685D8EBAF45648AAE8CE2E /* GameSession.swift */; };
+		B2E5C639FA975014994C0358 /* Lifeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109932A1D51539A8CD65E1D /* Lifeline.swift */; };
+		2BBD70A7870E5447B39C0A98 /* MatchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174059FF8CE57DBBF7C7F93 /* MatchHistory.swift */; };
+		49784B19640E5BFA838A307A /* OverallStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B296E532A6C75040BE5ED6B3 /* OverallStatistics.swift */; };
+		3EF88D1673B25BBFAB0F4423 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A22FB6896A56BFA20C30DD /* Question.swift */; };
+		1BE1437131D654EA9F56B309 /* QuestionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8615F854ABDF5FB28FE6D806 /* QuestionCategory.swift */; };
+		8A8BE1088B6751B2BD89356C /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F69D0A9ECF594E9D9227F5 /* QuestionType.swift */; };
+		94DC83C746CB536387568456 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62EF008463952B9B7FC10F2 /* Team.swift */; };
+		DCA8BE98A2B3537E9716E63A /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EE3B34FF85C6B945FB5A0 /* AppTheme.swift */; };
+		8D2690AB04F65B1EB3F395B7 /* ArabicNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB434D08BE9540D89BFAA7D /* ArabicNormalizer.swift */; };
+		D044C8CEA22155579D41F78C /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7919CDEAE1205413899FFA0F /* AudioService.swift */; };
+		772724DA20A05551940530A5 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8337C6699C2F5B25A9A30A60 /* HapticService.swift */; };
+		2B841FB9A35850B0986A4029 /* JSONImporterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB630683D39D523D85176A0C /* JSONImporterService.swift */; };
+		D42D8312125C569F841E0141 /* QuestionBankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037FE097DFFB5928BC0AC0DF /* QuestionBankService.swift */; };
+		A5098F39B7C15DB9B4728CCC /* GamePlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD6F2D3507549B81980DAD /* GamePlayViewModel.swift */; };
+		643786E236855BCD85049794 /* QuestionBankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A15313A555522DA0A6FE41 /* QuestionBankViewModel.swift */; };
+		E505935743995854B3317B32 /* SetupGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4143360E3D52A6805EC55A /* SetupGameViewModel.swift */; };
+		8A4E261B58245E1EBB35F442 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547435668F2514FA9BAE239 /* StatisticsViewModel.swift */; };
+		E28D277C4E505A67A04DA1EC /* AnswerRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0DC3779F159F8831981B3 /* AnswerRevealView.swift */; };
+		6CE4FC2B85FF5D1180EDF3D8 /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7674BFAF0D75DE884229CFD /* AppSettingsView.swift */; };
+		6A587CD0490950BF9D24C3FF /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E40BC8518A56528FE12461 /* CategoryDetailView.swift */; };
+		3BD82ABF6057537FAAA80B95 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE5724D0395261BC42311E /* CategorySelectionView.swift */; };
+		6BC8CF1FE1585E6DA2F2F408 /* FinalResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57AF66AAA05BC38E608BED /* FinalResultsView.swift */; };
+		C5DCA75AA60E5D708AFEDCC3 /* GameSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A384C237ED251D89A5B2C36 /* GameSettingsView.swift */; };
+		843C2FDE881F57C9B8D84A95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAEE8085D35FE0ADA1CEC7 /* HomeView.swift */; };
+		425EE1362BF35667BCC07C68 /* MatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942033B8789F5586A1D7FA1C /* MatchHistoryView.swift */; };
+		EF2611D725A15DD08925300C /* QuestionBankManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE073C9064451ACA67216AA /* QuestionBankManagementView.swift */; };
+		12F7A599EF7A50348D895236 /* SaffahinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C33F19A5B2C53559465DD63 /* SaffahinLogoView.swift */; };
+		8EFF260F8F2C5E56881D05CC /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A27C3D9F9856EFBCF1B48E /* SplashScreenView.swift */; };
+		CC0C689439CF50D3B8B8FE84 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59ECB6985A500891600AF5 /* StatisticsView.swift */; };
+		09BA3554F67D50AE8EF4B978 /* TeamSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544BFC6660685EBF9FBCF285 /* TeamSetupView.swift */; };
+		BF7019CC5E015846859983B9 /* DirectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35AA2FBED1531CA52B9229 /* DirectAnswerView.swift */; };
+		D2CC0E894D675757AABC02A2 /* FillInBlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F9E64BA9265BA48CE9FBB8 /* FillInBlankView.swift */; };
+		45F6515D49875935B909E0BE /* FlagQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DED3997F15542AD285D2E /* FlagQuestionView.swift */; };
+		DAAF28938569582BA2E3B500 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE469A6C51B501BAA89718A /* GamePlayView.swift */; };
+		5435C837A5575FAEB20CFD29 /* LetterQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C10DB9B4825142ACDDD2AA /* LetterQuestionView.swift */; };
+		29F112459478530987E1D94D /* LifelinesBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C2217E02B5AF995688956 /* LifelinesBarView.swift */; };
+		8FAFFCBEA56A518CB75D94D4 /* MultipleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F2EB238DD55583BF433C73 /* MultipleChoiceView.swift */; };
+		3B8E04CD57115A9396CA552D /* PointsPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178FDCB38A951A0840CE929 /* PointsPickerCard.swift */; };
+		F4B4A00D8DD155E493879BC9 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1F312E558558A90074352 /* QuestionCardView.swift */; };
+		298F8BB5E0635D5C8121EEDA /* animals_nature.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7C101FE602519BBE5D2462 /* animals_nature.json */; };
+		461CA9BF4E815004B4D64E64 /* arab_world.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E87969098FD5A01B3965A8F /* arab_world.json */; };
+		4622CA49334B55358D22CCDF /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = AB6D7B58C02451CB8FF87403 /* cars.json */; };
+		842810DC21975154AD13262A /* champions_league.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB49045B13D53409D5BFC1A /* champions_league.json */; };
+		434015F4FCCF5A2E80436F76 /* cinema_movies.json in Resources */ = {isa = PBXBuildFile; fileRef = F233E2943EB55799912B6AA1 /* cinema_movies.json */; };
+		924E615379B6501FA274C832 /* famous_people.json in Resources */ = {isa = PBXBuildFile; fileRef = CAD561BED88E5C219058EC42 /* famous_people.json */; };
+		AEB8E111A3B5571397391D07 /* flags.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A605A928F0C5788B1BCA2D8 /* flags.json */; };
+		0452621763205D6E9D6A739E /* football.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FF187BA43BC53B390FD51AD /* football.json */; };
+		B0DA386D26AA52C98AB960BB /* general_culture.json in Resources */ = {isa = PBXBuildFile; fileRef = EC3C543A3AE75F4BB7193A1C /* general_culture.json */; };
+		57E25538A01E5B4584C6B402 /* geography.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F6A2353A7530BAF1AC659 /* geography.json */; };
+		9C24D1417D5A5789A84D9AD5 /* islamic_general.json in Resources */ = {isa = PBXBuildFile; fileRef = 72D9E9E7C1295A5D8FFDF5AF /* islamic_general.json */; };
+		249F33580D4B5558AF2B1035 /* islamic_history.json in Resources */ = {isa = PBXBuildFile; fileRef = 73F5959AFF4A57B0989F267E /* islamic_history.json */; };
+		51AA3FB5EDF655DBB449C894 /* letters.json in Resources */ = {isa = PBXBuildFile; fileRef = 99D23D9802AD5989AB55278C /* letters.json */; };
+		39D4EB08638B535BA3C02FD0 /* literature_books.json in Resources */ = {isa = PBXBuildFile; fileRef = 592924BE772854A4916FCD86 /* literature_books.json */; };
+		3EFEAD6576BA50378434AB3C /* mathematics.json in Resources */ = {isa = PBXBuildFile; fileRef = 47AA0DBA972853A4808747F9 /* mathematics.json */; };
+		CCA3426E4FC852F98727B12C /* miscellaneous.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CB2B2BCAB275C4BBCAF9B00 /* miscellaneous.json */; };
+		E4436A029C1853409FBEE482 /* music_arts.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BAE2538415205B86ACD78 /* music_arts.json */; };
+		536513AC2B755096B8584C60 /* physics_chemistry.json in Resources */ = {isa = PBXBuildFile; fileRef = DA26D7A8CB6156848337CF09 /* physics_chemistry.json */; };
+		018B76308CC858599093B2A8 /* riddles_iq.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB26EFC227531DB5A954BC /* riddles_iq.json */; };
+		180EF31B07E55EEC8516303C /* saudi_arabia.json in Resources */ = {isa = PBXBuildFile; fileRef = 124554A6BE9F5D0588551FDF /* saudi_arabia.json */; };
+		144D96FCD27C522686F4335C /* saudi_football.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D9E3D2D14F65815B825996F /* saudi_football.json */; };
+		71394B76DBE95901BD38C3E4 /* science.json in Resources */ = {isa = PBXBuildFile; fileRef = BBE830C02F455850A06934CE /* science.json */; };
+		63A5A034622E5A4DB483031B /* series.json in Resources */ = {isa = PBXBuildFile; fileRef = F77FD2E196755D13B7C6581F /* series.json */; };
+		4B115FADA04851D4B8CB4A5F /* technology.json in Resources */ = {isa = PBXBuildFile; fileRef = 9246B8ED7F425FF0BA74CFF0 /* technology.json */; };
+		6D729EE6E72D5A3A834AB8B9 /* world_cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 142DC35F704A5CB2A87690A0 /* world_cup.json */; };
+		B3E4916D742E57E59ABF74B9 /* world_history.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DB5DE0FFB335C649DBB67F9 /* world_history.json */; };
+		37EFF7D53B465289B7771169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72AEB60743C5540E964CE385 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B8AA9A2A9BA5FD18DC07D72 /* ArabicTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArabicTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F6F0D8AE96A5A9F9D28AEF2 /* ArabicTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArabicTriviaApp.swift"; sourceTree = "<group>"; };
+		8EE1529F69DB5403A21539DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
+		D8F8014CE3B55A52AFA09A6C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager.swift"; sourceTree = "<group>"; };
+		C17BEE78C9CA5FC394CA80F8 /* UsedQuestionsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsedQuestionsTracker.swift"; sourceTree = "<group>"; };
+		7F8A376F4A0055DCADB27613 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DifficultyLevel.swift"; sourceTree = "<group>"; };
+		38685D8EBAF45648AAE8CE2E /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession.swift"; sourceTree = "<group>"; };
+		B109932A1D51539A8CD65E1D /* Lifeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lifeline.swift"; sourceTree = "<group>"; };
+		F174059FF8CE57DBBF7C7F93 /* MatchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchHistory.swift"; sourceTree = "<group>"; };
+		B296E532A6C75040BE5ED6B3 /* OverallStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverallStatistics.swift"; sourceTree = "<group>"; };
+		F7A22FB6896A56BFA20C30DD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question.swift"; sourceTree = "<group>"; };
+		8615F854ABDF5FB28FE6D806 /* QuestionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCategory.swift"; sourceTree = "<group>"; };
+		68F69D0A9ECF594E9D9227F5 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionType.swift"; sourceTree = "<group>"; };
+		E62EF008463952B9B7FC10F2 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Team.swift"; sourceTree = "<group>"; };
+		344EE3B34FF85C6B945FB5A0 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTheme.swift"; sourceTree = "<group>"; };
+		5EB434D08BE9540D89BFAA7D /* ArabicNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArabicNormalizer.swift"; sourceTree = "<group>"; };
+		7919CDEAE1205413899FFA0F /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioService.swift"; sourceTree = "<group>"; };
+		8337C6699C2F5B25A9A30A60 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HapticService.swift"; sourceTree = "<group>"; };
+		AB630683D39D523D85176A0C /* JSONImporterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONImporterService.swift"; sourceTree = "<group>"; };
+		037FE097DFFB5928BC0AC0DF /* QuestionBankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionBankService.swift"; sourceTree = "<group>"; };
+		51FD6F2D3507549B81980DAD /* GamePlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamePlayViewModel.swift"; sourceTree = "<group>"; };
+		B5A15313A555522DA0A6FE41 /* QuestionBankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionBankViewModel.swift"; sourceTree = "<group>"; };
+		DE4143360E3D52A6805EC55A /* SetupGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupGameViewModel.swift"; sourceTree = "<group>"; };
+		9547435668F2514FA9BAE239 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatisticsViewModel.swift"; sourceTree = "<group>"; };
+		1AE0DC3779F159F8831981B3 /* AnswerRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerRevealView.swift"; sourceTree = "<group>"; };
+		C7674BFAF0D75DE884229CFD /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettingsView.swift"; sourceTree = "<group>"; };
+		F2E40BC8518A56528FE12461 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryDetailView.swift"; sourceTree = "<group>"; };
+		96EE5724D0395261BC42311E /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategorySelectionView.swift"; sourceTree = "<group>"; };
+		2F57AF66AAA05BC38E608BED /* FinalResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalResultsView.swift"; sourceTree = "<group>"; };
+		2A384C237ED251D89A5B2C36 /* GameSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSettingsView.swift"; sourceTree = "<group>"; };
+		18DAEE8085D35FE0ADA1CEC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
+		942033B8789F5586A1D7FA1C /* MatchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchHistoryView.swift"; sourceTree = "<group>"; };
+		2DE073C9064451ACA67216AA /* QuestionBankManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionBankManagementView.swift"; sourceTree = "<group>"; };
+		7C33F19A5B2C53559465DD63 /* SaffahinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaffahinLogoView.swift"; sourceTree = "<group>"; };
+		F8A27C3D9F9856EFBCF1B48E /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashScreenView.swift"; sourceTree = "<group>"; };
+		0E59ECB6985A500891600AF5 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatisticsView.swift"; sourceTree = "<group>"; };
+		544BFC6660685EBF9FBCF285 /* TeamSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamSetupView.swift"; sourceTree = "<group>"; };
+		DB35AA2FBED1531CA52B9229 /* DirectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectAnswerView.swift"; sourceTree = "<group>"; };
+		C7F9E64BA9265BA48CE9FBB8 /* FillInBlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FillInBlankView.swift"; sourceTree = "<group>"; };
+		BE7DED3997F15542AD285D2E /* FlagQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlagQuestionView.swift"; sourceTree = "<group>"; };
+		1EE469A6C51B501BAA89718A /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamePlayView.swift"; sourceTree = "<group>"; };
+		08C10DB9B4825142ACDDD2AA /* LetterQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetterQuestionView.swift"; sourceTree = "<group>"; };
+		869C2217E02B5AF995688956 /* LifelinesBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LifelinesBarView.swift"; sourceTree = "<group>"; };
+		05F2EB238DD55583BF433C73 /* MultipleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipleChoiceView.swift"; sourceTree = "<group>"; };
+		C178FDCB38A951A0840CE929 /* PointsPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointsPickerCard.swift"; sourceTree = "<group>"; };
+		97A1F312E558558A90074352 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCardView.swift"; sourceTree = "<group>"; };
+		DA7C101FE602519BBE5D2462 /* animals_nature.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "animals_nature.json"; sourceTree = "<group>"; };
+		8E87969098FD5A01B3965A8F /* arab_world.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "arab_world.json"; sourceTree = "<group>"; };
+		AB6D7B58C02451CB8FF87403 /* cars.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cars.json"; sourceTree = "<group>"; };
+		4EB49045B13D53409D5BFC1A /* champions_league.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "champions_league.json"; sourceTree = "<group>"; };
+		F233E2943EB55799912B6AA1 /* cinema_movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cinema_movies.json"; sourceTree = "<group>"; };
+		CAD561BED88E5C219058EC42 /* famous_people.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "famous_people.json"; sourceTree = "<group>"; };
+		5A605A928F0C5788B1BCA2D8 /* flags.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "flags.json"; sourceTree = "<group>"; };
+		6FF187BA43BC53B390FD51AD /* football.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "football.json"; sourceTree = "<group>"; };
+		EC3C543A3AE75F4BB7193A1C /* general_culture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "general_culture.json"; sourceTree = "<group>"; };
+		1B8F6A2353A7530BAF1AC659 /* geography.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "geography.json"; sourceTree = "<group>"; };
+		72D9E9E7C1295A5D8FFDF5AF /* islamic_general.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "islamic_general.json"; sourceTree = "<group>"; };
+		73F5959AFF4A57B0989F267E /* islamic_history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "islamic_history.json"; sourceTree = "<group>"; };
+		99D23D9802AD5989AB55278C /* letters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "letters.json"; sourceTree = "<group>"; };
+		592924BE772854A4916FCD86 /* literature_books.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "literature_books.json"; sourceTree = "<group>"; };
+		47AA0DBA972853A4808747F9 /* mathematics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mathematics.json"; sourceTree = "<group>"; };
+		3CB2B2BCAB275C4BBCAF9B00 /* miscellaneous.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "miscellaneous.json"; sourceTree = "<group>"; };
+		0D8BAE2538415205B86ACD78 /* music_arts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "music_arts.json"; sourceTree = "<group>"; };
+		DA26D7A8CB6156848337CF09 /* physics_chemistry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "physics_chemistry.json"; sourceTree = "<group>"; };
+		3EDB26EFC227531DB5A954BC /* riddles_iq.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "riddles_iq.json"; sourceTree = "<group>"; };
+		124554A6BE9F5D0588551FDF /* saudi_arabia.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "saudi_arabia.json"; sourceTree = "<group>"; };
+		3D9E3D2D14F65815B825996F /* saudi_football.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "saudi_football.json"; sourceTree = "<group>"; };
+		BBE830C02F455850A06934CE /* science.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "science.json"; sourceTree = "<group>"; };
+		F77FD2E196755D13B7C6581F /* series.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "series.json"; sourceTree = "<group>"; };
+		9246B8ED7F425FF0BA74CFF0 /* technology.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "technology.json"; sourceTree = "<group>"; };
+		142DC35F704A5CB2A87690A0 /* world_cup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world_cup.json"; sourceTree = "<group>"; };
+		9DB5DE0FFB335C649DBB67F9 /* world_history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world_history.json"; sourceTree = "<group>"; };
+		72AEB60743C5540E964CE385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		80CBD7C6317058EC89925281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7110709DB0758BE85F9923E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D2E6A3402C950B78E0D2671 = {
+			isa = PBXGroup;
+			children = (
+				7070D71935FF5FC499D11EDA /* ArabicTrivia */,
+				92C43B9FC0E65F6DB2CAB38E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92C43B9FC0E65F6DB2CAB38E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B8AA9A2A9BA5FD18DC07D72 /* ArabicTrivia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7070D71935FF5FC499D11EDA /* ArabicTrivia */ = {
+			isa = PBXGroup;
+			children = (
+				9F6F0D8AE96A5A9F9D28AEF2 /* ArabicTriviaApp.swift */,
+				8EE1529F69DB5403A21539DD /* ContentView.swift */,
+				D8F8014CE3B55A52AFA09A6C /* DataManager.swift */,
+				C17BEE78C9CA5FC394CA80F8 /* UsedQuestionsTracker.swift */,
+				7F8A376F4A0055DCADB27613 /* DifficultyLevel.swift */,
+				38685D8EBAF45648AAE8CE2E /* GameSession.swift */,
+				B109932A1D51539A8CD65E1D /* Lifeline.swift */,
+				F174059FF8CE57DBBF7C7F93 /* MatchHistory.swift */,
+				B296E532A6C75040BE5ED6B3 /* OverallStatistics.swift */,
+				F7A22FB6896A56BFA20C30DD /* Question.swift */,
+				8615F854ABDF5FB28FE6D806 /* QuestionCategory.swift */,
+				68F69D0A9ECF594E9D9227F5 /* QuestionType.swift */,
+				E62EF008463952B9B7FC10F2 /* Team.swift */,
+				344EE3B34FF85C6B945FB5A0 /* AppTheme.swift */,
+				5EB434D08BE9540D89BFAA7D /* ArabicNormalizer.swift */,
+				7919CDEAE1205413899FFA0F /* AudioService.swift */,
+				8337C6699C2F5B25A9A30A60 /* HapticService.swift */,
+				AB630683D39D523D85176A0C /* JSONImporterService.swift */,
+				037FE097DFFB5928BC0AC0DF /* QuestionBankService.swift */,
+				51FD6F2D3507549B81980DAD /* GamePlayViewModel.swift */,
+				B5A15313A555522DA0A6FE41 /* QuestionBankViewModel.swift */,
+				DE4143360E3D52A6805EC55A /* SetupGameViewModel.swift */,
+				9547435668F2514FA9BAE239 /* StatisticsViewModel.swift */,
+				1AE0DC3779F159F8831981B3 /* AnswerRevealView.swift */,
+				C7674BFAF0D75DE884229CFD /* AppSettingsView.swift */,
+				F2E40BC8518A56528FE12461 /* CategoryDetailView.swift */,
+				96EE5724D0395261BC42311E /* CategorySelectionView.swift */,
+				2F57AF66AAA05BC38E608BED /* FinalResultsView.swift */,
+				2A384C237ED251D89A5B2C36 /* GameSettingsView.swift */,
+				18DAEE8085D35FE0ADA1CEC7 /* HomeView.swift */,
+				942033B8789F5586A1D7FA1C /* MatchHistoryView.swift */,
+				2DE073C9064451ACA67216AA /* QuestionBankManagementView.swift */,
+				7C33F19A5B2C53559465DD63 /* SaffahinLogoView.swift */,
+				F8A27C3D9F9856EFBCF1B48E /* SplashScreenView.swift */,
+				0E59ECB6985A500891600AF5 /* StatisticsView.swift */,
+				544BFC6660685EBF9FBCF285 /* TeamSetupView.swift */,
+				DB35AA2FBED1531CA52B9229 /* DirectAnswerView.swift */,
+				C7F9E64BA9265BA48CE9FBB8 /* FillInBlankView.swift */,
+				BE7DED3997F15542AD285D2E /* FlagQuestionView.swift */,
+				1EE469A6C51B501BAA89718A /* GamePlayView.swift */,
+				08C10DB9B4825142ACDDD2AA /* LetterQuestionView.swift */,
+				869C2217E02B5AF995688956 /* LifelinesBarView.swift */,
+				05F2EB238DD55583BF433C73 /* MultipleChoiceView.swift */,
+				C178FDCB38A951A0840CE929 /* PointsPickerCard.swift */,
+				97A1F312E558558A90074352 /* QuestionCardView.swift */,
+				2F05B98344055E1A8D6E5370 /* QuestionBank */,
+				4A38F2F317BA57A39EFDDD91 /* Resources */,
+				80CBD7C6317058EC89925281 /* Info.plist */,
+			);
+			path = ArabicTrivia;
+			sourceTree = "<group>";
+		};
+		2F05B98344055E1A8D6E5370 /* QuestionBank */ = {
+			isa = PBXGroup;
+			children = (
+				DA7C101FE602519BBE5D2462 /* animals_nature.json */,
+				8E87969098FD5A01B3965A8F /* arab_world.json */,
+				AB6D7B58C02451CB8FF87403 /* cars.json */,
+				4EB49045B13D53409D5BFC1A /* champions_league.json */,
+				F233E2943EB55799912B6AA1 /* cinema_movies.json */,
+				CAD561BED88E5C219058EC42 /* famous_people.json */,
+				5A605A928F0C5788B1BCA2D8 /* flags.json */,
+				6FF187BA43BC53B390FD51AD /* football.json */,
+				EC3C543A3AE75F4BB7193A1C /* general_culture.json */,
+				1B8F6A2353A7530BAF1AC659 /* geography.json */,
+				72D9E9E7C1295A5D8FFDF5AF /* islamic_general.json */,
+				73F5959AFF4A57B0989F267E /* islamic_history.json */,
+				99D23D9802AD5989AB55278C /* letters.json */,
+				592924BE772854A4916FCD86 /* literature_books.json */,
+				47AA0DBA972853A4808747F9 /* mathematics.json */,
+				3CB2B2BCAB275C4BBCAF9B00 /* miscellaneous.json */,
+				0D8BAE2538415205B86ACD78 /* music_arts.json */,
+				DA26D7A8CB6156848337CF09 /* physics_chemistry.json */,
+				3EDB26EFC227531DB5A954BC /* riddles_iq.json */,
+				124554A6BE9F5D0588551FDF /* saudi_arabia.json */,
+				3D9E3D2D14F65815B825996F /* saudi_football.json */,
+				BBE830C02F455850A06934CE /* science.json */,
+				F77FD2E196755D13B7C6581F /* series.json */,
+				9246B8ED7F425FF0BA74CFF0 /* technology.json */,
+				142DC35F704A5CB2A87690A0 /* world_cup.json */,
+				9DB5DE0FFB335C649DBB67F9 /* world_history.json */,
+			);
+			path = QuestionBank;
+			sourceTree = "<group>";
+		};
+		4A38F2F317BA57A39EFDDD91 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72AEB60743C5540E964CE385 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACDC1F21EDE05201B7BEA1FB /* ArabicTrivia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5F7D47B122E545290B23BC6 /* Build configuration list for PBXNativeTarget "ArabicTrivia" */;
+			buildPhases = (
+				46875295CB955BE8A98FF953 /* Sources */,
+				E7110709DB0758BE85F9923E /* Frameworks */,
+				9EFB346BABF358748FD463B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArabicTrivia;
+			productName = ArabicTrivia;
+			productReference = 9B8AA9A2A9BA5FD18DC07D72 /* ArabicTrivia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		734AB368A98A5203A4EBFCE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					ACDC1F21EDE05201B7BEA1FB = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 11958FA2D8565C43A01DA9CE /* Build configuration list for PBXProject "ArabicTrivia" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ar;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ar,
+				Base,
+			);
+			mainGroup = 2D2E6A3402C950B78E0D2671;
+			productRefGroup = 92C43B9FC0E65F6DB2CAB38E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACDC1F21EDE05201B7BEA1FB /* ArabicTrivia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9EFB346BABF358748FD463B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				298F8BB5E0635D5C8121EEDA /* animals_nature.json in Resources */,
+				461CA9BF4E815004B4D64E64 /* arab_world.json in Resources */,
+				4622CA49334B55358D22CCDF /* cars.json in Resources */,
+				842810DC21975154AD13262A /* champions_league.json in Resources */,
+				434015F4FCCF5A2E80436F76 /* cinema_movies.json in Resources */,
+				924E615379B6501FA274C832 /* famous_people.json in Resources */,
+				AEB8E111A3B5571397391D07 /* flags.json in Resources */,
+				0452621763205D6E9D6A739E /* football.json in Resources */,
+				B0DA386D26AA52C98AB960BB /* general_culture.json in Resources */,
+				57E25538A01E5B4584C6B402 /* geography.json in Resources */,
+				9C24D1417D5A5789A84D9AD5 /* islamic_general.json in Resources */,
+				249F33580D4B5558AF2B1035 /* islamic_history.json in Resources */,
+				51AA3FB5EDF655DBB449C894 /* letters.json in Resources */,
+				39D4EB08638B535BA3C02FD0 /* literature_books.json in Resources */,
+				3EFEAD6576BA50378434AB3C /* mathematics.json in Resources */,
+				CCA3426E4FC852F98727B12C /* miscellaneous.json in Resources */,
+				E4436A029C1853409FBEE482 /* music_arts.json in Resources */,
+				536513AC2B755096B8584C60 /* physics_chemistry.json in Resources */,
+				018B76308CC858599093B2A8 /* riddles_iq.json in Resources */,
+				180EF31B07E55EEC8516303C /* saudi_arabia.json in Resources */,
+				144D96FCD27C522686F4335C /* saudi_football.json in Resources */,
+				71394B76DBE95901BD38C3E4 /* science.json in Resources */,
+				63A5A034622E5A4DB483031B /* series.json in Resources */,
+				4B115FADA04851D4B8CB4A5F /* technology.json in Resources */,
+				6D729EE6E72D5A3A834AB8B9 /* world_cup.json in Resources */,
+				B3E4916D742E57E59ABF74B9 /* world_history.json in Resources */,
+				37EFF7D53B465289B7771169 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46875295CB955BE8A98FF953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				998B71CEFBCB5CB5984F5E4D /* ArabicTriviaApp.swift in Sources */,
+				2939A501FE525FD29A73A65E /* ContentView.swift in Sources */,
+				8A4416AAC6BB50FFB5F5D9CC /* DataManager.swift in Sources */,
+				D646B5AEA5F25DA68DADAA24 /* UsedQuestionsTracker.swift in Sources */,
+				45B13711BD3D51DFAE2D05E3 /* DifficultyLevel.swift in Sources */,
+				39E861EFD3EE53718D66864A /* GameSession.swift in Sources */,
+				B2E5C639FA975014994C0358 /* Lifeline.swift in Sources */,
+				2BBD70A7870E5447B39C0A98 /* MatchHistory.swift in Sources */,
+				49784B19640E5BFA838A307A /* OverallStatistics.swift in Sources */,
+				3EF88D1673B25BBFAB0F4423 /* Question.swift in Sources */,
+				1BE1437131D654EA9F56B309 /* QuestionCategory.swift in Sources */,
+				8A8BE1088B6751B2BD89356C /* QuestionType.swift in Sources */,
+				94DC83C746CB536387568456 /* Team.swift in Sources */,
+				DCA8BE98A2B3537E9716E63A /* AppTheme.swift in Sources */,
+				8D2690AB04F65B1EB3F395B7 /* ArabicNormalizer.swift in Sources */,
+				D044C8CEA22155579D41F78C /* AudioService.swift in Sources */,
+				772724DA20A05551940530A5 /* HapticService.swift in Sources */,
+				2B841FB9A35850B0986A4029 /* JSONImporterService.swift in Sources */,
+				D42D8312125C569F841E0141 /* QuestionBankService.swift in Sources */,
+				A5098F39B7C15DB9B4728CCC /* GamePlayViewModel.swift in Sources */,
+				643786E236855BCD85049794 /* QuestionBankViewModel.swift in Sources */,
+				E505935743995854B3317B32 /* SetupGameViewModel.swift in Sources */,
+				8A4E261B58245E1EBB35F442 /* StatisticsViewModel.swift in Sources */,
+				E28D277C4E505A67A04DA1EC /* AnswerRevealView.swift in Sources */,
+				6CE4FC2B85FF5D1180EDF3D8 /* AppSettingsView.swift in Sources */,
+				6A587CD0490950BF9D24C3FF /* CategoryDetailView.swift in Sources */,
+				3BD82ABF6057537FAAA80B95 /* CategorySelectionView.swift in Sources */,
+				6BC8CF1FE1585E6DA2F2F408 /* FinalResultsView.swift in Sources */,
+				C5DCA75AA60E5D708AFEDCC3 /* GameSettingsView.swift in Sources */,
+				843C2FDE881F57C9B8D84A95 /* HomeView.swift in Sources */,
+				425EE1362BF35667BCC07C68 /* MatchHistoryView.swift in Sources */,
+				EF2611D725A15DD08925300C /* QuestionBankManagementView.swift in Sources */,
+				12F7A599EF7A50348D895236 /* SaffahinLogoView.swift in Sources */,
+				8EFF260F8F2C5E56881D05CC /* SplashScreenView.swift in Sources */,
+				CC0C689439CF50D3B8B8FE84 /* StatisticsView.swift in Sources */,
+				09BA3554F67D50AE8EF4B978 /* TeamSetupView.swift in Sources */,
+				BF7019CC5E015846859983B9 /* DirectAnswerView.swift in Sources */,
+				D2CC0E894D675757AABC02A2 /* FillInBlankView.swift in Sources */,
+				45F6515D49875935B909E0BE /* FlagQuestionView.swift in Sources */,
+				DAAF28938569582BA2E3B500 /* GamePlayView.swift in Sources */,
+				5435C837A5575FAEB20CFD29 /* LetterQuestionView.swift in Sources */,
+				29F112459478530987E1D94D /* LifelinesBarView.swift in Sources */,
+				8FAFFCBEA56A518CB75D94D4 /* MultipleChoiceView.swift in Sources */,
+				3B8E04CD57115A9396CA552D /* PointsPickerCard.swift in Sources */,
+				F4B4A00D8DD155E493879BC9 /* QuestionCardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		31A995A165BF5A978212AB8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB30FDE0A1E359F9B1AAFDDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8757FEF342D551EA93BD992B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArabicTrivia/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sijal.ArabicTrivia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1534C16758525EA9973A04CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArabicTrivia/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sijal.ArabicTrivia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11958FA2D8565C43A01DA9CE /* Build configuration list for PBXProject "ArabicTrivia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31A995A165BF5A978212AB8A /* Debug */,
+				FB30FDE0A1E359F9B1AAFDDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5F7D47B122E545290B23BC6 /* Build configuration list for PBXNativeTarget "ArabicTrivia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8757FEF342D551EA93BD992B /* Debug */,
+				1534C16758525EA9973A04CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 734AB368A98A5203A4EBFCE2 /* Project object */;
+}

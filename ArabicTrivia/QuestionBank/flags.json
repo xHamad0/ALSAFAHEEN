@@ -1,0 +1,247 @@
+[
+  {
+    "id": "501a4d9f-9871-5939-8c6a-b5a50a68b769",
+    "text": "ما هو اللون السائد في علم المملكة العربية السعودية وتتوسطه الشهادتان والسيف؟",
+    "answer": "الأخضر",
+    "options": [
+      "الأحمر",
+      "الأخضر",
+      "الأبيض",
+      "الأزرق"
+    ],
+    "category": "flags",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "علم المملكة العربية السعودية أخضر زاهٍ يتوسطه السيف وشهادة التوحيد.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "SA"
+  },
+  {
+    "id": "39dc5627-62e5-50a1-99f4-7c5b0e949e41",
+    "text": "أي من الدول التالية يحتوي علمها على شمس صفراء بملامح وجه تسمى 'شمس مايو'؟",
+    "answer": "الأرجنتين",
+    "options": [
+      "البرازيل",
+      "الأرجنتين",
+      "تشيلي",
+      "المكسيك"
+    ],
+    "category": "flags",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "علم الأرجنتين يحمل شمس مايو التاريخية في منتصف الشريط الأبيض.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "AR"
+  },
+  {
+    "id": "de0014c7-b3ab-58b7-9494-c89852ec57d6",
+    "text": "ما هي الدولة الوحيدة في العالم التي لا يتخذ علمها شكلاً مستطيلاً أو مربعاً بل مثلثين متداخلين؟",
+    "answer": "نيبال",
+    "options": [
+      "بوتان",
+      "نيبال",
+      "سويسرا",
+      "الفاتيكان"
+    ],
+    "category": "flags",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "علم نيبال هو العلم الوطني الوحيد غير الرباعي في العالم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "NP"
+  },
+  {
+    "id": "4ee4d1bc-7b99-5822-82e9-8ecc7d3d9b55",
+    "text": "ما هو رمز النبات الوطني الموجود في منتصف علم دولة كندا؟",
+    "answer": "ورقة القيقب",
+    "options": null,
+    "category": "flags",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "تتوسط ورقة القيقب الحمراء العلم الكندي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "CA"
+  },
+  {
+    "id": "bdcb74dc-64c3-5348-9893-d72da6c4abb2",
+    "text": "كم عدد النجوم الموجودة في علم الولايات المتحدة الأمريكية والتي تمثل الولايات؟",
+    "answer": "50 نجمة",
+    "options": [
+      "48 نجمة",
+      "49 نجمة",
+      "50 نجمة",
+      "52 نجمة"
+    ],
+    "category": "flags",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "تمثل الـ 50 نجمة بيضاء عدد الولايات الأمريكية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "US"
+  },
+  {
+    "id": "8ce33095-75bd-5cff-b626-e44bbe53c61e",
+    "text": "علم دولة البرازيل يتكون من قاعدة خضراء ومعين أصفر تتوسطه دائرة زرقاء مكتوب عليها عبارة النظام و_______",
+    "answer": "التقدم",
+    "options": null,
+    "category": "flags",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "العبارة المكتوبة هي 'Ordem e Progresso' بالبرتغالية وتعني النظام والتقدم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "BR"
+  },
+  {
+    "id": "7daf5815-deec-5821-b998-571d0b95624c",
+    "text": "أي من الأعلام الأوروبية يتطابق تماماً في ترتيب ألوانه وتصميمه مع علم دولة تشاد الإفريقية؟",
+    "answer": "رومانيا",
+    "options": [
+      "بلجيكا",
+      "رومانيا",
+      "إيرلندا",
+      "إيطاليا"
+    ],
+    "category": "flags",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "يتطابق علما تشاد ورومانيا (أزرق، أصفر، أحمر) مع اختلاف طفيف جداً في درجة الأزرق.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "TD"
+  },
+  {
+    "id": "e1618a1a-1a73-50c8-9450-af296d1fdedf",
+    "text": "ما اسم الحيوان الأسطوري المرسوم في وسط علم دولة ويلز؟",
+    "answer": "التنين الأحمر",
+    "options": null,
+    "category": "flags",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "يظهر التنين الأحمر التاريخي في علم ويلز.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "301ce8fe-ff43-5517-91d8-ac172bdc78fa",
+    "text": "كم عدد الأسنان المسننة في الخط الفاصل الأبيض في علم دولة قطر؟",
+    "answer": "9 أسنان",
+    "options": [
+      "7 أسنان",
+      "8 أسنان",
+      "9 أسنان",
+      "10 أسنان"
+    ],
+    "category": "flags",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "ترمز الأسنان التسعة في علم قطر إلى أن قطر هي العضو التاسع في الإمارات المتصالحة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "QA"
+  },
+  {
+    "id": "2166b52a-2535-5ab2-9f6f-7a1fb76ed7f3",
+    "text": "الدولة الإفريقية الوحيدة التي يتضمن علمها الوطني صورة لبندقية هجومية حديثة (كلاشينكوف) هي دولة _______",
+    "answer": "موزمبيق",
+    "options": null,
+    "category": "flags",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "يتضمن علم موزمبيق رمز البندقية للدلالة على الدفاع واليقظة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "MZ"
+  },
+  {
+    "id": "418885e0-0994-5fd7-b547-153db183ad22",
+    "text": "ما هي ألوان علم دولة فلسطين وعلم الثورة العربية الكبرى؟",
+    "answer": "الأسود والأبيض والأخضر والأحمر",
+    "options": [
+      "الأزرق والأبيض والأحمر",
+      "الأسود والأبيض والأخضر والأحمر",
+      "الأصفر والأخضر والأزرق",
+      "الأحمر والأبيض والأسود فقط"
+    ],
+    "category": "flags",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يتكون علم فلسطين من مثلث أحمر وثلاثة خطوط أفقية: أسود، أبيض، أخضر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "PS"
+  },
+  {
+    "id": "46b9909e-f095-57a5-8c4b-7fafc23f760f",
+    "text": "أي من الدول التالية يتوسط علمها أرزة خضراء ترمز للخلود؟",
+    "answer": "لبنان",
+    "options": [
+      "قبرص",
+      "لبنان",
+      "كندا",
+      "الأردن"
+    ],
+    "category": "flags",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "شجرة الأرز الخضراء هي الشعار الوطني لعلم لبنان.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "LB"
+  },
+  {
+    "id": "1be7678e-afe8-5e40-bf38-c049e4c5ed7e",
+    "text": "كم عدد النجوم الصفراء الموجودة في علم الاتحاد الأوروبي الأزرق؟",
+    "answer": "12 نجمة",
+    "options": [
+      "10 نجوم",
+      "12 نجمة",
+      "15 نجمة",
+      "27 نجمة"
+    ],
+    "category": "flags",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "ترمز الـ 12 نجمة إلى الوحدة والكمال والتناغم وليس عدد الدول.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "EU"
+  },
+  {
+    "id": "64586342-102d-519d-969b-4cfa8674e012",
+    "text": "ما هو لون القرص الدائري في وسط علم دولة اليابان الأبيض؟",
+    "answer": "الأحمر",
+    "options": null,
+    "category": "flags",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "يمثل القرص الأحمر الشمس المشرقة 'هينومارو'.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "JP"
+  },
+  {
+    "id": "f7747a25-1e72-527a-ab25-97034ac34732",
+    "text": "أي من الدول التالية لا يحتوي علمها إطلاقاً على أي من ألوان الأحمر أو الأبيض أو الأزرق؟",
+    "answer": "جامايكا",
+    "options": [
+      "البرازيل",
+      "جامايكا",
+      "جنوب إفريقيا",
+      "كينيا"
+    ],
+    "category": "flags",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "يتكون علم جامايكا من الألوان الأخضر والذهبي والأسود فقط.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": "JM"
+  }
+]

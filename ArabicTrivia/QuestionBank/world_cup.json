@@ -1,0 +1,247 @@
+[
+  {
+    "id": "c9ab657b-3cd6-5571-b559-974d2e028e33",
+    "text": "ما هو المنتخب الأكثر تتويجاً ببطولة كأس العالم عبر التاريخ؟",
+    "answer": "البرازيل",
+    "options": [
+      "ألمانيا",
+      "إيطاليا",
+      "الأرجنتين",
+      "البرازيل"
+    ],
+    "category": "world_cup",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "توج منتخب البرازيل بـ 5 ألقاب (1958, 1962, 1970, 1994, 2002).",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "8034caf8-1682-5b78-96ed-37498e50b26b",
+    "text": "أين أقيمت أول بطولة لكأس العالم عام 1930؟",
+    "answer": "الأوروغواي",
+    "options": [
+      "البرازيل",
+      "إيطاليا",
+      "الأوروغواي",
+      "الأرجنتين"
+    ],
+    "category": "world_cup",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "استضافت الأوروغواي أول نسخة وفازت بلقبها أيضاً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "626df62b-4569-575c-b026-28e079774b65",
+    "text": "من هو الهداف التاريخي لبطولات كأس العالم بإجمالي 16 هدفاً؟",
+    "answer": "ميروسلاف كلوزه",
+    "options": [
+      "رونالدو البرازيلي",
+      "ميروسلاف كلوزه",
+      "غيرد مولر",
+      "بيليه"
+    ],
+    "category": "world_cup",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "سجل الألماني ميروسلاف كلوزه 16 هدفاً في 4 نسخ مونديالية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0b99e240-8067-5a41-b4cf-f38be575fa82",
+    "text": "توج المنتخب الفرنسي بلقب كأس العالم للمرة الأولى في تاريخه عام _______",
+    "answer": "1998",
+    "options": null,
+    "category": "world_cup",
+    "difficulty": 200,
+    "type": "fill_in_blank",
+    "explanation": "فازت فرنسا على البرازيل في النهائي بنتيجة 3-0 على أرضها عام 1998.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "c9ea0735-ba3e-5dd1-af96-2ca2553c9599",
+    "text": "من هو صاحب أسرع هدف في تاريخ كأس العالم وجاء بعد 11 ثانية فقط؟",
+    "answer": "هاكان شوكور",
+    "options": [
+      "هاكان شوكور",
+      "فاكلاف ماسيك",
+      "برايان روبسون",
+      "كلينت ديمبسي"
+    ],
+    "category": "world_cup",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "سجل التركي هاكان شوكور الهدف ضد كوريا الجنوبية في مباراة تحديد المركز الثالث 2002.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a4244002-9eab-51d9-b2ae-6920451f10d8",
+    "text": "من هو أول منتخب عربي وإفريقي يصل إلى نصف نهائي كأس العالم؟",
+    "answer": "المغرب",
+    "options": null,
+    "category": "world_cup",
+    "difficulty": 300,
+    "type": "direct_answer",
+    "explanation": "حقق منتخب المغرب المركز الرابع التاريخي في مونديال قطر 2022.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "fc832aec-4d63-57f5-99a1-83af7d76fa76",
+    "text": "كم كان عدد الأهداف التي سجلها الفرنسي جوست فونتين في نسخة مونديال 1958 وهو رقم قياسي لنسخة واحدة؟",
+    "answer": "13 هدفاً",
+    "options": [
+      "10 أهداف",
+      "11 هدفاً",
+      "13 هدفاً",
+      "15 هدفاً"
+    ],
+    "category": "world_cup",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "سجل جوست فونتين 13 هدفاً في مونديال السويد 1958.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "19497bbc-aece-57e3-a944-91e8f29e749c",
+    "text": "المدرب الوحيد الذي قاد منتخب بلاده للفوز بكأس العالم مرتين متتاليتين هو الإيطالي _______",
+    "answer": "فيتوريو بوتسو",
+    "options": null,
+    "category": "world_cup",
+    "difficulty": 400,
+    "type": "fill_in_blank",
+    "explanation": "قاد فيتوريو بوتسو إيطاليا للتتويج عامي 1934 و1938.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f93291a0-912c-546c-a51b-08f50746f42d",
+    "text": "من هو الحكم الذي قاد المباراة النهائية لكأس العالم 2022 بين الأرجنتين وفرنسا؟",
+    "answer": "سيمون مارتشينياك",
+    "options": [
+      "سيمون مارتشينياك",
+      "نيستور بيتانا",
+      "نيكولا ريتزولي",
+      "هوارد ويب"
+    ],
+    "category": "world_cup",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "أدار الحكم البولندي مارتشينياك النهائي التاريخي على استاد لوسيل.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "dc9d4d65-e6ee-5c30-b81d-3c7e1b27a5d1",
+    "text": "من هو اللاعب الذي سجل ثلاثية 'هاتريك' في نهائي كأس العالم 1966 لصالح إنجلترا؟",
+    "answer": "جيف هيرست",
+    "options": null,
+    "category": "world_cup",
+    "difficulty": 500,
+    "type": "direct_answer",
+    "explanation": "سجل الإنجليزي جيف هيرست ثلاثية ضد ألمانيا الغربية 1966.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "9ed783c9-4600-56d7-a593-d55de9f4a0dc",
+    "text": "في أي دولة عربية أقيمت نهائيات كأس العالم 2022 لأول مرة في الشرق الأوسط؟",
+    "answer": "قطر",
+    "options": [
+      "الإمارات",
+      "السعودية",
+      "قطر",
+      "مصر"
+    ],
+    "category": "world_cup",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "نظمت قطر نسخة 2022 المونديالية التاريخية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7ed28aa5-cf53-53a6-9f16-61625428378e",
+    "text": "من فاز بجائزة الحذاء الذهبي كهداف كأس العالم 2022 بتسجيله 8 أهداف؟",
+    "answer": "كيليان مبابي",
+    "options": [
+      "ليونيل ميسي",
+      "كيليان مبابي",
+      "أوليفييه جيرو",
+      "جوليان ألفاريز"
+    ],
+    "category": "world_cup",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "سجل مبابي 8 أهداف منها ثلاثية تاريخية في النهائي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "fbd1f31a-9737-54b6-8b4f-9f4f180fc5e5",
+    "text": "ما هي النتيجة التاريخية الشهيرة لنصف نهائي مونديال 2014 بين ألمانيا والبرازيل؟",
+    "answer": "7-1",
+    "options": null,
+    "category": "world_cup",
+    "difficulty": 300,
+    "type": "direct_answer",
+    "explanation": "فازت ألمانيا على البرازيل 7-1 على استاد مينيراو في بيلو هوريزونتي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "23a3afd5-da4d-51b0-9cf8-a80a14b7b868",
+    "text": "ما هو المنتخب الأوروبي الوحيد الذي فاز بكأس العالم خارج قارته مرتين؟",
+    "answer": "ألمانيا",
+    "options": [
+      "إيطاليا",
+      "ألمانيا",
+      "فرنسا",
+      "إسبانيا"
+    ],
+    "category": "world_cup",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "فازت ألمانيا في البرازيل 2014 وسويسرا وإيطاليا.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5a78dd8e-796c-595a-adcc-c0b5caf02d0b",
+    "text": "من هو حارس المرمى الذي تصدى لركلتي ترجيح في نهائي كأس العالم 2006؟",
+    "answer": "جانلويجي بوفون",
+    "options": [
+      "فابيان بارتيز",
+      "جانلويجي بوفون",
+      "ديدا",
+      "إيكر كاسياس"
+    ],
+    "category": "world_cup",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "حقق بوفون وإيطاليا اللقب بعد الفوز بركلات الترجيح 5-3.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

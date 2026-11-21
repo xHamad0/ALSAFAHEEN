@@ -1,0 +1,157 @@
+[
+  {
+    "id": "32fadd8f-5f4a-5787-a50a-bfec62502192",
+    "text": "كم عدد أركان الإسلام الخمسة التي بني عليها الدين الحنيف؟",
+    "answer": "خمسة أركان",
+    "options": [
+      "أربعة أركان",
+      "خمسة أركان",
+      "ستة أركان",
+      "سبعة أركان"
+    ],
+    "category": "islamic_general",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "بني الإسلام على خمس: الشهادتان، والصلاة، والزكاة، والصوم، وحج البيت.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "303a4a20-cbb5-552c-9489-652bd216bf89",
+    "text": "السورة القرآنية التي تسمى 'أم الكتاب' والسبع المثاني وافتتاحية المصحف هي سورة _______",
+    "answer": "الفاتحة",
+    "options": null,
+    "category": "islamic_general",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "سورة الفاتحة ركن أساسي في كل ركعة من الصلاة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5be657de-a04b-5687-bb30-e9db1858adeb",
+    "text": "ما هي أطول سورة في القرآن الكريم وعدد آياتها 286 آية؟",
+    "answer": "البقرة",
+    "options": [
+      "آل عمران",
+      "البقرة",
+      "النساء",
+      "المائدة"
+    ],
+    "category": "islamic_general",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "سورة البقرة هي أطول سور المصحف الشريف وفيها آية الكرسي وآية الدين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7e9badc8-2ed0-55ca-86c6-820a767d87ee",
+    "text": "من هو النبي الملقب بـ 'كليم الله' الذي كلمه ربه عند جبل الطور؟",
+    "answer": "موسى عليه السلام",
+    "options": null,
+    "category": "islamic_general",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "نبي الله موسى كلمه الله تكليماً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "7963861e-0c10-5550-8925-dd5d25feeb60",
+    "text": "ما هي السورة الوحيدة في القرآن الكريم التي لا تبدأ بـ 'بسم الله الرحمن الرحيم'؟",
+    "answer": "التوبة",
+    "options": [
+      "الأنفال",
+      "التوبة",
+      "يونس",
+      "هود"
+    ],
+    "category": "islamic_general",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "سورة التوبة (براءة) نزلت بالسيف ورفع الأمان عن المشركين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "09402a91-7b90-5a10-83ea-a8a85ffb15b7",
+    "text": "الصحابي الجليل الذي جمع القرآن الكريم في مصحف واحد ونسخه ووزعه على الأمصار هو عثمان بن _______",
+    "answer": "عفان",
+    "options": null,
+    "category": "islamic_general",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "كتب المصحف العثماني في عهد الخليفة الراشد عثمان بن عفان رضي الله عنه.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "089c58aa-a6fd-5d5e-90b9-f8c51aa37391",
+    "text": "كم عدد السجدات المفروضة في الصلوات الخمس اليومية للمسلم (17 ركعة)؟",
+    "answer": "34 سجدة",
+    "options": [
+      "17 سجدة",
+      "24 سجدة",
+      "34 سجدة",
+      "40 سجدة"
+    ],
+    "category": "islamic_general",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "في كل ركعة سجدتان (17 * 2 = 34 سجدة).",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d8ee49e0-33be-5f27-b50e-81ef27950f09",
+    "text": "من هو الصحابي الذي أشار على النبي ﷺ بحفر الخندق في غزوة الأحزاب؟",
+    "answer": "سلمان الفارسي",
+    "options": null,
+    "category": "islamic_general",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "سلمان الفارسي رضي الله عنه أشار بحفر الخندق وهي خطة لم تكن تعرفها العرب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ceb0fa5d-20fc-54c9-97ae-d81549f01ccf",
+    "text": "ما هي السورة القرآنية الكريمة التي تعدل قراءتها ثلث القرآن الكريم كما ثبت في الحديث الصحيح؟",
+    "answer": "الإخلاص",
+    "options": [
+      "الفاتحة",
+      "الإخلاص",
+      "الكوثر",
+      "الزلزلة"
+    ],
+    "category": "islamic_general",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "سورة الإخلاص تتضمن صفة الرحمن وتوحيده الخالص فتعدل ثلث القرآن.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6d0763ac-c23f-58ee-83bd-36eb6cf13d7c",
+    "text": "الميقات المكاني لأهل المدينة المنورة ومن يمر بها للإحرام بالحج والعمرة هو ذو _______",
+    "answer": "الحليفة",
+    "options": null,
+    "category": "islamic_general",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "ذو الحليفة (أبيار علي) هو أبعد المواقيت عن مكة المكرمة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

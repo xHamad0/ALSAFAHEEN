@@ -1,0 +1,157 @@
+[
+  {
+    "id": "1fe77f4c-3654-5d52-83c0-5877e71d339f",
+    "text": "من هو أول الخلفاء الراشدين رضي الله عنهم؟",
+    "answer": "أبو بكر الصديق",
+    "options": [
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب",
+      "أبو بكر الصديق"
+    ],
+    "category": "islamic_history",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "تولى أبو بكر الصديق الخلافة بعد وفاة النبي ﷺ.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e3c14007-3746-5bc3-9d2f-a1ac75ac6718",
+    "text": "أول معركة كبرى فاصلة في الإسلام بين المسلمين وقريش هي غزوة _______",
+    "answer": "بدر",
+    "options": null,
+    "category": "islamic_history",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "وقعت غزوة بدر الكبرى في 17 رمضان 2 هـ.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "4df86756-a4ce-513d-a1e4-266fcbdf8e31",
+    "text": "من هو القائد المسلم الذي انتصر على الصليبيين في معركة حطين واسترد بيت المقدس عام 1187م؟",
+    "answer": "صلاح الدين الأيوبي",
+    "options": [
+      "نور الدين زنكي",
+      "صلاح الدين الأيوبي",
+      "سيف الدين قطز",
+      "الظاهر بيبرس"
+    ],
+    "category": "islamic_history",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "قاد السلطان صلاح الدين الأيوبي جيش المسلمين للانتصار التاريخي في حطين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "15497bd3-0f10-5227-813d-fcf0048c5543",
+    "text": "ما هي المدينة التي كانت عاصمة الدولة الأموية طوال فترة حكمها في المشرق؟",
+    "answer": "دمشق",
+    "options": null,
+    "category": "islamic_history",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "اتخذ معاوية بن أبي سفيان دمشق عاصمة للخلافة الأموية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2e107e12-8f4c-5308-b0f9-6ed2af398a25",
+    "text": "ما اسم المعركة الفاصلة التي انتصر فيها المسلمون بقيادة خالد بن الوليد على الروم البيزنطيين عام 13 هـ؟",
+    "answer": "اليرموك",
+    "options": [
+      "القادسية",
+      "اليرموك",
+      "عين جالوت",
+      "مؤتة"
+    ],
+    "category": "islamic_history",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "كانت معركة اليرموك نهاية الوجود البيزنطي في بلاد الشام.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "4e5c09ee-c0f0-548b-a4f7-88275c4de415",
+    "text": "القائد المسلم الذي فتح الأندلس وعبر المضيق المسمى باسمه عام 92 هـ هو _______",
+    "answer": "طارق بن زياد",
+    "options": null,
+    "category": "islamic_history",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "عبر طارق بن زياد بجنوده مضيق جبل طارق لفتح بلاد الأندلس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "52d7605f-e45b-5af3-a1b4-b4c49b40fde9",
+    "text": "في أي عام تم فتح القسطنطينية على يد السلطان العثماني محمد الفاتح؟",
+    "answer": "1453م",
+    "options": [
+      "1440م",
+      "1453م",
+      "1492م",
+      "1517م"
+    ],
+    "category": "islamic_history",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "تم فتح القسطنطينية في 29 مايو 1453م وتحويلها إلى عاصمة العثمانيين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "417e4a97-e6b9-556c-9b46-0020ef408fba",
+    "text": "من هو الخليفة العباسي الذي شيدت 'دار الحكمة' في بغداد وشهد عصره أوج حركة الترجمة والعلوم؟",
+    "answer": "المأمون",
+    "options": null,
+    "category": "islamic_history",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "شهد عهد الخليفة عبد الله المأمون بن هارون الرشيد أعظم نهضة علمية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6ee69fe4-ace9-58f3-a468-fd73414775a2",
+    "text": "ما اسم المعركة البحرية الشهيرة التي خاضها المسلمون في عهد عثمان بن عفان سنة 35 هـ واعتبرت أول معركة بحرية إسلامية؟",
+    "answer": "ذات الصواري",
+    "options": [
+      "ذات السلاسل",
+      "ذات الصواري",
+      "بلاط الشهداء",
+      "أجنادين"
+    ],
+    "category": "islamic_history",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "قاد عبد الله بن سعد بن أبي السرح معركة ذات الصواري ضد أسطول البيزنطيين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "2c957898-07ab-51f0-b7fe-9f6809212b4f",
+    "text": "السلطان المملوكي الذي قاد المسلمين للنصر على المغول في معركة عين جالوت عام 1260م هو سيف الدين _______",
+    "answer": "قطز",
+    "options": null,
+    "category": "islamic_history",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "أطلق قطز صيحته الشهيرة 'واإسلاماه' في معركة عين جالوت.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

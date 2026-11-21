@@ -1,0 +1,157 @@
+[
+  {
+    "id": "a6c1ebdb-34d0-54d1-becb-056e4500cb33",
+    "text": "في أي عام انتهت الحرب العالمية الثانية رسمياً؟",
+    "answer": "1945",
+    "options": [
+      "1939",
+      "1944",
+      "1945",
+      "1948"
+    ],
+    "category": "world_history",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "انتهت الحرب باستسلام ألمانيا واليابان عام 1945.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0ea082d1-9075-5b37-9c76-72fcfacef58e",
+    "text": "الحضارة القديمة التي اشتهرت ببناء الأهرامات على ضفاف نهر النيل هي حضارة الفراعنة في _______",
+    "answer": "مصر",
+    "options": null,
+    "category": "world_history",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "بنى المصريون القدماء أهرامات الجيزة الخالدة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "0e1c131f-0284-5cae-93ee-382d856e8560",
+    "text": "ما اسم الجدار الشهير الذي سقط عام 1989 ليعلن بداية نهاية الحرب الباردة؟",
+    "answer": "جدار برلين",
+    "options": [
+      "جدار الصين",
+      "جدار برلين",
+      "جدار الأطلسي",
+      "جدار هادريان"
+    ],
+    "category": "world_history",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "سقط جدار برلين في 9 نوفمبر 1989 وتوحدت ألمانيا بعدها.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e1832ac3-9e20-52a0-8990-9db241fabe2f",
+    "text": "من هو القائد العسكري الفرنسي الشهير الذي نفي أخيراً إلى جزيرة سانت هيلانة؟",
+    "answer": "نابليون بونابرت",
+    "options": null,
+    "category": "world_history",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "نفي الإمبراطور نابليون إلى سانت هيلانة بعد هزيمته في معركة واترلو.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "578f44d1-b272-5902-a047-d0ecbb0dd546",
+    "text": "في أي بلد انطلقت الثورة الصناعية الأولى في منتصف القرن الثامن عشر؟",
+    "answer": "بريطانيا",
+    "options": [
+      "فرنسا",
+      "ألمانيا",
+      "بريطانيا",
+      "الولايات المتحدة"
+    ],
+    "category": "world_history",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "انطلقت الثورة الصناعية باختراع المحرك البخاري وتطوير النسيج في بريطانيا.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "8dc230cd-a65e-5835-b961-6fda4dadc636",
+    "text": "سفينة الركاب العملاقة التي غرقت في أولى رحلاتها عام 1912 بعد اصطدامها بجبل جليدي تسمى _______",
+    "answer": "تيتانيك",
+    "options": null,
+    "category": "world_history",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "غرقت التيتانيك في شمال المحيط الأطلسي ليلة 14-15 أبريل 1912.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "a7591c46-47e0-500b-ba23-ce016a34e890",
+    "text": "ما هي المدينة الرومانية الشهيرة التي دفنت تحت رماد بركان فيزوف عام 79 ميلادية؟",
+    "answer": "بومبي",
+    "options": [
+      "أثينا",
+      "بومبي",
+      "قرطاج",
+      "روما"
+    ],
+    "category": "world_history",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "دفنت مدينة بومبي بالكامل مع هيركولانيوم بفعل ثوران بركان فيزوف.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "777179b1-84b1-573e-af3f-cf907140c7fa",
+    "text": "من كان رئيس وزراء بريطانيا خلال أغلب سنوات الحرب العالمية الثانية وعرف بخطاباته الحماسية؟",
+    "answer": "ونستون تشرشل",
+    "options": null,
+    "category": "world_history",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "قاد تشرشل بريطانيا بحزم حتى النصر في الحرب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "03e9f92d-c424-5e3b-a5ba-a6315fe495a2",
+    "text": "في أي عام تم توقيع وثيقة 'الماغنا كارتا' (الميثاق الأعظم) للحقوق في إنجلترا؟",
+    "answer": "1215",
+    "options": [
+      "1066",
+      "1215",
+      "1348",
+      "1492"
+    ],
+    "category": "world_history",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "وقع الملك جون وثيقة الماغنا كارتا في رانيميد عام 1215 واعتبرت أساس الدستور والقانون.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "df51698f-f7e0-53fe-a960-c1240241afaf",
+    "text": "الحرب التي استمرت 116 عاماً بين مملكتي إنجلترا وفرنسا في القرنين 14 و15 تسمى حرب _______",
+    "answer": "المئة عام",
+    "options": null,
+    "category": "world_history",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "استمرت حرب المئة عام من 1337 إلى 1453م.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

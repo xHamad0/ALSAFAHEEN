@@ -1,0 +1,162 @@
+[
+  {
+    "id": "25b6b6fa-e01f-5e73-a365-b0b93cef19d3",
+    "text": "كم عدد لاعبي الفريق الواحد داخل أرضية ملعب كرة القدم؟",
+    "answer": "11 لاعباً",
+    "options": [
+      "9 لاعبين",
+      "10 لاعبين",
+      "11 لاعباً",
+      "12 لاعباً"
+    ],
+    "category": "football",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يتكون فريق كرة القدم الأساسي من 11 لاعباً منهم حارس المرمى.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "40bc651c-44ce-5131-87f7-10a05ad0d4e5",
+    "text": "ما هي مدة المباراة الرسمية في كرة القدم بدون أشواط إضافية؟",
+    "answer": "90 دقيقة",
+    "options": [
+      "60 دقيقة",
+      "80 دقيقة",
+      "90 دقيقة",
+      "100 دقيقة"
+    ],
+    "category": "football",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "تنقسم المباراة إلى شوطين مدة كل شوط 45 دقيقة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "203517af-dbc0-57b7-9f4b-92c16ca56087",
+    "text": "أي لاعب يحمل الرقم القياسي في الفوز بجائزة الكرة الذهبية؟",
+    "answer": "ليونيل ميسي",
+    "options": [
+      "كريستيانو رونالدو",
+      "ليونيل ميسي",
+      "ميشيل بلاتيني",
+      "يوهان كرويف"
+    ],
+    "category": "football",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "توج الأرجنتيني ليونيل ميسي بالجائزة 8 مرات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "82169249-77ef-5ee0-86b9-23dd72ce05c0",
+    "text": "الملعب الشهير الخاص بنادي برشلونة الإسباني يسمى ملعب سبوتيفاي _______",
+    "answer": "كامب نو",
+    "options": null,
+    "category": "football",
+    "difficulty": 200,
+    "type": "fill_in_blank",
+    "explanation": "كامب نو هو معقل البلوغرانا التاريخي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6d255185-05da-5e58-8a45-bf9c9ce6826a",
+    "text": "من هو المدرب الذي قاد مانشستر يونايتد لأكثر من 26 عاماً وحقق 38 بطولة؟",
+    "answer": "أليكس فيرغسون",
+    "options": [
+      "أرسين فينغر",
+      "أليكس فيرغسون",
+      "جوزيه مورينيو",
+      "بوب بيزلي"
+    ],
+    "category": "football",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "السير أليكس فيرغسون هو أنجح مدرب في تاريخ الكرة الإنجليزية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "dd7d1781-30fe-5ff8-ac41-bce41f8e878e",
+    "text": "ما هو النادي الإنجليزي الوحيد الذي فاز بلقب الدوري الممتاز الذهبي دون أي هزيمة طوال الموسم؟",
+    "answer": "أرسنال",
+    "options": null,
+    "category": "football",
+    "difficulty": 300,
+    "type": "direct_answer",
+    "explanation": "حقق أرسنال دوري اللاهزيمة التاريخي موسم 2003-2004 بقيادة فينغر.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b6cf5bae-e7d4-5206-a663-f00d5f46d527",
+    "text": "في أي عام تم تطبيق نظام البطاقات الصفراء والحمراء لأول مرة في كأس العالم؟",
+    "answer": "1970",
+    "options": [
+      "1966",
+      "1970",
+      "1974",
+      "1982"
+    ],
+    "category": "football",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "ابتكر الحكم كين أستون نظام البطاقات واستُخدم رسمياً بمونديال المكسيك 1970.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "da7852e2-5725-5974-ad1e-a2841a7ff375",
+    "text": "اللاعب الوحيد في تاريخ كرة القدم الذي فاز بـ 3 ألقاب كأس عالم كلاعب هو الأسطورة البرازيلية _______",
+    "answer": "بيليه",
+    "options": null,
+    "category": "football",
+    "difficulty": 400,
+    "type": "fill_in_blank",
+    "explanation": "فاز بيليه بكؤوس العالم أعوام 1958 و1962 و1970.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "13955e7e-5f98-59cb-9257-70565fc25bfe",
+    "text": "من هو أول لاعب إفريقي في التاريخ يفوز بجائزة الكرة الذهبية (Ballon d'Or)؟",
+    "answer": "جورج وياه",
+    "options": [
+      "ديدييه دروغبا",
+      "صامويل إيتو",
+      "جورج وياه",
+      "عبيدي بيليه"
+    ],
+    "category": "football",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "حقق النجم الليبيري جورج وياه الجائزة عام 1995 أثناء لعبه لميلان.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "83ff8eef-b4d0-5a9a-a732-6c2d3d9dc2fa",
+    "text": "من هو الحارس الوحيد في تاريخ كرة القدم الذي فاز بجائزة الكرة الذهبية؟",
+    "answer": "ليف ياشين",
+    "options": null,
+    "category": "football",
+    "difficulty": 500,
+    "type": "direct_answer",
+    "explanation": "فاز الحارس السوفيتي ليف ياشين 'العنكبوت الأسود' بالكرة الذهبية عام 1963.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

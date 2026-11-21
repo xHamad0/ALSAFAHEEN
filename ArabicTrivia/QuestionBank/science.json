@@ -1,0 +1,157 @@
+[
+  {
+    "id": "2adcdccd-8f1e-52e3-bce5-67f9523447c2",
+    "text": "ما هو أكبر عضو في جسم الإنسان من حيث المساحة والوزن؟",
+    "answer": "الجلد",
+    "options": [
+      "الكبد",
+      "الجلد",
+      "الرئتان",
+      "الدماغ"
+    ],
+    "category": "science",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "يمثل الجلد خط الدفاع الأول ويغطي مساحة تقارب 2 متر مربع.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "acd95d80-6792-5e88-8a51-3e532fc71af6",
+    "text": "الكوكب الأقرب إلى الشمس في المجموعة الشمسية هو كوكب _______",
+    "answer": "عطارد",
+    "options": null,
+    "category": "science",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "عطارد هو أصغر وأقرب كواكب المجموعة الشمسية إلى الشمس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "518e1e09-0755-576a-bdb5-2fb63046dd2e",
+    "text": "كم عدد عظام الهيكل العظمي للشخص البالغ الطبيعي؟",
+    "answer": "206 عظمات",
+    "options": [
+      "195 عظمة",
+      "206 عظمات",
+      "214 عظمة",
+      "220 عظمة"
+    ],
+    "category": "science",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "يولد الإنسان بحوالي 270 عظمة تلتحم مع النمو لتصل إلى 206 عظمات.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "87957a97-729a-5430-a27b-06d35dddb72d",
+    "text": "ما اسم العضية الخلوية المسؤولة عن إنتاج الطاقة وتعرف بـ 'مصنع طاقة الخلية'؟",
+    "answer": "الميتوكوندريا",
+    "options": null,
+    "category": "science",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "تقوم الميتوكوندريا بإنتاج جزيئات ATP اللازمة للطاقة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "80691858-1c22-5d3f-9fa1-b14d0ffbb9e8",
+    "text": "ما هو الغاز الأكثر وفرة في الغلاف الجوي للأرض بنسبة تقارب 78%؟",
+    "answer": "النيتروجين",
+    "options": [
+      "الأكسجين",
+      "النيتروجين",
+      "ثاني أكسيد الكربون",
+      "الأرجون"
+    ],
+    "category": "science",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "يشكل النيتروجين 78% من هواء الغلاف الجوي بينما يمثل الأكسجين 21%.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "aa8683e5-2002-53ca-ad9c-8f67becbeb62",
+    "text": "سرعة الضوء في الفراغ تبلغ حوالي 300 ألف كيلومتر في _______",
+    "answer": "الثانية",
+    "options": null,
+    "category": "science",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "تبلغ سرعة الضوء الدقيقة 299,792 كم/ثانية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "927369ac-37d2-548d-bbfe-e7a78fce8d3e",
+    "text": "ما هو نوع فصيلة الدم التي تعتبر 'معطياً عاماً' لجميع الفصائل؟",
+    "answer": "O سالب",
+    "options": [
+      "AB موجب",
+      "O موجب",
+      "O سالب",
+      "A سالب"
+    ],
+    "category": "science",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "فصيلة O- خالية من مولدات الضد A وB وعامل الريسوس Rh فتصلح للجميع.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "5ab6537c-cc35-55d3-8208-7e2e6039ce0c",
+    "text": "من هو العالم الإنجليزي مكتشف البنسلين كأول مضاد حيوي في التاريخ عام 1928؟",
+    "answer": "ألكسندر فليمنغ",
+    "options": null,
+    "category": "science",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "اكتشف ألكسندر فليمنغ فطر البنسليوم صدفة في معمله.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "b004b9e4-df70-5952-8ae5-e2586b6855fe",
+    "text": "كم عدد أزواج الكروموسومات في الخلية البشرية الطبيعية؟",
+    "answer": "23 زوجاً",
+    "options": [
+      "21 زوجاً",
+      "22 زوجاً",
+      "23 زوجاً",
+      "24 زوجاً"
+    ],
+    "category": "science",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "تحتوي النواة البشرية على 46 كروموسوماً مرتبة في 23 زوجاً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "73239fa9-d198-536f-b11b-e34233e7f141",
+    "text": "الجزيء الحيوي الحامل للشفرة الوراثية يرمز له باختصار DNA ويعني حمض الديوكسي ريبو _______",
+    "answer": "نوويك",
+    "options": null,
+    "category": "science",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "الحمض النووي الريبوزي منقوص الأكسجين Deoxyribonucleic acid.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

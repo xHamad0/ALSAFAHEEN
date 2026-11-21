@@ -1,0 +1,157 @@
+[
+  {
+    "id": "7a084d8d-9558-5754-8217-6d924dfb553b",
+    "text": "ما هي عاصمة اليابان؟",
+    "answer": "طوكيو",
+    "options": [
+      "كيوتو",
+      "طوكيو",
+      "أوساكا",
+      "سيول"
+    ],
+    "category": "geography",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "طوكيو هي عاصمة اليابان وأكبر تجمع حضري في العالم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "c559fd5b-9321-5fff-872b-e687a2d5a979",
+    "text": "أطول نهر في العالم يمر بقارة إفريقيا هو نهر _______",
+    "answer": "النيل",
+    "options": null,
+    "category": "geography",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "يمتد نهر النيل بطول يتجاوز 6650 كم.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "deb39de1-90fb-55c9-8861-dab64f16db03",
+    "text": "ما هي أكبر قارة في العالم من حيث المساحة وعدد السكان؟",
+    "answer": "آسيا",
+    "options": [
+      "إفريقيا",
+      "آسيا",
+      "أوروبا",
+      "أمريكا الشمالية"
+    ],
+    "category": "geography",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "تمثل قارة آسيا نحو 30% من إجمالي مساحة اليابسة.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "92f221a7-b612-5214-a4d8-5ce7f7b4bce1",
+    "text": "ما هي عاصمة أستراليا الفيدرالية؟",
+    "answer": "كانبرا",
+    "options": null,
+    "category": "geography",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "كانبرا هي العاصمة الرسمية وليست سيدني أو ملبورن.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "fd2de59d-02c2-518d-a611-c2312d29d0e0",
+    "text": "ما هو المضيق المائي الحيوي الذي يربط بين الخليج العربي وبحر عمان؟",
+    "answer": "مضيق هرمز",
+    "options": [
+      "مضيق باب المندب",
+      "مضيق هرمز",
+      "مضيق جبل طارق",
+      "مضيق البوسفور"
+    ],
+    "category": "geography",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "مضيق هرمز يمر عبره حوالي خمس إنتاج النفط العالمي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "818bcbad-9430-5d67-82d9-9cc8439cb328",
+    "text": "أعلى قمة جبلية في العالم بارتفاع 8848 متراً فوق سطح البحر هي قمة جبل _______",
+    "answer": "إفرست",
+    "options": null,
+    "category": "geography",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "تقع قمة إفرست في سلسلة جبال الهيمالايا بين نيبال والصين.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "90fa446b-4a1a-5d78-a6fa-b1571a39becb",
+    "text": "ما هي الدولة الحبيسة غير الساحلية الأكبر مساحة في العالم؟",
+    "answer": "كازاخستان",
+    "options": [
+      "منغوليا",
+      "كازاخستان",
+      "تشاد",
+      "بوليفيا"
+    ],
+    "category": "geography",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "كازاخستان هي أكبر دولة غير ساحلية بمساحة 2.7 مليون كم مربع.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "279d83c9-0e2c-5fa3-9a3e-da98c2386235",
+    "text": "ما هي عاصمة كندا؟",
+    "answer": "أوتاوا",
+    "options": null,
+    "category": "geography",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "أوتاوا في مقاطعة أونتاريو هي عاصمة كندا الاتحادية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "42c11ea0-6aa7-515e-9337-30c285181845",
+    "text": "ما هي أعمق نقطة مسجلة في محيطات العالم وتصل إلى قرابة 11,000 متر؟",
+    "answer": "خندق ماريانا",
+    "options": [
+      "خندق بويرتوريكو",
+      "خندق ماريانا",
+      "خندق جاوة",
+      "خندق تونغا"
+    ],
+    "category": "geography",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "يقع خندق ماريانا في غرب المحيط الهادئ ونقطة 'تشالنجر ديب'.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "58d8b3dd-8e40-5f8e-828d-784fe577a1a5",
+    "text": "البحيرة التي تعد أكبر مسطح مائي حبيس ومغلق في العالم هي بحر _______",
+    "answer": "قزوين",
+    "options": null,
+    "category": "geography",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "بحر قزوين هو أكبر بحيرة مغلقة على كوكب الأرض بمساحة 371 ألف كم².",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

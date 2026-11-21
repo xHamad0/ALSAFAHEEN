@@ -1,0 +1,157 @@
+[
+  {
+    "id": "56d244f9-c41f-5226-96fb-fdc63070579c",
+    "text": "كم عدد أيام السنة البسيطة غير الكبيسة في التقويم الميلادي؟",
+    "answer": "365 يوماً",
+    "options": [
+      "360 يوماً",
+      "364 يوماً",
+      "365 يوماً",
+      "366 يوماً"
+    ],
+    "category": "miscellaneous",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "السنة البسيطة 365 يوماً، وتأتي السنة الكبيسة كل 4 سنوات بـ 366 يوماً.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "4a764b61-999b-5396-b300-e4d53520ab74",
+    "text": "الجهة التي تغرب منها الشمس في جميع أنحاء الأرض تسمى جهة الـ _______",
+    "answer": "غرب",
+    "options": null,
+    "category": "miscellaneous",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "تدور الأرض من الغرب إلى الشرق فتبدو الشمس شارقة من الشرق وغاربة بالغرب.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "9924897d-36a8-5ffd-a3d4-f82c7401a226",
+    "text": "ما هو المعدن السمين الذي تقاس نقاوته بالقيراط مثل عيار 24 وعيار 21؟",
+    "answer": "الذهب",
+    "options": [
+      "الفضة",
+      "البلاتين",
+      "الذهب",
+      "النحاس"
+    ],
+    "category": "miscellaneous",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "عيار 24 يمثل الذهب الخالص بنسبة 99.9%.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ea3ba7dd-5390-5343-9440-aa9ba097941c",
+    "text": "ما هي الألوان الأساسية الثلاثة للضوء في النموذج اللوني القياسي (RGB)؟",
+    "answer": "الأحمر والأخضر والأزرق",
+    "options": null,
+    "category": "miscellaneous",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "الأحمر Red، الأخضر Green، والأزرق Blue.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "72b96092-c47b-5cfc-b5e1-3d2a62d2c770",
+    "text": "كم عدد أوتار آلة الغيتار الكلاسيكي التقليدي؟",
+    "answer": "6 أوتار",
+    "options": [
+      "4 أوتار",
+      "5 أوتار",
+      "6 أوتار",
+      "7 أوتار"
+    ],
+    "category": "miscellaneous",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "يحتوي الغيتار الكلاسيكي على 6 أوتار معدنية أو نايلون.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "e558df34-8379-5aaa-8223-cf005806870a",
+    "text": "اللعبة اللوحية الاستراتيجية العالمية التي تتكون من 64 مربعاً باللونين الأبيض والأسود تسمى _______",
+    "answer": "الشطرنج",
+    "options": null,
+    "category": "miscellaneous",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "لعبة الملوك الشطرنج تقوم على حماية الملك وتطويق الخصم (كش ملك).",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "f8f0bf59-1860-5d9b-979d-a3391e5a75bf",
+    "text": "ما اسم خط الطول الوهمي الذي يعتبر خط الصفر لحساب التوقيت العالمي (GMT)؟",
+    "answer": "خط غرينتش",
+    "options": [
+      "خط الاستواء",
+      "خط غرينتش",
+      "مدار السرطان",
+      "مدار الجدي"
+    ],
+    "category": "miscellaneous",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "يمر خط غرينتش بمرصد غرينتش بالقرب من لندن.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "d14160da-a21d-5440-9284-4694a034e7ae",
+    "text": "ما هو الحيوان الرخوي البحري الذي ينتج اللؤلؤ الطبيعي الثمين داخل صدفته؟",
+    "answer": "المحار",
+    "options": null,
+    "category": "miscellaneous",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "يفرز المحار مادة عرق اللؤلؤ حول الأجسام الغريبة داخل صدفته.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "864df88d-2075-5bea-9e1d-bcd1f4d2120b",
+    "text": "كم عدد المربعات في كل صف وعمود في لغز الأرقام الياباني الشهير 'سودوكو'؟",
+    "answer": "9 مربعات",
+    "options": [
+      "6 مربعات",
+      "8 مربعات",
+      "9 مربعات",
+      "10 مربعات"
+    ],
+    "category": "miscellaneous",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "تتكون شبكة السودوكو الكلاسيكية من 9*9 مربعات مقسمة إلى 9 مناطق فرعية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "25092354-31ed-5933-947a-d86abf0f1c68",
+    "text": "المقياس العالمي الشائع لقياس قوة وشدة الزلازل هو مقياس _______",
+    "answer": "ريختر",
+    "options": null,
+    "category": "miscellaneous",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "ابتكر تشارلز ريختر مقياسه اللوغاريتمي عام 1935.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]

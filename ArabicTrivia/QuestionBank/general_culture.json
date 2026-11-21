@@ -1,0 +1,157 @@
+[
+  {
+    "id": "b0fbf8ba-9f0c-513f-8e21-16cd3ca84240",
+    "text": "ما هي العملة الرسمية الموحدة في أغلب دول الاتحاد الأوروبي؟",
+    "answer": "اليورو",
+    "options": [
+      "الجنيه الإسترليني",
+      "اليورو",
+      "الفرنك",
+      "الكرونة"
+    ],
+    "category": "general_culture",
+    "difficulty": 100,
+    "type": "multiple_choice",
+    "explanation": "بدأ استخدام اليورو كعملة رسمية مصرفية في 1999 وتداولية في 2002.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "abc8032c-0c2a-5298-b94f-2ca4bcf59ff8",
+    "text": "مدينة الضباب هو اللقب الشهير الذي يطلق على عاصمة بريطانيا مدينة _______",
+    "answer": "لندن",
+    "options": null,
+    "category": "general_culture",
+    "difficulty": 100,
+    "type": "fill_in_blank",
+    "explanation": "اشتهرت لندن بالضباب الدخاني التاريخي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6dd5ec57-f4f9-5ac5-af53-b9bbc89682fa",
+    "text": "في أي مدينة سويسرية يقع المقر الأوروبي للأمم المتحدة ومقر الصليب الأحمر الدولي؟",
+    "answer": "جنيف",
+    "options": [
+      "زيورخ",
+      "برن",
+      "جنيف",
+      "بازل"
+    ],
+    "category": "general_culture",
+    "difficulty": 200,
+    "type": "multiple_choice",
+    "explanation": "جنيف هي المركز الدبلوماسي العالمي ومقر للمنظمات الدولية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "6f66f9a5-f6c2-53b3-98ac-60e76cd957c1",
+    "text": "ما هي جائزة نوبل الوحيدة التي تسلم في مدينة أوسلو النرويجية بينما تسلم باقي الجوائز في ستوكهولم؟",
+    "answer": "نوبل للسلام",
+    "options": null,
+    "category": "general_culture",
+    "difficulty": 200,
+    "type": "direct_answer",
+    "explanation": "تمنح جائزة نوبل للسلام من قبل لجنة نوبل النرويجية في أوسلو.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "61c32858-0112-572c-86fc-1e68272dd608",
+    "text": "ما اسم القناة المائية الاصطناعية التي تصل البحر الأبيض المتوسط بالبحر الأحمر وافتتحت عام 1869؟",
+    "answer": "قناة السويس",
+    "options": [
+      "قناة بنما",
+      "قناة السويس",
+      "قناة كورنث",
+      "قناة كيل"
+    ],
+    "category": "general_culture",
+    "difficulty": 300,
+    "type": "multiple_choice",
+    "explanation": "افتتحت قناة السويس في مصر في نوفمبر 1869 وتعد أهم ممر ملاحي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "61843279-46f2-537f-8304-e4c43f8cdb1c",
+    "text": "العملة الرسمية المستخدمة في اليابان تسمى الـ _______",
+    "answer": "ين",
+    "options": null,
+    "category": "general_culture",
+    "difficulty": 300,
+    "type": "fill_in_blank",
+    "explanation": "الين الياباني هو ثالث أكثر العملات تداولاً في سوق الصرف الأجنبي.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "1953bef5-1254-56fe-b60b-aea693450d55",
+    "text": "من هو الكاتب والفيلسوف الذي رفض استلام جائزة نوبل في الأدب طواعية عام 1964؟",
+    "answer": "جان بول سارتر",
+    "options": [
+      "ألبير كامو",
+      "جان بول سارتر",
+      "برنارد شو",
+      "إرنست همنغواي"
+    ],
+    "category": "general_culture",
+    "difficulty": 400,
+    "type": "multiple_choice",
+    "explanation": "رفض الفيلسوف الوجودي الفرنسي سارتر قبول الجائزة احتراماً لمبادئه الشخصية.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "ce57a56e-3d83-5bff-a04c-bb01e5f9128a",
+    "text": "ما هي المنظمة التابعة للأمم المتحدة المتخصصة في حماية التراث الإنساني والتربية والعلوم والثقافة؟",
+    "answer": "اليونسكو",
+    "options": null,
+    "category": "general_culture",
+    "difficulty": 400,
+    "type": "direct_answer",
+    "explanation": "منظمة الأمم المتحدة للتربية والعلم والثقافة (UNESCO) مقرها باريس.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "4f73a900-75f7-5ecc-95af-c2e11174d859",
+    "text": "في أي عام تم منح جوائز نوبل لأول مرة في التاريخ تنفيذاً لوصية ألفريد نوبل؟",
+    "answer": "1901",
+    "options": [
+      "1895",
+      "1896",
+      "1901",
+      "1905"
+    ],
+    "category": "general_culture",
+    "difficulty": 500,
+    "type": "multiple_choice",
+    "explanation": "وزعت أول جوائز نوبل عام 1901 بعد خمس سنوات من وفاة ألفريد نوبل.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  },
+  {
+    "id": "9ea5df90-1fdb-589a-9d19-91969a85f894",
+    "text": "أقدم جامعة عاملة في العالم حتى اليوم دون انقطاع وفقاً لموسوعة غينيس واليونسكو هي جامعة _______ في المغرب",
+    "answer": "القرويين",
+    "options": null,
+    "category": "general_culture",
+    "difficulty": 500,
+    "type": "fill_in_blank",
+    "explanation": "أسستها فاطمة الفهرية في مدينة فاس بالمغرب عام 859م.",
+    "letter": null,
+    "flagImage": null,
+    "flagCountryCode": null
+  }
+]
