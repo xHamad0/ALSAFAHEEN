@@ -1,17 +1,66 @@
 
+name: Build ArabicTrivia iOS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build iOS IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          xcodebuild -version
+
       - name: Build iOS application
         run: |
           set -o pipefail
           xcodebuild \
             -project ArabicTrivia.xcodeproj \
-            -scheme "${{ steps.scheme.outputs.scheme }}" \
+            -scheme ArabicTrivia \
             -configuration Release \
             -sdk iphoneos \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             build 2>&1 | tee xcodebuild.log
 
-      - name: Upload build error log
+      - name: Package unsigned IPA
+        if: success()
+        run: |
+          APP=$(find build/Build/Products/Release-iphoneos \
+            -maxdepth 1 -name "*.app" -print -quit)
+
+          if [ -z "$APP" ]; then
+            echo "Application not found"
+            exit 1
+          fi
+
+          mkdir Payload
+          cp -R "$APP" Payload/
+          ditto -c -k --sequesterRsrc --keepParent \
+            Payload ArabicTrivia-unsigned.ipa
+
+      - name: Upload IPA
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ArabicTrivia-unsigned-IPA
+          path: ArabicTrivia-unsigned.ipa
+          retention-days: 14
+
+      - name: Upload build log
         if: always()
         uses: actions/upload-artifact@v4
         with:
