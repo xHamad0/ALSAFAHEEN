@@ -1,0 +1,67 @@
+
+name: Build ArabicTrivia iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build iOS IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Find project scheme
+        id: scheme
+        run: |
+          SCHEME=$(xcodebuild -list -json \
+            -project ArabicTrivia.xcodeproj | \
+            python3 -c "import json,sys; d=json.load(sys.stdin); print(d['project']['schemes'][0])")
+          echo "scheme=$SCHEME" >> "$GITHUB_OUTPUT"
+          echo "Using scheme: $SCHEME"
+
+      - name: Build iOS application
+        run: |
+          xcodebuild \
+            -project ArabicTrivia.xcodeproj \
+            -scheme "${{ steps.scheme.outputs.scheme }}" \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          APP=$(find build/Build/Products/Release-iphoneos \
+            -maxdepth 1 -name "*.app" -print -quit)
+
+          if [ -z "$APP" ]; then
+            echo "Application not found"
+            exit 1
+          fi
+
+          mkdir Payload
+          cp -R "$APP" Payload/
+          ditto -c -k --sequesterRsrc --keepParent \
+            Payload ArabicTrivia-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ArabicTrivia-unsigned-IPA
+          path: ArabicTrivia-unsigned.ipa
+          retention-days: 14
