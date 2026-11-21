@@ -195,4 +195,31 @@ public final class QuestionBankService: ObservableObject {
         let usedIDs = tracker.getAllUsedIDs()
         return allQuestions.filter { !usedIDs.contains($0.id) }.count
     }
+    
+    /// إضافة أسئلة مستوردة مباشرة إلى الذاكرة
+    public func appendImportedQuestions(_ newQuestions: [Question]) {
+        queue.async(flags: .barrier) {
+            var currentIDs = Set(self.allQuestions.map { $0.id })
+            var added: [Question] = []
+            
+            for q in newQuestions {
+                if !currentIDs.contains(q.id) {
+                    currentIDs.insert(q.id)
+                    added.append(q)
+                }
+            }
+            
+            let updatedList = self.allQuestions + added
+            var grouped = self.questionsByCategory
+            for q in added {
+                grouped[q.category, default: []].append(q)
+            }
+            
+            DispatchQueue.main.async {
+                self.allQuestions = updatedList
+                self.questionsByCategory = grouped
+                self.totalQuestionsCount = updatedList.count
+            }
+        }
+    }
 }
