@@ -1,12 +1,16 @@
 import Foundation
 import SwiftUI
 
-/// مدير إعداد المباراة قبل بدئها مع تثبيت الـ 6 فئات للجولة
+/// مدير إعداد المباراة قبل بدئها مع تثبيت الـ 6 فئات للجولة ووسائل المساعدة المختارة
 public final class SetupGameViewModel: ObservableObject {
+    @Published public var gameName: String = ""
     @Published public var team1Name: String
     @Published public var team2Name: String
     @Published public var team1ColorHex: String
     @Published public var team2ColorHex: String
+    
+    @Published public var team1SelectedLifelines: Set<LifelineType> = [.fiftyFifty, .doublePoints, .extraTime]
+    @Published public var team2SelectedLifelines: Set<LifelineType> = [.fiftyFifty, .doublePoints, .extraTime]
     
     @Published public var timeLimitSeconds: Int = 30
     @Published public var selectedCategories: Set<QuestionCategory> = []
@@ -14,6 +18,7 @@ public final class SetupGameViewModel: ObservableObject {
     
     public let timeOptions = [15, 20, 30, 45, 60]
     public let targetCategoriesCount = 6
+    public let maxLifelinesPerTeam = 3
     
     private let dataManager = DataManager.shared
     private let questionService = QuestionBankService.shared
@@ -42,6 +47,27 @@ public final class SetupGameViewModel: ObservableObject {
         }
     }
     
+    /// تبديل وسيلة المساعدة لفريق معين (بحد أقصى 3 وسائل)
+    public func toggleLifeline(_ lifeline: LifelineType, forTeam teamIndex: Int) {
+        if teamIndex == 0 {
+            if team1SelectedLifelines.contains(lifeline) {
+                if team1SelectedLifelines.count > 1 {
+                    team1SelectedLifelines.remove(lifeline)
+                }
+            } else if team1SelectedLifelines.count < maxLifelinesPerTeam {
+                team1SelectedLifelines.insert(lifeline)
+            }
+        } else {
+            if team2SelectedLifelines.contains(lifeline) {
+                if team2SelectedLifelines.count > 1 {
+                    team2SelectedLifelines.remove(lifeline)
+                }
+            } else if team2SelectedLifelines.count < maxLifelinesPerTeam {
+                team2SelectedLifelines.insert(lifeline)
+            }
+        }
+    }
+    
     public var isValidSetup: Bool {
         !team1Name.trimmingCharacters(in: .whitespaces).isEmpty &&
         !team2Name.trimmingCharacters(in: .whitespaces).isEmpty &&
@@ -56,8 +82,18 @@ public final class SetupGameViewModel: ObservableObject {
         dataManager.defaultTeam2Color = team2ColorHex
         dataManager.saveSettings()
         
-        let team1 = Team(name: team1Name, colorHex: team1ColorHex)
-        let team2 = Team(name: team2Name, colorHex: team2ColorHex)
+        var t1Lifelines: [String: Int] = [:]
+        for l in LifelineType.allCases {
+            t1Lifelines[l.rawValue] = team1SelectedLifelines.contains(l) ? 1 : 0
+        }
+        
+        var t2Lifelines: [String: Int] = [:]
+        for l in LifelineType.allCases {
+            t2Lifelines[l.rawValue] = team2SelectedLifelines.contains(l) ? 1 : 0
+        }
+        
+        let team1 = Team(name: team1Name, colorHex: team1ColorHex, lifelinesRemaining: t1Lifelines)
+        let team2 = Team(name: team2Name, colorHex: team2ColorHex, lifelinesRemaining: t2Lifelines)
         
         // تثبيت الفئات الـ 6 للجولة
         let boardCats = Array(selectedCategories)
@@ -68,7 +104,6 @@ public final class SetupGameViewModel: ObservableObject {
         
         for cat in boardCats {
             for diff in DifficultyLevel.allCases {
-                // السؤال الأول (العمود الأيمن)
                 let q1 = questionService.fetchQuestionForSlot(category: cat, difficulty: diff, excludeIDs: assignedQuestionIDs)
                 if let q1 = q1 {
                     assignedQuestionIDs.insert(q1.id)
@@ -80,7 +115,6 @@ public final class SetupGameViewModel: ObservableObject {
                     questionId: q1?.id
                 ))
                 
-                // السؤال الثاني (العمود الأيسر)
                 let q2 = questionService.fetchQuestionForSlot(category: cat, difficulty: diff, excludeIDs: assignedQuestionIDs)
                 if let q2 = q2 {
                     assignedQuestionIDs.insert(q2.id)

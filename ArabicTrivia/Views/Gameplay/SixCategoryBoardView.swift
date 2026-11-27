@@ -8,7 +8,9 @@ public struct SixCategoryBoardView: View {
     private let difficulties = DifficultyLevel.allCases // 100, 200, 300, 400, 500
     
     private var columns: [GridItem] {
-        let count = (horizontalSizeClass == .regular) ? 3 : 2
+        // في الوضع الأفقي (Landscape) نعرض 3 أعمدة × صفين، وفي العمودي عمودان
+        let isLandscape = UIScreen.main.bounds.width > UIScreen.main.bounds.height
+        let count = (horizontalSizeClass == .regular || isLandscape) ? 3 : 2
         return Array(repeating: GridItem(.flexible(), spacing: 8), count: count)
     }
     
