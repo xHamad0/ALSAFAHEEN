@@ -62,13 +62,13 @@ public final class SetupGameViewModel: ObservableObject {
         // تثبيت الفئات الـ 6 للجولة
         let boardCats = Array(selectedCategories)
         
-        // بناء الـ 60 خانة (6 فئات × 5 قيم × 2 سؤالين لكل خانة)
+        // بناء الـ 60 خانة (6 فئات × 5 قيم من 100 إلى 500 × سؤالين لكل قيمة: يمين ويسار)
         var slots: [BoardSlot] = []
         var assignedQuestionIDs = Set<String>()
         
         for cat in boardCats {
             for diff in DifficultyLevel.allCases {
-                // السؤال الأول للخانة
+                // السؤال الأول (العمود الأيمن)
                 let q1 = questionService.fetchQuestionForSlot(category: cat, difficulty: diff, excludeIDs: assignedQuestionIDs)
                 if let q1 = q1 {
                     assignedQuestionIDs.insert(q1.id)
@@ -80,7 +80,7 @@ public final class SetupGameViewModel: ObservableObject {
                     questionId: q1?.id
                 ))
                 
-                // السؤال الثاني لنفس الخانة والقيمة
+                // السؤال الثاني (العمود الأيسر)
                 let q2 = questionService.fetchQuestionForSlot(category: cat, difficulty: diff, excludeIDs: assignedQuestionIDs)
                 if let q2 = q2 {
                     assignedQuestionIDs.insert(q2.id)

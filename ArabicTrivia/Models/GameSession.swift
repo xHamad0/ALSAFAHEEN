@@ -2,7 +2,7 @@ import Foundation
 
 /// حالات تدفق اللعب في الجولة
 public enum GamePhase: String, Codable {
-    case boardSelection        // لوحة الجولة (عرض الفئات الـ 6 وخانات 100-500 بسؤالين لكل خانة)
+    case boardSelection        // لوحة الجولة (عرض الفئات الـ 6 وخانات 100-500 يمين ويسار)
     case questionAnswering     // الإجابة عن السؤال المختار
     case answerRevealed        // كشف الإجابة والنتيجة
     case tieBreakerPending     // حالة التعادل في انتظار جولة الحسم

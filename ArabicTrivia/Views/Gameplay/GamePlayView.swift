@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// شاشة اللعب الرئيسية المتكاملة مع لوحة الفئات الـ 6 وتعديل النتيجة وتبديل الدور
+/// شاشة اللعب الرئيسية بتصميم لوحة المسابقات (ترويسة برتقالية-حمراء + لوحة 6 فئات + شريط نتائج سفلي)
 public struct GamePlayView: View {
     @StateObject public var viewModel: GamePlayViewModel
     @Environment(\.dismiss) private var dismiss
@@ -13,30 +13,29 @@ public struct GamePlayView: View {
     
     public var body: some View {
         ZStack {
-            AppTheme.bgGradient
+            // الخلفية الفاتحة المريحة للعين المطابقة للتصميم
+            Color(hex: "#F3F4F6")
                 .ignoresSafeArea()
             
-            VStack(spacing: 12) {
-                // ترويسة المباراة: زر الخروج + عداد الخانات + زر الإيقاف المؤقت
-                headerBar
+            VStack(spacing: 0) {
+                // 1. الترويسة العلوية المتدرجة (أحمر قرمزي -> برتقالي)
+                topHeaderBar
                 
-                // لوحة نتائج الفريقين (قابلة للنقر لتعديل النتيجة)
-                teamsScoreBoard
-                
-                // شريط تحديد وتبديل الدور اليدوي (Requirement 3: اقدر اعدل الدور عند مين)
-                turnControlBanner
-                
-                // محتوى الجولة حسب المرحلة الحالية
+                // 2. المنطقة الوسطى (اللوحة أو السؤال أو كشف الإجابة)
                 ScrollView(showsIndicators: false) {
-                    VStack(spacing: 16) {
+                    VStack(spacing: 14) {
                         switch viewModel.session.phase {
                         case .boardSelection:
-                            // لوحة الفئات الـ 6 الثابتة (Requirement 4)
                             SixCategoryBoardView(viewModel: viewModel)
+                                .padding(.top, 6)
                             
                         case .questionAnswering:
                             if let question = viewModel.session.currentQuestion,
                                let diff = viewModel.session.activeDifficulty {
+                                // مؤقت السؤال الدائري
+                                questionTimerBadge
+                                    .padding(.top, 4)
+                                
                                 QuestionCardView(
                                     question: question,
                                     difficulty: diff,
@@ -55,13 +54,6 @@ public struct GamePlayView: View {
                                     }
                                 )
                                 
-                                // شريط وسائل المساعدة
-                                LifelinesBarView(
-                                    team: viewModel.session.currentTeam,
-                                    canUse: { viewModel.canUseLifeline($0) },
-                                    onUse: { viewModel.useLifeline($0) }
-                                )
-                                
                                 // زر تخطي السؤال
                                 Button(action: {
                                     viewModel.skipQuestion()
@@ -72,19 +64,22 @@ public struct GamePlayView: View {
                                     }
                                     .font(.caption)
                                     .fontWeight(.bold)
-                                    .foregroundColor(AppTheme.textMuted)
+                                    .foregroundColor(Color(hex: "#4B5563"))
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 16)
-                                    .background(Color.white.opacity(0.05))
+                                    .background(Color.white)
                                     .cornerRadius(12)
+                                    .shadow(color: Color.black.opacity(0.06), radius: 3, x: 0, y: 1)
                                 }
                             }
                             
                         case .answerRevealed:
                             AnswerRevealView(viewModel: viewModel)
+                                .padding(.top, 8)
                             
                         case .tieBreakerPending:
                             tieBreakerCard
+                                .padding(.top, 12)
                             
                         case .matchFinished:
                             FinalResultsView(session: viewModel.session) {
@@ -92,8 +87,13 @@ public struct GamePlayView: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 24)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                }
+                
+                // 3. الشريط السفلي لنتائج الفريقين ووسائل المساعدة (يظهر دائماً أثناء المباراة)
+                if viewModel.session.phase != .matchFinished {
+                    bottomTeamsFooter
                 }
             }
             
@@ -126,170 +126,266 @@ public struct GamePlayView: View {
         }
     }
     
-    // MARK: - Header Bar
-    private var headerBar: some View {
-        HStack {
-            Button(action: { showExitConfirmation = true }) {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(AppTheme.textMuted)
-            }
-            
-            Spacer()
-            
-            Text("السَّــفَّاحِــين")
-                .font(.headline)
-                .fontWeight(.black)
-                .foregroundStyle(AppTheme.goldGradient)
-            
-            Spacer()
-            
-            Button(action: { viewModel.togglePauseGame() }) {
-                Image(systemName: viewModel.session.isPaused ? "play.circle.fill" : "pause.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(AppTheme.goldPrimary)
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 4)
-    }
-    
-    // MARK: - Score Board (مع دعم التعديل اليدوي بالضغط على البطاقة)
-    private var teamsScoreBoard: some View {
-        HStack(spacing: 10) {
-            // كرت الفريق الأول (قابل للنقر لتعديل النتيجة)
-            teamScoreCard(
-                team: viewModel.session.team1,
-                isActive: viewModel.session.currentTurnTeamIndex == 0,
-                teamIndex: 0
-            )
-            
-            // المؤقت في المنتصف أثناء الإجابة
-            if viewModel.session.phase == .questionAnswering {
-                ZStack {
-                    Circle()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 4)
-                        .frame(width: 44, height: 44)
-                    
-                    Circle()
-                        .trim(from: 0, to: CGFloat(viewModel.remainingSeconds) / CGFloat(max(viewModel.session.timeLimitSeconds, 1)))
-                        .stroke(viewModel.remainingSeconds <= 5 ? AppTheme.error : AppTheme.goldPrimary, lineWidth: 4)
-                        .frame(width: 44, height: 44)
-                        .rotationEffect(.degrees(-90))
-                        .animation(.linear(duration: 1.0), value: viewModel.remainingSeconds)
-                    
-                    Text("\(viewModel.remainingSeconds)")
-                        .font(.headline)
-                        .fontWeight(.black)
-                        .foregroundColor(viewModel.remainingSeconds <= 5 ? AppTheme.error : AppTheme.textPrimary)
-                }
-            } else {
-                Text("VS")
-                    .font(.caption2)
-                    .fontWeight(.black)
-                    .foregroundColor(AppTheme.goldPrimary)
-                    .frame(width: 32, height: 32)
-                    .background(AppTheme.bgSecondary)
-                    .clipShape(Circle())
-            }
-            
-            // كرت الفريق الثاني (قابل للنقر لتعديل النتيجة)
-            teamScoreCard(
-                team: viewModel.session.team2,
-                isActive: viewModel.session.currentTurnTeamIndex == 1,
-                teamIndex: 1
-            )
-        }
-        .padding(.horizontal, 14)
-    }
-    
-    private func teamScoreCard(team: Team, isActive: Bool, teamIndex: Int) -> some View {
-        Button(action: {
-            viewModel.openScoreEditor(for: teamIndex)
-        }) {
+    // MARK: - 1. الترويسة العلوية (مطابقة للتصميم المرجعي)
+    private var topHeaderBar: some View {
+        VStack(spacing: 6) {
             HStack(spacing: 8) {
-                Circle()
-                    .fill(Color(hex: team.colorHex))
-                    .frame(width: 12, height: 12)
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: 4) {
-                        Text(team.name)
-                            .font(.system(size: 13, weight: isActive ? .black : .bold))
-                            .foregroundColor(isActive ? .white : AppTheme.textSecondary)
+                // الجانب الأيمن (RTL): شارة الدور القابلة للتبديل
+                Button(action: {
+                    viewModel.switchTurn()
+                }) {
+                    HStack(spacing: 5) {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                            .font(.system(size: 10, weight: .bold))
+                        Text("دور فريق: \(viewModel.session.currentTeam.name)")
+                            .font(.system(size: 11, weight: .bold))
                             .lineLimit(1)
-                        
-                        // أيقونة التعديل
-                        Image(systemName: "pencil")
-                            .font(.system(size: 9))
-                            .foregroundColor(AppTheme.textMuted)
+                    }
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(Color.white.opacity(0.16))
+                    .clipShape(Capsule())
+                    .overlay(
+                        Capsule()
+                            .stroke(Color.white.opacity(0.55), lineWidth: 1)
+                    )
+                }
+                .buttonStyle(ScaleButtonStyle())
+                
+                Spacer()
+                
+                // العنوان في المنتصف
+                Text("السفاحين")
+                    .font(.system(size: 19, weight: .black))
+                    .foregroundColor(.white)
+                    .shadow(color: Color.black.opacity(0.15), radius: 2, x: 0, y: 1)
+                
+                Spacer()
+                
+                // الجانب الأيسر (RTL): أزرار التحكم (الرجوع للوحة / إيقاف / خروج)
+                HStack(spacing: 10) {
+                    if viewModel.session.phase == .questionAnswering {
+                        Button(action: { viewModel.returnToBoard() }) {
+                            HStack(spacing: 3) {
+                                Image(systemName: "square.grid.2x2.fill")
+                                Text("اللوحة")
+                            }
+                            .font(.system(size: 10.5, weight: .bold))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.white.opacity(0.18))
+                            .cornerRadius(8)
+                        }
                     }
                     
-                    Text("\(team.score) ن")
-                        .font(.system(size: 17, weight: .heavy))
-                        .foregroundColor(isActive ? AppTheme.goldPrimary : AppTheme.textPrimary)
+                    Button(action: { viewModel.togglePauseGame() }) {
+                        Image(systemName: viewModel.session.isPaused ? "play.fill" : "pause.fill")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                    
+                    Button(action: { showExitConfirmation = true }) {
+                        HStack(spacing: 3) {
+                            Text("خروج")
+                                .font(.system(size: 11, weight: .bold))
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(.system(size: 12, weight: .bold))
+                        }
+                        .foregroundColor(.white)
+                    }
                 }
-                
-                Spacer()
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 8)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(isActive ? AppTheme.bgCardElevated : AppTheme.bgCard.opacity(0.6))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 14)
-                            .stroke(isActive ? Color(hex: team.colorHex) : Color.white.opacity(0.08), lineWidth: isActive ? 2 : 1)
-                    )
-            )
-        }
-        .buttonStyle(ScaleButtonStyle())
-    }
-    
-    // MARK: - Turn Control Banner (Requirement 3: اقدر اعدل الدور عند مين)
-    private var turnControlBanner: some View {
-        Button(action: {
-            viewModel.switchTurn()
-        }) {
-            HStack(spacing: 8) {
-                Image(systemName: "person.2.arrow.triangle.turn.up.right.diamond.fill")
-                    .foregroundColor(AppTheme.goldPrimary)
-                    .font(.caption)
-                
-                Text("الدور الحالي:")
-                    .font(.caption2)
-                    .foregroundColor(AppTheme.textSecondary)
-                
-                Text(viewModel.session.currentTeam.name)
-                    .font(.caption)
-                    .fontWeight(.black)
-                    .foregroundColor(Color(hex: viewModel.session.currentTeam.colorHex))
-                
-                Spacer()
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                    Text("تبديل الدور")
-                }
-                .font(.system(size: 10, weight: .bold))
-                .foregroundColor(.black)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 3)
-                .background(AppTheme.goldGradient)
-                .cornerRadius(8)
             }
             .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(AppTheme.bgCardElevated)
-            .cornerRadius(12)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(AppTheme.goldPrimary.opacity(0.25), lineWidth: 1)
+            .padding(.vertical, 10)
+        }
+        .background(
+            LinearGradient(
+                colors: [Color(hex: "#C8232C"), Color(hex: "#E84A27"), Color(hex: "#F58220")],
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+            .ignoresSafeArea(edges: .top)
+        )
+        .shadow(color: Color.black.opacity(0.12), radius: 4, x: 0, y: 2)
+    }
+    
+    // MARK: - مؤقت السؤال الدائري
+    private var questionTimerBadge: some View {
+        HStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .stroke(Color.black.opacity(0.1), lineWidth: 4)
+                    .frame(width: 44, height: 44)
+                
+                Circle()
+                    .trim(from: 0, to: CGFloat(viewModel.remainingSeconds) / CGFloat(max(viewModel.session.timeLimitSeconds, 1)))
+                    .stroke(viewModel.remainingSeconds <= 5 ? Color(hex: "#DC2626") : Color(hex: "#EA580C"), lineWidth: 4)
+                    .frame(width: 44, height: 44)
+                    .rotationEffect(.degrees(-90))
+                    .animation(.linear(duration: 1.0), value: viewModel.remainingSeconds)
+                
+                Text("\(viewModel.remainingSeconds)")
+                    .font(.system(size: 15, weight: .black, design: .rounded))
+                    .foregroundColor(viewModel.remainingSeconds <= 5 ? Color(hex: "#DC2626") : Color(hex: "#1F2937"))
+            }
+            
+            Text("ثانية متبقية")
+                .font(.caption)
+                .fontWeight(.bold)
+                .foregroundColor(Color(hex: "#4B5563"))
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 6)
+        .background(Color.white)
+        .clipShape(Capsule())
+        .shadow(color: Color.black.opacity(0.06), radius: 4, x: 0, y: 2)
+    }
+    
+    // MARK: - 3. الشريط السفلي للفرق والنتائج ووسائل المساعدة
+    private var bottomTeamsFooter: some View {
+        HStack(spacing: 8) {
+            // الفريق الأول (يمين في RTL)
+            teamFooterPanel(
+                team: viewModel.session.team1,
+                teamIndex: 0,
+                isActive: viewModel.session.currentTurnTeamIndex == 0
+            )
+            
+            Rectangle()
+                .fill(Color.black.opacity(0.08))
+                .frame(width: 1, height: 76)
+            
+            // الفريق الثاني (يسار في RTL)
+            teamFooterPanel(
+                team: viewModel.session.team2,
+                teamIndex: 1,
+                isActive: viewModel.session.currentTurnTeamIndex == 1
             )
         }
-        .buttonStyle(ScaleButtonStyle())
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 10)
+        .padding(.top, 8)
+        .padding(.bottom, 8)
+        .background(
+            Color.white
+                .ignoresSafeArea(edges: .bottom)
+        )
+        .overlay(
+            Rectangle()
+                .fill(Color.black.opacity(0.08))
+                .frame(height: 1),
+            alignment: .top
+        )
+        .shadow(color: Color.black.opacity(0.06), radius: 6, x: 0, y: -3)
+    }
+    
+    private func teamFooterPanel(team: Team, teamIndex: Int, isActive: Bool) -> some View {
+        VStack(spacing: 6) {
+            // كبسولة اسم الفريق (الضغط عليها ينقل الدور لهذا الفريق)
+            Button(action: {
+                viewModel.setTurn(to: teamIndex)
+            }) {
+                HStack(spacing: 4) {
+                    if isActive {
+                        Circle()
+                            .fill(Color.yellow)
+                            .frame(width: 6, height: 6)
+                    }
+                    Text(team.name)
+                        .font(.system(size: 12, weight: .black))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                }
+                .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity)
+                .frame(height: 26)
+                .background(isActive ? Color(hex: "#B91C1C") : Color(hex: "#DC2626").opacity(0.82))
+                .clipShape(Capsule())
+                .overlay(
+                    Capsule()
+                        .stroke(isActive ? Color(hex: "#F59E0B") : Color.clear, lineWidth: 1.8)
+                )
+            }
+            .buttonStyle(ScaleButtonStyle())
+            
+            // شريط تعديل النقاط (- | النتيجة | +)
+            HStack(spacing: 6) {
+                // زر الإنقاص السريع (-100)
+                Button(action: {
+                    viewModel.adjustScore(for: teamIndex, delta: -100)
+                }) {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(hex: "#B91C1C"))
+                }
+                
+                // رقم النتيجة (النقر عليه يفتح نافذة التعديل الكاملة)
+                Button(action: {
+                    viewModel.openScoreEditor(for: teamIndex)
+                }) {
+                    Text("\(team.score)")
+                        .font(.system(size: 16, weight: .black, design: .rounded))
+                        .foregroundColor(Color(hex: "#1F2937"))
+                        .frame(minWidth: 44)
+                }
+                
+                // زر الزيادة السريع (+100)
+                Button(action: {
+                    viewModel.adjustScore(for: teamIndex, delta: 100)
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(hex: "#B91C1C"))
+                }
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(Color(hex: "#F3F4F6"))
+            .clipShape(Capsule())
+            
+            // وسائل المساعدة أسفل النقاط
+            HStack(spacing: 6) {
+                ForEach(LifelineType.allCases) { item in
+                    let count = team.lifelinesRemaining[item.rawValue] ?? 0
+                    let isUsable = isActive && count > 0 && viewModel.canUseLifeline(item)
+                    
+                    Button(action: {
+                        if isUsable {
+                            viewModel.useLifeline(item)
+                        }
+                    }) {
+                        ZStack(alignment: .topTrailing) {
+                            Circle()
+                                .fill(isUsable ? Color(hex: "#FEF3C7") : Color(hex: "#F9FAFB"))
+                                .frame(width: 26, height: 26)
+                                .overlay(
+                                    Circle()
+                                        .stroke(isUsable ? Color(hex: "#EA580C") : Color(hex: "#D1D5DB"), lineWidth: 1)
+                                )
+                            
+                            Image(systemName: item.iconName)
+                                .font(.system(size: 11, weight: .bold))
+                                .foregroundColor(isUsable ? Color(hex: "#B91C1C") : Color(hex: "#6B7280"))
+                                .frame(width: 26, height: 26)
+                            
+                            if count > 0 {
+                                Text("\(count)")
+                                    .font(.system(size: 7.5, weight: .black))
+                                    .foregroundColor(.white)
+                                    .frame(width: 11, height: 11)
+                                    .background(isUsable ? Color(hex: "#EA580C") : Color(hex: "#9CA3AF"))
+                                    .clipShape(Circle())
+                                    .offset(x: 2, y: -2)
+                            }
+                        }
+                    }
+                    .disabled(!isUsable)
+                    .opacity(count > 0 ? 1.0 : 0.35)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
     }
     
     // MARK: - Tie Breaker Card
@@ -333,11 +429,11 @@ public struct GamePlayView: View {
     // MARK: - Pause Overlay
     private var pauseOverlay: some View {
         ZStack {
-            Color.black.opacity(0.85).ignoresSafeArea()
+            Color.black.opacity(0.75).ignoresSafeArea()
             VStack(spacing: 20) {
                 Image(systemName: "pause.circle.fill")
                     .font(.system(size: 60))
-                    .foregroundColor(AppTheme.goldPrimary)
+                    .foregroundColor(Color(hex: "#F58220"))
                 
                 Text("المباراة متوقفة مؤقتاً")
                     .font(.title2)
@@ -349,9 +445,11 @@ public struct GamePlayView: View {
                         viewModel.togglePauseGame()
                     }
                     .fontWeight(.bold)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width: 200, height: 46)
-                    .background(AppTheme.goldGradient)
+                    .background(
+                        LinearGradient(colors: [Color(hex: "#DC2626"), Color(hex: "#F97316")], startPoint: .leading, endPoint: .trailing)
+                    )
                     .cornerRadius(14)
                     
                     Button("إنهاء الآن") {

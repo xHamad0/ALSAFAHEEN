@@ -19,7 +19,7 @@ public struct CategorySelectionView: View {
                                 .fontWeight(.black)
                                 .foregroundColor(AppTheme.textPrimary)
                             
-                            Text("اختر 6 فئات لجميع الفرق (كل فئة تضم 10 أسئلة)")
+                            Text("اختر 6 فئات لجميع الفرق (100-500 يمين ويسار)")
                                 .font(.caption2)
                                 .foregroundColor(AppTheme.textSecondary)
                         }

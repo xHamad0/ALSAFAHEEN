@@ -45,7 +45,7 @@ final class ArabicTriviaTests: XCTestCase {
         
         let session = vm.createGameSession()
         XCTAssertEqual(session.boardCategories.count, 6)
-        // 6 فئات × 5 قيم × 2 سؤالين = 60 خانة
+        // 6 فئات × 5 قيم × 2 سؤالين (يمين ويسار) = 60 خانة
         XCTAssertEqual(session.boardSlots.count, 60)
         
         // التحقق من أن كل تصنيف به 10 خانات

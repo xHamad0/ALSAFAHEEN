@@ -58,6 +58,37 @@ public final class GamePlayViewModel: ObservableObject {
         self.showScoreEditSheet = true
     }
     
+    /// تعديل نتيجة فريق محدد مباشرة من شريط النتائج السفلي
+    public func adjustScore(for teamIndex: Int, delta: Int) {
+        haptic.impact(.medium)
+        if teamIndex == 0 {
+            session.team1.score = max(0, session.team1.score + delta)
+        } else {
+            session.team2.score = max(0, session.team2.score + delta)
+        }
+        saveCurrentProgress()
+    }
+    
+    /// الرجوع إلى لوحة الفئات دون احتساب السؤال الحالي
+    public func returnToBoard() {
+        stopTimer()
+        haptic.selection()
+        session.phase = .boardSelection
+        session.activeBoardSlotId = nil
+        session.activeCategory = nil
+        session.activeDifficulty = nil
+        session.currentQuestion = nil
+        session.eliminatedOptions = []
+        session.isDoublePointsActive = false
+        session.isStealAttempt = false
+        session.lastAnswerWasCorrect = nil
+        session.lastPointsEarned = 0
+        selectedOptionIndex = nil
+        directAnswerInput = ""
+        showExplanation = false
+        saveCurrentProgress()
+    }
+    
     /// تعديل نتيجة الفريق بزيادة أو إنقاص نقاط
     public func adjustScore(delta: Int) {
         haptic.impact(.medium)
