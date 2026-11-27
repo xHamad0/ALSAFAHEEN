@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// كرت السؤال النشط بدون خيارات (نمط تحداني / سين جيم: عرض السؤال ثم كشف الإجابة والتحكيم)
+/// كرت السؤال النشط بدون خيارات: يعرض السؤال وزر "إظهار الإجابة" الذي يوقف الوقت وينتقل لتحديد الفائز
 public struct QuestionCardView: View {
     let question: Question
     let difficulty: DifficultyLevel
@@ -11,11 +11,10 @@ public struct QuestionCardView: View {
     let onSelectOption: (Int) -> Void
     let onSubmitDirectOrBlank: () -> Void
     let onManualVerify: (Bool) -> Void
-    
-    @State private var isAnswerRevealedLocally: Bool = false
+    var onRevealAnswer: (() -> Void)? = nil
     
     public var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 14) {
             // شريط المعلومات العلوي (التصنيف + مضاعفة النقاط + قيمة السؤال)
             HStack {
                 HStack(spacing: 6) {
@@ -24,11 +23,11 @@ public struct QuestionCardView: View {
                     Text(question.category.titleArabic)
                         .font(.caption)
                         .fontWeight(.bold)
-                        .foregroundColor(AppTheme.textPrimary)
+                        .foregroundColor(Color(hex: "#1F2937"))
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
-                .background(question.category.themeColor.opacity(0.18))
+                .background(question.category.themeColor.opacity(0.14))
                 .cornerRadius(12)
                 
                 Spacer()
@@ -57,118 +56,75 @@ public struct QuestionCardView: View {
                 .foregroundColor(.white)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
-                .background(difficulty.gradient)
+                .background(
+                    LinearGradient(
+                        colors: [Color(hex: "#DC2626"), Color(hex: "#F97316")],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
                 .cornerRadius(12)
             }
             
-            // محتوى السؤال بدون خيارات
-            VStack(spacing: 14) {
-                // في حال سؤال الأعلام نعرض العلم
-                if question.category == .flags, let code = question.flagCountryCode, !code.isEmpty {
-                    Text(flagEmoji(from: code))
-                        .font(.system(size: 56))
-                }
-                
-                // في حال سؤال الحروف نعرض الحرف المطلوب
-                if question.category == .letters, let letter = question.letter {
-                    Text("حرف «\(letter)»")
-                        .font(.subheadline)
-                        .fontWeight(.black)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 4)
-                        .background(Color(hex: "#8B5CF6"))
-                        .clipShape(Capsule())
-                }
-                
-                // نص السؤال
-                Text(question.text)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(AppTheme.textPrimary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 10)
-                    .lineSpacing(5)
-                
-                if !isAnswerRevealedLocally {
-                    // زر كشف الإجابة
-                    Button(action: {
-                        withAnimation(.spring(response: 0.3)) {
-                            isAnswerRevealedLocally = true
-                        }
-                    }) {
-                        HStack(spacing: 8) {
-                            Image(systemName: "eye.fill")
-                            Text("كشف الإجابة")
-                                .fontWeight(.black)
-                        }
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: 260)
-                        .frame(height: 46)
-                        .background(AppTheme.goldGradient)
-                        .clipShape(Capsule())
-                        .shadow(color: AppTheme.goldPrimary.opacity(0.35), radius: 6, x: 0, y: 3)
-                    }
-                } else {
-                    // عرض الإجابة الصحيحة + أزرار التحكيم (صح / خطأ)
-                    VStack(spacing: 10) {
-                        HStack(spacing: 8) {
-                            Image(systemName: "checkmark.seal.fill")
-                                .foregroundColor(AppTheme.success)
-                            Text("الإجابة: \(question.answer)")
-                                .font(.headline)
-                                .fontWeight(.black)
-                                .foregroundColor(AppTheme.goldPrimary)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 10)
-                        .frame(maxWidth: .infinity)
-                        .background(AppTheme.bgSecondary)
-                        .cornerRadius(14)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14)
-                                .stroke(AppTheme.goldPrimary.opacity(0.4), lineWidth: 1)
-                        )
-                        
-                        HStack(spacing: 12) {
-                            Button(action: { onManualVerify(true) }) {
-                                HStack(spacing: 6) {
-                                    Image(systemName: "checkmark.circle.fill")
-                                    Text("إجابة صحيحة (+\(isDoublePoints ? difficulty.points * 2 : difficulty.points))")
-                                        .fontWeight(.bold)
-                                }
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(AppTheme.success)
-                                .cornerRadius(12)
-                            }
-                            
-                            Button(action: { onManualVerify(false) }) {
-                                HStack(spacing: 6) {
-                                    Image(systemName: "xmark.circle.fill")
-                                    Text("إجابة خاطئة")
-                                        .fontWeight(.bold)
-                                }
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(AppTheme.error)
-                                .cornerRadius(12)
-                            }
-                        }
-                    }
-                }
+            // في حال سؤال الأعلام نعرض العلم
+            if question.category == .flags, let code = question.flagCountryCode, !code.isEmpty {
+                Text(flagEmoji(from: code))
+                    .font(.system(size: 54))
             }
-            .padding(16)
-            .premiumCard()
+            
+            // في حال سؤال الحروف نعرض الحرف المطلوب
+            if question.category == .letters, let letter = question.letter {
+                Text("حرف «\(letter)»")
+                    .font(.subheadline)
+                    .fontWeight(.black)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 4)
+                    .background(Color(hex: "#8B5CF6"))
+                    .clipShape(Capsule())
+            }
+            
+            // نص السؤال
+            Text(question.text)
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundColor(Color(hex: "#111827"))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 12)
+                .lineSpacing(5)
+            
+            // زر إظهار الإجابة (يوقف المؤقت وينتقل لصفحة الإجابة وتحديد من جاوب)
+            Button(action: {
+                onRevealAnswer?()
+            }) {
+                HStack(spacing: 8) {
+                    Image(systemName: "eye.fill")
+                    Text("إظهار الإجابة")
+                        .fontWeight(.black)
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: 260)
+                .frame(height: 46)
+                .background(
+                    LinearGradient(
+                        colors: [Color(hex: "#C8232C"), Color(hex: "#F97316")],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .clipShape(Capsule())
+                .shadow(color: Color(hex: "#F97316").opacity(0.35), radius: 6, x: 0, y: 3)
+            }
         }
-        .onChange(of: question.id) { _ in
-            isAnswerRevealedLocally = false
-        }
+        .padding(18)
+        .background(Color.white)
+        .cornerRadius(22)
+        .overlay(
+            RoundedRectangle(cornerRadius: 22)
+                .stroke(Color(hex: "#F97316"), lineWidth: 2.2)
+        )
+        .shadow(color: Color.black.opacity(0.06), radius: 6, x: 0, y: 3)
     }
     
     private func flagEmoji(from countryCode: String) -> String {

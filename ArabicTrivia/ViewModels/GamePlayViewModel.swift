@@ -241,6 +241,56 @@ public final class GamePlayViewModel: ObservableObject {
         processAnswerResult(isCorrect: isCorrect)
     }
     
+    /// إظهار الإجابة وإيقاف المؤقت فوراً
+    public func revealAnswerAndStopTimer() {
+        stopTimer()
+        haptic.selection()
+        session.phase = .answerRevealed
+        saveCurrentProgress()
+    }
+    
+    /// منح نقاط السؤال للفريق الذي أجاب صح (0 أو 1) أو لا أحد (nil) ثم العودة للوحة
+    public func awardQuestionTo(teamIndex: Int?) {
+        guard let difficulty = session.activeDifficulty else {
+            proceedToNextTurn()
+            return
+        }
+        let basePoints = difficulty.points
+        let earnedPoints = session.isDoublePointsActive ? basePoints * 2 : basePoints
+        
+        if let activeSlotId = session.activeBoardSlotId,
+           let index = session.boardSlots.firstIndex(where: { $0.id == activeSlotId }) {
+            session.boardSlots[index].isPlayed = true
+            session.boardSlots[index].playedByTeamIndex = teamIndex
+            session.boardSlots[index].wasCorrect = (teamIndex != nil)
+        }
+        
+        if let idx = teamIndex {
+            audio.playCorrectSound()
+            haptic.notification(.success)
+            if idx == 0 {
+                session.team1.score += earnedPoints
+                session.team1.correctAnswersCount += 1
+                session.team1.currentStreak += 1
+                if session.team1.currentStreak > session.team1.longestStreak {
+                    session.team1.longestStreak = session.team1.currentStreak
+                }
+            } else if idx == 1 {
+                session.team2.score += earnedPoints
+                session.team2.correctAnswersCount += 1
+                session.team2.currentStreak += 1
+                if session.team2.currentStreak > session.team2.longestStreak {
+                    session.team2.longestStreak = session.team2.currentStreak
+                }
+            }
+        } else {
+            audio.playWrongSound()
+            haptic.selection()
+        }
+        
+        proceedToNextTurn()
+    }
+    
     private func processAnswerResult(isCorrect: Bool) {
         guard let difficulty = session.activeDifficulty else { return }
         let basePoints = difficulty.points

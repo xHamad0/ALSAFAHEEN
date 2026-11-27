@@ -51,6 +51,9 @@ public struct GamePlayView: View {
                                     },
                                     onManualVerify: { isCorrect in
                                         viewModel.verifyManualAnswer(isCorrect: isCorrect)
+                                    },
+                                    onRevealAnswer: {
+                                        viewModel.revealAnswerAndStopTimer()
                                     }
                                 )
                                 
