@@ -198,7 +198,7 @@ public struct GamePlayView: View {
                 }
             }
             .padding(.horizontal, 12)
-            .padding(.vertical, 10)
+            .padding(.vertical, 6)
         }
         .background(
             LinearGradient(
@@ -243,7 +243,7 @@ public struct GamePlayView: View {
         .shadow(color: Color.black.opacity(0.06), radius: 4, x: 0, y: 2)
     }
     
-    // MARK: - 3. الشريط السفلي للفرق والنتائج ووسائل المساعدة
+    // MARK: - 3. الشريط السفلي المضغوط للفرق والنتائج ووسائل المساعدة (صف أفقي واحد لا يغطي اللوحة)
     private var bottomTeamsFooter: some View {
         HStack(spacing: 8) {
             // الفريق الأول (يمين في RTL)
@@ -254,8 +254,8 @@ public struct GamePlayView: View {
             )
             
             Rectangle()
-                .fill(Color.black.opacity(0.08))
-                .frame(width: 1, height: 76)
+                .fill(Color.black.opacity(0.1))
+                .frame(width: 1, height: 28)
             
             // الفريق الثاني (يسار في RTL)
             teamFooterPanel(
@@ -264,9 +264,8 @@ public struct GamePlayView: View {
                 isActive: viewModel.session.currentTurnTeamIndex == 1
             )
         }
-        .padding(.horizontal, 10)
-        .padding(.top, 8)
-        .padding(.bottom, 8)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
         .background(
             Color.white
                 .ignoresSafeArea(edges: .bottom)
@@ -277,12 +276,12 @@ public struct GamePlayView: View {
                 .frame(height: 1),
             alignment: .top
         )
-        .shadow(color: Color.black.opacity(0.06), radius: 6, x: 0, y: -3)
+        .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: -2)
     }
     
     private func teamFooterPanel(team: Team, teamIndex: Int, isActive: Bool) -> some View {
-        VStack(spacing: 6) {
-            // كبسولة اسم الفريق (الضغط عليها ينقل الدور لهذا الفريق)
+        HStack(spacing: 6) {
+            // كبسولة اسم الفريق (مضغوطة)
             Button(action: {
                 viewModel.setTurn(to: teamIndex)
             }) {
@@ -290,62 +289,61 @@ public struct GamePlayView: View {
                     if isActive {
                         Circle()
                             .fill(Color.yellow)
-                            .frame(width: 6, height: 6)
+                            .frame(width: 5, height: 5)
                     }
                     Text(team.name)
-                        .font(.system(size: 12, weight: .black))
+                        .font(.system(size: 11, weight: .black))
                         .foregroundColor(.white)
                         .lineLimit(1)
                 }
-                .padding(.horizontal, 12)
-                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 10)
+                .frame(minWidth: 58, maxWidth: 110)
                 .frame(height: 26)
                 .background(isActive ? Color(hex: "#B91C1C") : Color(hex: "#DC2626").opacity(0.82))
                 .clipShape(Capsule())
                 .overlay(
                     Capsule()
-                        .stroke(isActive ? Color(hex: "#F59E0B") : Color.clear, lineWidth: 1.8)
+                        .stroke(isActive ? Color(hex: "#F59E0B") : Color.clear, lineWidth: 1.5)
                 )
             }
             .buttonStyle(ScaleButtonStyle())
             
             // شريط تعديل النقاط (- | النتيجة | +)
-            HStack(spacing: 6) {
-                // زر الإنقاص السريع (-100)
+            HStack(spacing: 4) {
                 Button(action: {
                     viewModel.adjustScore(for: teamIndex, delta: -100)
                 }) {
                     Image(systemName: "minus.circle.fill")
-                        .font(.system(size: 20))
+                        .font(.system(size: 17))
                         .foregroundColor(Color(hex: "#B91C1C"))
                 }
                 
-                // رقم النتيجة (النقر عليه يفتح نافذة التعديل الكاملة)
                 Button(action: {
                     viewModel.openScoreEditor(for: teamIndex)
                 }) {
                     Text("\(team.score)")
-                        .font(.system(size: 16, weight: .black, design: .rounded))
+                        .font(.system(size: 13, weight: .black, design: .rounded))
                         .foregroundColor(Color(hex: "#1F2937"))
-                        .frame(minWidth: 44)
+                        .frame(minWidth: 32)
                 }
                 
-                // زر الزيادة السريع (+100)
                 Button(action: {
                     viewModel.adjustScore(for: teamIndex, delta: 100)
                 }) {
                     Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 20))
+                        .font(.system(size: 17))
                         .foregroundColor(Color(hex: "#B91C1C"))
                 }
             }
-            .padding(.horizontal, 8)
-            .padding(.vertical, 3)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
             .background(Color(hex: "#F3F4F6"))
             .clipShape(Capsule())
             
-            // وسائل المساعدة أسفل النقاط
-            HStack(spacing: 6) {
+            Spacer(minLength: 2)
+            
+            // وسائل المساعدة أفقياً بجانب النقاط
+            HStack(spacing: 4) {
                 ForEach(LifelineType.allCases) { item in
                     let count = team.lifelinesRemaining[item.rawValue] ?? 0
                     let isUsable = isActive && count > 0 && viewModel.canUseLifeline(item)
@@ -355,33 +353,22 @@ public struct GamePlayView: View {
                             viewModel.useLifeline(item)
                         }
                     }) {
-                        ZStack(alignment: .topTrailing) {
+                        ZStack {
                             Circle()
                                 .fill(isUsable ? Color(hex: "#FEF3C7") : Color(hex: "#F9FAFB"))
-                                .frame(width: 26, height: 26)
+                                .frame(width: 24, height: 24)
                                 .overlay(
                                     Circle()
                                         .stroke(isUsable ? Color(hex: "#EA580C") : Color(hex: "#D1D5DB"), lineWidth: 1)
                                 )
                             
                             Image(systemName: item.iconName)
-                                .font(.system(size: 11, weight: .bold))
+                                .font(.system(size: 10, weight: .bold))
                                 .foregroundColor(isUsable ? Color(hex: "#B91C1C") : Color(hex: "#6B7280"))
-                                .frame(width: 26, height: 26)
-                            
-                            if count > 0 {
-                                Text("\(count)")
-                                    .font(.system(size: 7.5, weight: .black))
-                                    .foregroundColor(.white)
-                                    .frame(width: 11, height: 11)
-                                    .background(isUsable ? Color(hex: "#EA580C") : Color(hex: "#9CA3AF"))
-                                    .clipShape(Circle())
-                                    .offset(x: 2, y: -2)
-                            }
                         }
                     }
                     .disabled(!isUsable)
-                    .opacity(count > 0 ? 1.0 : 0.35)
+                    .opacity(count > 0 ? 1.0 : 0.3)
                 }
             }
         }

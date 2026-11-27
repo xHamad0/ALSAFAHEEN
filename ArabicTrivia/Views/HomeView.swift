@@ -12,6 +12,7 @@ public struct HomeView: View {
     @State private var navigateToResumeMatch: Bool = false
     @State private var startedSession: GameSession? = nil
     @State private var infoCategory: QuestionCategory? = nil
+    @FocusState private var isInputFocused: Bool
     
     private var filteredCategories: [QuestionCategory] {
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -46,15 +47,32 @@ public struct HomeView: View {
                         .padding(.vertical, 16)
                         .padding(.bottom, 76)
                     }
+                    .scrollDismissesKeyboard(.interactively)
+                    .onTapGesture {
+                        isInputFocused = false
+                    }
                 }
                 
-                // زر بدء اللعب الثابت في الأسفل
-                VStack {
-                    Spacer()
-                    startGameBottomBar
+                // زر بدء اللعب الثابت في الأسفل (يختفي أثناء الكتابة حتى لا يغطي على الكيبورد)
+                if !isInputFocused {
+                    VStack {
+                        Spacer()
+                        startGameBottomBar
+                    }
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
                 }
             }
             .navigationBarHidden(true)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("تم") {
+                        isInputFocused = false
+                    }
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(hex: "#EA580C"))
+                }
+            }
             .navigationDestination(isPresented: $navigateToGamePlay) {
                 if let session = startedSession {
                     GamePlayView(session: session)
@@ -141,6 +159,9 @@ public struct HomeView: View {
         VStack(spacing: 16) {
             // حقل اسم اللعبة في المنتصف
             TextField("اسم اللعبة", text: $setupViewModel.gameName)
+                .focused($isInputFocused)
+                .submitLabel(.done)
+                .onSubmit { isInputFocused = false }
                 .font(.system(size: 14, weight: .bold))
                 .foregroundColor(Color(hex: "#1F2937"))
                 .multilineTextAlignment(.center)
@@ -190,6 +211,9 @@ public struct HomeView: View {
             
             VStack(spacing: 4) {
                 TextField("اسم الفريق", text: name)
+                    .focused($isInputFocused)
+                    .submitLabel(.done)
+                    .onSubmit { isInputFocused = false }
                     .font(.system(size: 14, weight: .bold))
                     .foregroundColor(Color(hex: "#1F2937"))
                     .multilineTextAlignment(.center)
@@ -303,6 +327,9 @@ public struct HomeView: View {
                     .foregroundColor(Color(hex: "#F97316"))
                 
                 TextField("البحث باسم الفئة", text: $searchText)
+                    .focused($isInputFocused)
+                    .submitLabel(.done)
+                    .onSubmit { isInputFocused = false }
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color(hex: "#1F2937"))
             }
