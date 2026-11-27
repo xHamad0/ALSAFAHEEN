@@ -28,7 +28,7 @@ public final class GamePlayViewModel: ObservableObject {
     
     public init(session: GameSession) {
         self.session = session
-        self.remainingSeconds = session.timeLimitSeconds
+        self.remainingSeconds = 0
     }
     
     // MARK: - تعديل الدور (Requirement 3: اقدر اعدل الدور عند مين)
@@ -162,10 +162,9 @@ public final class GamePlayViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Timer Handling
+    // MARK: - Timer Handling (تصاعدي من 0 بلا حد أقصى)
     public func startTimer() {
-        guard session.timeLimitSeconds > 0 else { return }
-        remainingSeconds = session.timeLimitSeconds
+        remainingSeconds = 0
         isTimerRunning = true
         
         timerSubscription?.cancel()
@@ -173,16 +172,7 @@ public final class GamePlayViewModel: ObservableObject {
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self, self.isTimerRunning else { return }
-                if self.remainingSeconds > 1 {
-                    self.remainingSeconds -= 1
-                    if self.remainingSeconds <= 5 {
-                        self.audio.playTimerTickSound()
-                        self.haptic.impact(.light)
-                    }
-                } else {
-                    self.remainingSeconds = 0
-                    self.timeDidExpire()
-                }
+                self.remainingSeconds += 1
             }
     }
     
@@ -191,9 +181,7 @@ public final class GamePlayViewModel: ObservableObject {
     }
     
     public func resumeTimer() {
-        if remainingSeconds > 0 {
-            isTimerRunning = true
-        }
+        isTimerRunning = true
     }
     
     public func togglePauseGame() {
@@ -332,7 +320,7 @@ public final class GamePlayViewModel: ObservableObject {
         case .doublePoints:
             session.isDoublePointsActive = true
         case .extraTime:
-            remainingSeconds += 20
+            remainingSeconds = max(0, remainingSeconds - 20)
         case .stealQuestion:
             session.isStealAttempt = true
         }

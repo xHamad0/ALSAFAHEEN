@@ -211,32 +211,22 @@ public struct GamePlayView: View {
         .shadow(color: Color.black.opacity(0.12), radius: 4, x: 0, y: 2)
     }
     
-    // MARK: - مؤقت السؤال الدائري
+    // MARK: - مؤقت السؤال التصاعدي (من 0 إلى فوق بدون حد)
     private var questionTimerBadge: some View {
-        HStack(spacing: 8) {
-            ZStack {
-                Circle()
-                    .stroke(Color.black.opacity(0.1), lineWidth: 4)
-                    .frame(width: 44, height: 44)
-                
-                Circle()
-                    .trim(from: 0, to: CGFloat(viewModel.remainingSeconds) / CGFloat(max(viewModel.session.timeLimitSeconds, 1)))
-                    .stroke(viewModel.remainingSeconds <= 5 ? Color(hex: "#DC2626") : Color(hex: "#EA580C"), lineWidth: 4)
-                    .frame(width: 44, height: 44)
-                    .rotationEffect(.degrees(-90))
-                    .animation(.linear(duration: 1.0), value: viewModel.remainingSeconds)
-                
-                Text("\(viewModel.remainingSeconds)")
-                    .font(.system(size: 15, weight: .black, design: .rounded))
-                    .foregroundColor(viewModel.remainingSeconds <= 5 ? Color(hex: "#DC2626") : Color(hex: "#1F2937"))
-            }
+        let mins = viewModel.remainingSeconds / 60
+        let secs = viewModel.remainingSeconds % 60
+        let formatted = String(format: "%02d:%02d", mins, secs)
+        
+        return HStack(spacing: 8) {
+            Image(systemName: "stopwatch.fill")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(Color(hex: "#EA580C"))
             
-            Text("ثانية متبقية")
-                .font(.caption)
-                .fontWeight(.bold)
-                .foregroundColor(Color(hex: "#4B5563"))
+            Text(formatted)
+                .font(.system(size: 17, weight: .black, design: .monospaced))
+                .foregroundColor(Color(hex: "#1F2937"))
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .padding(.vertical, 6)
         .background(Color.white)
         .clipShape(Capsule())
